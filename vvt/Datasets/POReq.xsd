@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="POReq" targetNamespace="http://tempuri.org/POReq.xsd" xmlns:mstns="http://tempuri.org/POReq.xsd" xmlns="http://tempuri.org/POReq.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="POReq" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="POReq" msprop:Generator_UserDSName="POReq">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="POreq" msprop:Generator_TableClassName="POreqDataTable" msprop:Generator_TableVarName="tablePOreq" msprop:Generator_TablePropName="POreq" msprop:Generator_RowDeletingName="POreqRowDeleting" msprop:Generator_RowChangingName="POreqRowChanging" msprop:Generator_RowEvHandlerName="POreqRowChangeEventHandler" msprop:Generator_RowDeletedName="POreqRowDeleted" msprop:Generator_UserTableName="POreq" msprop:Generator_RowChangedName="POreqRowChanged" msprop:Generator_RowEvArgName="POreqRowChangeEvent" msprop:Generator_RowClassName="POreqRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Req-Number" msprop:Generator_ColumnVarNameInTable="_columnReq_Number" msprop:Generator_ColumnPropNameInRow="_Req_Number" msprop:Generator_ColumnPropNameInTable="_Req_NumberColumn" msprop:Generator_UserColumnName="Req-Number" type="xs:string" minOccurs="0" />
+              <xs:element name="Supplier-ID" msprop:Generator_ColumnVarNameInTable="_columnSupplier_ID" msprop:Generator_ColumnPropNameInRow="_Supplier_ID" msprop:Generator_ColumnPropNameInTable="_Supplier_IDColumn" msprop:Generator_UserColumnName="Supplier-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Supplier-Name" msprop:Generator_ColumnVarNameInTable="_columnSupplier_Name" msprop:Generator_ColumnPropNameInRow="_Supplier_Name" msprop:Generator_ColumnPropNameInTable="_Supplier_NameColumn" msprop:Generator_UserColumnName="Supplier-Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Inventory-Item-ID" msprop:Generator_ColumnVarNameInTable="_columnInventory_Item_ID" msprop:Generator_ColumnPropNameInRow="_Inventory_Item_ID" msprop:Generator_ColumnPropNameInTable="_Inventory_Item_IDColumn" msprop:Generator_UserColumnName="Inventory-Item-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Item-Desc" msprop:Generator_ColumnVarNameInTable="_columnItem_Desc" msprop:Generator_ColumnPropNameInRow="_Item_Desc" msprop:Generator_ColumnPropNameInTable="_Item_DescColumn" msprop:Generator_UserColumnName="Item-Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty-Requisitioned" msprop:Generator_ColumnVarNameInTable="_columnQty_Requisitioned" msprop:Generator_ColumnPropNameInRow="_Qty_Requisitioned" msprop:Generator_ColumnPropNameInTable="_Qty_RequisitionedColumn" msprop:Generator_UserColumnName="Qty-Requisitioned" type="xs:string" minOccurs="0" />
+              <xs:element name="Unit-Meas-Purchase" msprop:Generator_ColumnVarNameInTable="_columnUnit_Meas_Purchase" msprop:Generator_ColumnPropNameInRow="_Unit_Meas_Purchase" msprop:Generator_ColumnPropNameInTable="_Unit_Meas_PurchaseColumn" msprop:Generator_UserColumnName="Unit-Meas-Purchase" type="xs:string" minOccurs="0" />
+              <xs:element name="Unit-Cost-Purchase" msprop:Generator_ColumnVarNameInTable="_columnUnit_Cost_Purchase" msprop:Generator_ColumnPropNameInRow="_Unit_Cost_Purchase" msprop:Generator_ColumnPropNameInTable="_Unit_Cost_PurchaseColumn" msprop:Generator_UserColumnName="Unit-Cost-Purchase" type="xs:string" minOccurs="0" />
+              <xs:element name="Req-Status" msprop:Generator_ColumnVarNameInTable="_columnReq_Status" msprop:Generator_ColumnPropNameInRow="_Req_Status" msprop:Generator_ColumnPropNameInTable="_Req_StatusColumn" msprop:Generator_UserColumnName="Req-Status" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

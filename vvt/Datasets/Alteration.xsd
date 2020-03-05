@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="Alteration" targetNamespace="http://tempuri.org/Alteration.xsd" xmlns:mstns="http://tempuri.org/Alteration.xsd" xmlns="http://tempuri.org/Alteration.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="Alteration" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="Alteration" msprop:Generator_UserDSName="Alteration">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="alteration" msprop:Generator_TableClassName="alterationDataTable" msprop:Generator_TableVarName="tablealteration" msprop:Generator_TablePropName="alteration" msprop:Generator_RowDeletingName="alterationRowDeleting" msprop:Generator_RowChangingName="alterationRowChanging" msprop:Generator_RowEvHandlerName="alterationRowChangeEventHandler" msprop:Generator_RowDeletedName="alterationRowDeleted" msprop:Generator_UserTableName="alteration" msprop:Generator_RowChangedName="alterationRowChanged" msprop:Generator_RowEvArgName="alterationRowChangeEvent" msprop:Generator_RowClassName="alterationRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="Alteration-Date" msprop:Generator_ColumnVarNameInTable="_columnAlteration_Date" msprop:Generator_ColumnPropNameInRow="_Alteration_Date" msprop:Generator_ColumnPropNameInTable="_Alteration_DateColumn" msprop:Generator_UserColumnName="Alteration-Date" type="xs:string" minOccurs="0" />
+              <xs:element name="Alteration-Time" msprop:Generator_ColumnVarNameInTable="_columnAlteration_Time" msprop:Generator_ColumnPropNameInRow="_Alteration_Time" msprop:Generator_ColumnPropNameInTable="_Alteration_TimeColumn" msprop:Generator_UserColumnName="Alteration-Time" type="xs:string" minOccurs="0" />
+              <xs:element name="Entered-By" msprop:Generator_ColumnVarNameInTable="_columnEntered_By" msprop:Generator_ColumnPropNameInRow="_Entered_By" msprop:Generator_ColumnPropNameInTable="_Entered_ByColumn" msprop:Generator_UserColumnName="Entered-By" type="xs:string" minOccurs="0" />
+              <xs:element name="Authorized-By" msprop:Generator_ColumnVarNameInTable="_columnAuthorized_By" msprop:Generator_ColumnPropNameInRow="_Authorized_By" msprop:Generator_ColumnPropNameInTable="_Authorized_ByColumn" msprop:Generator_UserColumnName="Authorized-By" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

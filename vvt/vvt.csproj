@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4C01BEBD-E444-46CB-AAD7-31FB41BB8C35}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>vvt</RootNamespace>
+    <AssemblyName>vvt</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>VVT-on-White.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AxShockwaveFlashObjects, Version=1.0.0.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CrystalReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Datasets\Alteration.cs">
+      <DependentUpon>Alteration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\Alteration.designer.cs">
+      <DependentUpon>Alteration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\Alteration1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Alteration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\FormSpecs.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FormSpecs.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\FreeFields.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FreeFields.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\JobComments.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobComments.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\MailFF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailFF.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\MailingVersionFF.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MailingVersionFF.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\POLineData.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POLineData.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\POReq.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POReq.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\shipTo.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>shipTo.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Datasets\Alteration.xsc">
+      <DependentUpon>Alteration.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\Alteration.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Alteration1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\Alteration.xss">
+      <DependentUpon>Alteration.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\FormSpecs.xsc">
+      <DependentUpon>FormSpecs.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\FormSpecs.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FormSpecs.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\FormSpecs.xss">
+      <DependentUpon>FormSpecs.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\FreeFields.xsc">
+      <DependentUpon>FreeFields.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\FreeFields.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FreeFields.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\FreeFields.xss">
+      <DependentUpon>FreeFields.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\JobComments.xsc">
+      <DependentUpon>JobComments.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\JobComments.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JobComments.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\JobComments.xss">
+      <DependentUpon>JobComments.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\MailFF.xsc">
+      <DependentUpon>MailFF.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\MailFF.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MailFF.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\MailFF.xss">
+      <DependentUpon>MailFF.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\MailingVersionFF.xsc">
+      <DependentUpon>MailingVersionFF.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\MailingVersionFF.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MailingVersionFF.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\MailingVersionFF.xss">
+      <DependentUpon>MailingVersionFF.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\POLineData.xsc">
+      <DependentUpon>POLineData.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\POLineData.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POLineData.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\POLineData.xss">
+      <DependentUpon>POLineData.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\POReq.xsc">
+      <DependentUpon>POReq.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\POReq.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POReq.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\POReq.xss">
+      <DependentUpon>POReq.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\shipTo.xsc">
+      <DependentUpon>shipTo.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\shipTo.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>shipTo.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Datasets\shipTo.xss">
+      <DependentUpon>shipTo.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="VVT-on-White.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

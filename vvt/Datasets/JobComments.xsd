@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="JobComments" targetNamespace="http://tempuri.org/JobComments.xsd" xmlns:mstns="http://tempuri.org/JobComments.xsd" xmlns="http://tempuri.org/JobComments.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="JobComments" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="JobComments" msprop:Generator_UserDSName="JobComments">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="JobComments" msprop:Generator_TableClassName="JobCommentsDataTable" msprop:Generator_TableVarName="tableJobComments" msprop:Generator_RowChangedName="JobCommentsRowChanged" msprop:Generator_TablePropName="_JobComments" msprop:Generator_RowDeletingName="JobCommentsRowDeleting" msprop:Generator_RowChangingName="JobCommentsRowChanging" msprop:Generator_RowEvHandlerName="JobCommentsRowChangeEventHandler" msprop:Generator_RowDeletedName="JobCommentsRowDeleted" msprop:Generator_RowClassName="JobCommentsRow" msprop:Generator_UserTableName="JobComments" msprop:Generator_RowEvArgName="JobCommentsRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+              <xs:element name="EnterBy" msprop:Generator_ColumnVarNameInTable="columnEnterBy" msprop:Generator_ColumnPropNameInRow="EnterBy" msprop:Generator_ColumnPropNameInTable="EnterByColumn" msprop:Generator_UserColumnName="EnterBy" type="xs:string" minOccurs="0" />
+              <xs:element name="DateEntered" msprop:Generator_ColumnVarNameInTable="columnDateEntered" msprop:Generator_ColumnPropNameInRow="DateEntered" msprop:Generator_ColumnPropNameInTable="DateEnteredColumn" msprop:Generator_UserColumnName="DateEntered" type="xs:string" minOccurs="0" />
+              <xs:element name="DateUpdated" msprop:Generator_ColumnVarNameInTable="columnDateUpdated" msprop:Generator_ColumnPropNameInRow="DateUpdated" msprop:Generator_ColumnPropNameInTable="DateUpdatedColumn" msprop:Generator_UserColumnName="DateUpdated" type="xs:string" minOccurs="0" />
+              <xs:element name="SpecID" msprop:Generator_ColumnVarNameInTable="columnSpecID" msprop:Generator_ColumnPropNameInRow="SpecID" msprop:Generator_ColumnPropNameInTable="SpecIDColumn" msprop:Generator_UserColumnName="SpecID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="FormSpecs" targetNamespace="http://tempuri.org/FormSpecs.xsd" xmlns:mstns="http://tempuri.org/FormSpecs.xsd" xmlns="http://tempuri.org/FormSpecs.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="FormSpecs" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FormSpecs" msprop:Generator_UserDSName="FormSpecs">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="formSpecDT" msprop:Generator_TableClassName="formSpecDTDataTable" msprop:Generator_TableVarName="tableformSpecDT" msprop:Generator_TablePropName="formSpecDT" msprop:Generator_RowDeletingName="formSpecDTRowDeleting" msprop:Generator_RowChangingName="formSpecDTRowChanging" msprop:Generator_RowEvHandlerName="formSpecDTRowChangeEventHandler" msprop:Generator_RowDeletedName="formSpecDTRowDeleted" msprop:Generator_UserTableName="formSpecDT" msprop:Generator_RowChangedName="formSpecDTRowChanged" msprop:Generator_RowEvArgName="formSpecDTRowChangeEvent" msprop:Generator_RowClassName="formSpecDTRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Form-ID" msprop:Generator_ColumnVarNameInTable="_columnForm_ID" msprop:Generator_ColumnPropNameInRow="_Form_ID" msprop:Generator_ColumnPropNameInTable="_Form_IDColumn" msprop:Generator_UserColumnName="Form-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Form-Desc" msprop:Generator_ColumnVarNameInTable="_columnForm_Desc" msprop:Generator_ColumnPropNameInRow="_Form_Desc" msprop:Generator_ColumnPropNameInTable="_Form_DescColumn" msprop:Generator_UserColumnName="Form-Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="Number-Pages" msprop:Generator_ColumnVarNameInTable="_columnNumber_Pages" msprop:Generator_ColumnPropNameInRow="_Number_Pages" msprop:Generator_ColumnPropNameInTable="_Number_PagesColumn" msprop:Generator_UserColumnName="Number-Pages" type="xs:string" minOccurs="0" />
+              <xs:element name="Width" msprop:Generator_ColumnVarNameInTable="columnWidth" msprop:Generator_ColumnPropNameInRow="Width" msprop:Generator_ColumnPropNameInTable="WidthColumn" msprop:Generator_UserColumnName="Width" type="xs:string" minOccurs="0" />
+              <xs:element name="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnPropNameInTable="LengthColumn" msprop:Generator_UserColumnName="Length" type="xs:string" minOccurs="0" />
+              <xs:element name="Number-forms" msprop:Generator_ColumnVarNameInTable="_columnNumber_forms" msprop:Generator_ColumnPropNameInRow="_Number_forms" msprop:Generator_ColumnPropNameInTable="_Number_formsColumn" msprop:Generator_UserColumnName="Number-forms" type="xs:string" minOccurs="0" />
+              <xs:element name="Number-Out" msprop:Generator_ColumnVarNameInTable="_columnNumber_Out" msprop:Generator_ColumnPropNameInRow="_Number_Out" msprop:Generator_ColumnPropNameInTable="_Number_OutColumn" msprop:Generator_UserColumnName="Number-Out" type="xs:string" minOccurs="0" />
+              <xs:element name="Imposition" msprop:Generator_ColumnVarNameInTable="columnImposition" msprop:Generator_ColumnPropNameInRow="Imposition" msprop:Generator_ColumnPropNameInTable="ImpositionColumn" msprop:Generator_UserColumnName="Imposition" type="xs:string" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="shipTo" targetNamespace="http://tempuri.org/shipTo.xsd" xmlns:mstns="http://tempuri.org/shipTo.xsd" xmlns="http://tempuri.org/shipTo.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="shipTo" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="shipTo" msprop:Generator_UserDSName="shipTo">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="shipToData" msprop:Generator_TableClassName="shipToDataDataTable" msprop:Generator_TableVarName="tableshipToData" msprop:Generator_TablePropName="shipToData" msprop:Generator_RowDeletingName="shipToDataRowDeleting" msprop:Generator_RowChangingName="shipToDataRowChanging" msprop:Generator_RowEvHandlerName="shipToDataRowChangeEventHandler" msprop:Generator_RowDeletedName="shipToDataRowDeleted" msprop:Generator_UserTableName="shipToData" msprop:Generator_RowChangedName="shipToDataRowChanged" msprop:Generator_RowEvArgName="shipToDataRowChangeEvent" msprop:Generator_RowClassName="shipToDataRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ship-To-Name" msprop:Generator_ColumnVarNameInTable="_columnShip_To_Name" msprop:Generator_ColumnPropNameInRow="_Ship_To_Name" msprop:Generator_ColumnPropNameInTable="_Ship_To_NameColumn" msprop:Generator_UserColumnName="Ship-To-Name" type="xs:string" minOccurs="0" />
+              <xs:element name="Ship-To-Address1" msprop:Generator_ColumnVarNameInTable="_columnShip_To_Address1" msprop:Generator_ColumnPropNameInRow="_Ship_To_Address1" msprop:Generator_ColumnPropNameInTable="_Ship_To_Address1Column" msprop:Generator_UserColumnName="Ship-To-Address1" type="xs:string" minOccurs="0" />
+              <xs:element name="Ship-To-Address2" msprop:Generator_ColumnVarNameInTable="_columnShip_To_Address2" msprop:Generator_ColumnPropNameInRow="_Ship_To_Address2" msprop:Generator_ColumnPropNameInTable="_Ship_To_Address2Column" msprop:Generator_UserColumnName="Ship-To-Address2" type="xs:string" minOccurs="0" />
+              <xs:element name="Ship-To-Address3" msprop:Generator_ColumnVarNameInTable="_columnShip_To_Address3" msprop:Generator_ColumnPropNameInRow="_Ship_To_Address3" msprop:Generator_ColumnPropNameInTable="_Ship_To_Address3Column" msprop:Generator_UserColumnName="Ship-To-Address3" type="xs:string" minOccurs="0" />
+              <xs:element name="Ship-To-City" msprop:Generator_ColumnVarNameInTable="_columnShip_To_City" msprop:Generator_ColumnPropNameInRow="_Ship_To_City" msprop:Generator_ColumnPropNameInTable="_Ship_To_CityColumn" msprop:Generator_UserColumnName="Ship-To-City" type="xs:string" minOccurs="0" />
+              <xs:element name="Ship-To-State" msprop:Generator_ColumnVarNameInTable="_columnShip_To_State" msprop:Generator_ColumnPropNameInRow="_Ship_To_State" msprop:Generator_ColumnPropNameInTable="_Ship_To_StateColumn" msprop:Generator_UserColumnName="Ship-To-State" type="xs:string" minOccurs="0" />
+              <xs:element name="Ship-To-Zip" msprop:Generator_ColumnVarNameInTable="_columnShip_To_Zip" msprop:Generator_ColumnPropNameInRow="_Ship_To_Zip" msprop:Generator_ColumnPropNameInTable="_Ship_To_ZipColumn" msprop:Generator_UserColumnName="Ship-To-Zip" type="xs:string" minOccurs="0" />
+              <xs:element name="Ship-To-Attention" msprop:Generator_ColumnVarNameInTable="_columnShip_To_Attention" msprop:Generator_ColumnPropNameInRow="_Ship_To_Attention" msprop:Generator_ColumnPropNameInTable="_Ship_To_AttentionColumn" msprop:Generator_UserColumnName="Ship-To-Attention" type="xs:string" minOccurs="0" />
+              <xs:element name="Instructions" msprop:Generator_ColumnVarNameInTable="columnInstructions" msprop:Generator_ColumnPropNameInRow="Instructions" msprop:Generator_ColumnPropNameInTable="InstructionsColumn" msprop:Generator_UserColumnName="Instructions" type="xs:string" minOccurs="0" />
+              <xs:element name="Requested-Quantity" msprop:Generator_ColumnVarNameInTable="_columnRequested_Quantity" msprop:Generator_ColumnPropNameInRow="_Requested_Quantity" msprop:Generator_ColumnPropNameInTable="_Requested_QuantityColumn" msprop:Generator_UserColumnName="Requested-Quantity" type="xs:string" minOccurs="0" />
+              <xs:element name="Requested-Number-Packages" msprop:Generator_ColumnVarNameInTable="_columnRequested_Number_Packages" msprop:Generator_ColumnPropNameInRow="_Requested_Number_Packages" msprop:Generator_ColumnPropNameInTable="_Requested_Number_PackagesColumn" msprop:Generator_UserColumnName="Requested-Number-Packages" type="xs:string" minOccurs="0" />
+              <xs:element name="FAX" msprop:Generator_ColumnVarNameInTable="columnFAX" msprop:Generator_ColumnPropNameInRow="FAX" msprop:Generator_ColumnPropNameInTable="FAXColumn" msprop:Generator_UserColumnName="FAX" type="xs:string" minOccurs="0" />
+              <xs:element name="Phone" msprop:Generator_ColumnVarNameInTable="columnPhone" msprop:Generator_ColumnPropNameInRow="Phone" msprop:Generator_ColumnPropNameInTable="PhoneColumn" msprop:Generator_UserColumnName="Phone" type="xs:string" minOccurs="0" />
+              <xs:element name="Ship-To-Country" msprop:Generator_ColumnVarNameInTable="_columnShip_To_Country" msprop:Generator_ColumnPropNameInRow="_Ship_To_Country" msprop:Generator_ColumnPropNameInTable="_Ship_To_CountryColumn" msprop:Generator_UserColumnName="Ship-To-Country" type="xs:string" minOccurs="0" />
+              <xs:element name="Requested-Ship-Date" msprop:Generator_ColumnVarNameInTable="_columnRequested_Ship_Date" msprop:Generator_ColumnPropNameInRow="_Requested_Ship_Date" msprop:Generator_ColumnPropNameInTable="_Requested_Ship_DateColumn" msprop:Generator_UserColumnName="Requested-Ship-Date" type="xs:string" minOccurs="0" />
+              <xs:element name="Shipment-Method-ID" msprop:Generator_ColumnVarNameInTable="_columnShipment_Method_ID" msprop:Generator_ColumnPropNameInRow="_Shipment_Method_ID" msprop:Generator_ColumnPropNameInTable="_Shipment_Method_IDColumn" msprop:Generator_UserColumnName="Shipment-Method-ID" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

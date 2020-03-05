@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="MailingVersionFF" targetNamespace="http://tempuri.org/MailingVersionFF.xsd" xmlns:mstns="http://tempuri.org/MailingVersionFF.xsd" xmlns="http://tempuri.org/MailingVersionFF.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MailingVersionFF" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MailingVersionFF" msprop:Generator_UserDSName="MailingVersionFF">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MailingVersionFFTable" msprop:Generator_TableClassName="MailingVersionFFTableDataTable" msprop:Generator_TableVarName="tableMailingVersionFFTable" msprop:Generator_TablePropName="MailingVersionFFTable" msprop:Generator_RowDeletingName="MailingVersionFFTableRowDeleting" msprop:Generator_RowChangingName="MailingVersionFFTableRowChanging" msprop:Generator_RowEvHandlerName="MailingVersionFFTableRowChangeEventHandler" msprop:Generator_RowDeletedName="MailingVersionFFTableRowDeleted" msprop:Generator_UserTableName="MailingVersionFFTable" msprop:Generator_RowChangedName="MailingVersionFFTableRowChanged" msprop:Generator_RowEvArgName="MailingVersionFFTableRowChangeEvent" msprop:Generator_RowClassName="MailingVersionFFTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FFvalue" msprop:Generator_ColumnVarNameInTable="columnFFvalue" msprop:Generator_ColumnPropNameInRow="FFvalue" msprop:Generator_ColumnPropNameInTable="FFvalueColumn" msprop:Generator_UserColumnName="FFvalue" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

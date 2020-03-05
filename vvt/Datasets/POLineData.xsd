@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="POLineData" targetNamespace="http://tempuri.org/POLineData.xsd" xmlns:mstns="http://tempuri.org/POLineData.xsd" xmlns="http://tempuri.org/POLineData.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="POLineData" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="POLineData" msprop:Generator_UserDSName="POLineData">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="PoLineTable" msprop:Generator_TableClassName="PoLineTableDataTable" msprop:Generator_TableVarName="tablePoLineTable" msprop:Generator_TablePropName="PoLineTable" msprop:Generator_RowDeletingName="PoLineTableRowDeleting" msprop:Generator_RowChangingName="PoLineTableRowChanging" msprop:Generator_RowEvHandlerName="PoLineTableRowChangeEventHandler" msprop:Generator_RowDeletedName="PoLineTableRowDeleted" msprop:Generator_UserTableName="PoLineTable" msprop:Generator_RowChangedName="PoLineTableRowChanged" msprop:Generator_RowEvArgName="PoLineTableRowChangeEvent" msprop:Generator_RowClassName="PoLineTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="PO-Number" msprop:Generator_ColumnVarNameInTable="_columnPO_Number" msprop:Generator_ColumnPropNameInRow="_PO_Number" msprop:Generator_ColumnPropNameInTable="_PO_NumberColumn" msprop:Generator_UserColumnName="PO-Number" type="xs:string" minOccurs="0" />
+              <xs:element name="Line-Status" msprop:Generator_ColumnVarNameInTable="_columnLine_Status" msprop:Generator_ColumnPropNameInRow="_Line_Status" msprop:Generator_ColumnPropNameInTable="_Line_StatusColumn" msprop:Generator_UserColumnName="Line-Status" type="xs:string" minOccurs="0" />
+              <xs:element name="Date-PO" msprop:Generator_ColumnVarNameInTable="_columnDate_PO" msprop:Generator_ColumnPropNameInRow="_Date_PO" msprop:Generator_ColumnPropNameInTable="_Date_POColumn" msprop:Generator_UserColumnName="Date-PO" type="xs:string" minOccurs="0" />
+              <xs:element name="Date-Last-Receipt" msprop:Generator_ColumnVarNameInTable="_columnDate_Last_Receipt" msprop:Generator_ColumnPropNameInRow="_Date_Last_Receipt" msprop:Generator_ColumnPropNameInTable="_Date_Last_ReceiptColumn" msprop:Generator_UserColumnName="Date-Last-Receipt" type="xs:string" minOccurs="0" />
+              <xs:element name="Item-Desc" msprop:Generator_ColumnVarNameInTable="_columnItem_Desc" msprop:Generator_ColumnPropNameInRow="_Item_Desc" msprop:Generator_ColumnPropNameInTable="_Item_DescColumn" msprop:Generator_UserColumnName="Item-Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty-Received-Purchase" msprop:Generator_ColumnVarNameInTable="_columnQty_Received_Purchase" msprop:Generator_ColumnPropNameInRow="_Qty_Received_Purchase" msprop:Generator_ColumnPropNameInTable="_Qty_Received_PurchaseColumn" msprop:Generator_UserColumnName="Qty-Received-Purchase" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
