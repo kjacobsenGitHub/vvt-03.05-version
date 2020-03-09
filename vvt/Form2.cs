@@ -89,10 +89,10 @@ namespace vvt
             #endregion label /button UI
 
             #region start
-            CrystalReport1 cryrpt = new CrystalReport1();
+            CrystalReport2 cryrpt = new CrystalReport2();
 
             //path to report
-            //cryrpt.Load("VVT.test.CrystalReport1.rpt");
+            //cryrpt.Load("VVT.test.CrystalReport2.rpt");
 
             cryrpt.DataSourceConnections.Clear();
 
@@ -864,10 +864,10 @@ namespace vvt
             #endregion label/button UI
 
             #region start
-            CrystalReport1 cryrpt = new CrystalReport1();
+            CrystalReport2 cryrpt = new CrystalReport2();
 
             //path to report
-            //cryrpt.Load("VVT.test.CrystalReport1.rpt");
+            //cryrpt.Load("VVT.test.CrystalReport2.rpt");
 
             cryrpt.DataSourceConnections.Clear();
 
@@ -1589,7 +1589,7 @@ namespace vvt
 
 
 
-            CrystalReport1 cryrpt = new CrystalReport1();
+            CrystalReport2 cryrpt = new CrystalReport2();
 
             cryrpt.DataSourceConnections.Clear();  //clear the connections (will popualte with fresh sql query defined data
 
@@ -1666,6 +1666,192 @@ namespace vvt
             //here is where i can change the UI of the report based on database data
             //ex) show word nailing on report if job# has a 810 tag associated with it
             #region UI crystal report editing (DB dependant)
+
+
+            #region Header
+
+            //set the job numbers from iuser input
+            CrystalDecisions.CrystalReports.Engine.TextObject jobNum1;
+            jobNum1 = cryrpt.ReportDefinition.ReportObjects["jobNum"] as TextObject;
+            jobNum1.Text = jobNumberUser;
+
+            CrystalDecisions.CrystalReports.Engine.TextObject jobNum2;
+            jobNum2 = cryrpt.ReportDefinition.ReportObjects["jobNum2"] as TextObject;
+            jobNum2.Text = jobNumberUser;
+
+
+            
+            String headerJob = "SELECT \"Job-Desc\", \"Date-Promised\", \"Sales-Rep-ID\", \"CSR-ID\", \"" +
+                "PO-Number\", \"Overs-Allowed\", \"Last-Estimate-ID\", \"Quantity-Ordered\", \"Contact-Name\", \"Date-Entered\", \"Cust-ID-Ordered-by\"" +
+                " FROM PUB.JOB WHERE \"Job-ID\" = " + jobNumberUser;
+
+            DataTable dtHeader = new DataTable();
+            try //to sql and fill adapter and DT
+            {
+                OdbcDataAdapter header = new OdbcDataAdapter(headerJob, dbConn);
+                header.Fill(dtHeader);
+            }
+            catch (Exception ex)
+            {
+                string error = ex + " : SQL error cannot load OdbcDataAdapter - UI setter";
+
+                ErrorLog(error);
+
+            }
+
+            //set all text objects to the data from datatable
+
+            //job descriptions
+            CrystalDecisions.CrystalReports.Engine.TextObject jobDesc;
+            jobDesc = cryrpt.ReportDefinition.ReportObjects["jobDesc"] as TextObject;
+            jobDesc.Text = dtHeader.Rows[0]["Job-Desc"].ToString();
+
+            CrystalDecisions.CrystalReports.Engine.TextObject jobDesc2;
+            jobDesc2 = cryrpt.ReportDefinition.ReportObjects["jobDesc2"] as TextObject;
+            jobDesc2.Text = dtHeader.Rows[0]["Job-Desc"].ToString();
+
+            //date promised
+            CrystalDecisions.CrystalReports.Engine.TextObject dateProm;
+            dateProm = cryrpt.ReportDefinition.ReportObjects["dateProm"] as TextObject;
+            dateProm.Text = dtHeader.Rows[0]["Date-Promised"].ToString();
+
+            CrystalDecisions.CrystalReports.Engine.TextObject dateProm2;
+            dateProm2 = cryrpt.ReportDefinition.ReportObjects["dateProm2"] as TextObject;
+            dateProm2.Text = dtHeader.Rows[0]["Date-Promised"].ToString();
+
+            //qty
+            CrystalDecisions.CrystalReports.Engine.TextObject qty;
+            qty = cryrpt.ReportDefinition.ReportObjects["qty"] as TextObject;
+            qty.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+
+            CrystalDecisions.CrystalReports.Engine.TextObject qty2;
+            qty2 = cryrpt.ReportDefinition.ReportObjects["qty2"] as TextObject;
+            qty2.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+
+            //job contact
+            CrystalDecisions.CrystalReports.Engine.TextObject jobContact;
+            jobContact = cryrpt.ReportDefinition.ReportObjects["contactName"] as TextObject;
+            jobContact.Text = dtHeader.Rows[0]["Contact-Name"].ToString();
+
+            //job date entered
+            CrystalDecisions.CrystalReports.Engine.TextObject jobDE;
+            jobDE = cryrpt.ReportDefinition.ReportObjects["jobDE"] as TextObject;
+            jobDE.Text = dtHeader.Rows[0]["Date-Entered"].ToString();
+
+            //over allowed
+            CrystalDecisions.CrystalReports.Engine.TextObject OA;
+            OA = cryrpt.ReportDefinition.ReportObjects["jobOA"] as TextObject;
+            OA.Text = dtHeader.Rows[0]["Overs-Allowed"].ToString();
+
+            //po num
+            CrystalDecisions.CrystalReports.Engine.TextObject PO;
+            PO = cryrpt.ReportDefinition.ReportObjects["poNum"] as TextObject;
+            PO.Text = dtHeader.Rows[0]["PO-Number"].ToString();
+
+            //estimate
+            string est = dtHeader.Rows[0]["Last-Estimate-ID"].ToString().Insert(6,"-");
+            CrystalDecisions.CrystalReports.Engine.TextObject estimate;
+            estimate = cryrpt.ReportDefinition.ReportObjects["estimate"] as TextObject;
+            estimate.Text = est;
+
+            //customer query and text objects
+            String headerCust = "SELECT \"cust-name\", \"Address-1\", \"Address-2\", \"City\", \"" +
+               "State\", \"Zip\", \"Phone\", \"Address-3\" FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+
+
+            DataTable dtCust = new DataTable();
+            try //to sql and fill adapter and DT
+            {
+                OdbcDataAdapter cust = new OdbcDataAdapter(headerCust, dbConn);
+                cust.Fill(dtCust);
+            }
+            catch (Exception ex)
+            {
+                string error = ex + " : SQL error cannot load OdbcDataAdapter - UI setter";
+
+                ErrorLog(error);
+
+            }
+
+            //set the Customer info text objects
+            //cust name
+            CrystalDecisions.CrystalReports.Engine.TextObject custName;
+            custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
+            custName.Text = dtCust.Rows[0]["cust-name"].ToString();
+
+            CrystalDecisions.CrystalReports.Engine.TextObject custName2;
+            custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
+            custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
+
+            //address -> add 1 and 2 and 3 combined
+            CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
+            custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
+            custAdd.Text = dtCust.Rows[0]["Address-1"].ToString()+" "+ dtCust.Rows[0]["Address-2"].ToString()+" "+dtCust.Rows[0]["Address-3"].ToString();
+
+            //city state zip customer
+            CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
+            custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
+            custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
+
+            //customerPhone
+            CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
+            custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
+            custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
+
+            //sales agent query and txt obj change
+            //why this does not work i have no fkin clue, making stack overflwo see what the brians can thunk up
+            String headerSalesAgent = "SELECT \"Sales-Agent-Name\" FROM PUB.\"sales-agent\" WHERE \"Sales-agent-id\" = " + "'" + dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "'";
+
+           // String headerSalesAgent = "SELECT \"Sales-agent-id\" , \"Sales-Agent-Name\" FROM PUB.\"sales-agent\"";
+
+            DataTable dtSalesAgent = new DataTable();
+            try //to sql and fill adapter and DT
+            {
+                OdbcDataAdapter salesAgent = new OdbcDataAdapter(headerSalesAgent, dbConn);
+                salesAgent.Fill(dtSalesAgent);
+            }
+            catch (Exception ex)
+            {
+                string error = ex + " : SQL error cannot load OdbcDataAdapter - UI setter";
+
+                ErrorLog(error);
+
+            }
+
+     
+            //sales agent name
+            CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
+            salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
+            salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-"+ dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+
+            //sales rep ID for billing
+            CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
+            salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
+            salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+
+            //csr query and txt obj change
+            String headerCSR = "SELECT \"CSR-Name\" FROM PUB.CSR WHERE \"CSR-ID\"="+ "'"+dtHeader.Rows[0]["CSR-ID"].ToString()+"'";
+
+            DataTable dtCsr = new DataTable();
+            try //to sql and fill adapter and DT
+            {
+                OdbcDataAdapter csrAdap = new OdbcDataAdapter(headerCSR, dbConn);
+                csrAdap.Fill(dtCsr);
+            }
+            catch (Exception ex)
+            {
+                string error = ex + " : SQL error cannot load OdbcDataAdapter - UI setter";
+
+                ErrorLog(error);
+
+            }
+
+            CrystalDecisions.CrystalReports.Engine.TextObject csr;
+            csr = cryrpt.ReportDefinition.ReportObjects["csr"] as TextObject;
+            csr.Text = dtHeader.Rows[0]["CSR-ID"].ToString() + "-" + dtCsr.Rows[0]["CSR-Name"].ToString();
+
+            #endregion Header
+
 
             #region 810 tag check - show MAILING
             //DataTable for all UI db-depenedant editing
@@ -1924,7 +2110,7 @@ namespace vvt
             //sub-reports section
             #region sub report creater
 
-            /*
+            //ObjectIndexCheck(cryrpt);
 
             //Press/Prepress sub rereports - Mailing Version, Mailing Free Feilds, Job Notes, Job Free Feilds, PO Req, PO line,
             //Forms, press, Stock
@@ -1955,14 +2141,14 @@ namespace vvt
             if (dtMailVersion.Rows.Count != 0)
             {
 
-                cryrpt.Subreports[7].DataSourceConnections.Clear();
-                cryrpt.Subreports[7].SetDataSource(dtMailVersion);
+                cryrpt.Subreports[5].DataSourceConnections.Clear();
+                cryrpt.Subreports[5].SetDataSource(dtMailVersion);
 
             }
             else
             {
 
-                string subMailVersionFF = "subMailVersionFF";
+                string subMailVersionFF = "subMailVersion";
                 HideSubs(cryrpt, subMailVersionFF);
 
             }
@@ -1994,14 +2180,14 @@ namespace vvt
             //also check if empty exists it is empty hideSubs it
             if (dtMailFF.Rows.Count != 0)
             {
-                cryrpt.Subreports[6].DataSourceConnections.Clear();
-                cryrpt.Subreports[6].SetDataSource(dtMailFF);
+                cryrpt.Subreports[4].DataSourceConnections.Clear();
+                cryrpt.Subreports[4].SetDataSource(dtMailFF);
 
             }
             else
             {
 
-                string subMailFF = "subMailFF";
+                string subMailFF = "subMailFreeFields";
                 HideSubs(cryrpt, subMailFF);
 
             }
@@ -2036,14 +2222,14 @@ namespace vvt
             //also check if empty exists it is empty hideSubs it
             if (dtJobNotes.Rows.Count != 0)
             {
-                cryrpt.Subreports[0].DataSourceConnections.Clear();
-                cryrpt.Subreports[0].SetDataSource(dtJobNotes);
+                cryrpt.Subreports[3].DataSourceConnections.Clear();
+                cryrpt.Subreports[3].SetDataSource(dtJobNotes);
 
             }
             else
             {
 
-                string subJobComments = "subJobComments";
+                string subJobComments = "subJobNotes";
                 HideSubs(cryrpt, subJobComments);
 
             }
@@ -2075,14 +2261,14 @@ namespace vvt
             //also check if empty exists it is empty hideSubs it
             if (dtAlt.Rows.Count != 0)
             {
-                cryrpt.Subreports[11].DataSourceConnections.Clear();
-                cryrpt.Subreports[11].SetDataSource(dtAlt);
+                cryrpt.Subreports[0].DataSourceConnections.Clear();
+                cryrpt.Subreports[0].SetDataSource(dtAlt);
 
             }
             else
             {
 
-                string subAlt = "subAlt";
+                string subAlt = "subAlterations";
                 HideSubs(cryrpt, subAlt);
 
             }
@@ -2116,14 +2302,14 @@ namespace vvt
             //also check if empty exists it is empty hideSubs it
             if (dtFF.Rows.Count != 0)
             {
-                cryrpt.Subreports[15].DataSourceConnections.Clear();
-                cryrpt.Subreports[15].SetDataSource(dtFF);
+                cryrpt.Subreports[2].DataSourceConnections.Clear();
+                cryrpt.Subreports[2].SetDataSource(dtFF);
 
             }
             else
             {
 
-                string subFF = "subFreeFields";
+                string subFF = "subJobFreeFields";
                 HideSubs(cryrpt, subFF);
 
             }
@@ -2152,14 +2338,14 @@ namespace vvt
             //also check if empty exists it is empty hideSubs it
             if (dtPOreq.Rows.Count != 0)
             {
-                cryrpt.Subreports[17].DataSourceConnections.Clear();
-                cryrpt.Subreports[17].SetDataSource(dtPOreq);
+                cryrpt.Subreports[7].DataSourceConnections.Clear();
+                cryrpt.Subreports[7].SetDataSource(dtPOreq);
 
             }
             else
             {
 
-                string subPOreq = "subPOreq";
+                string subPOreq = "subPOReq";
                 HideSubs(cryrpt, subPOreq);
 
             }
@@ -2188,8 +2374,8 @@ namespace vvt
             //also check if empty exists it is empty hideSubs it
             if (dtPOLine.Rows.Count != 0)
             {
-                cryrpt.Subreports[16].DataSourceConnections.Clear();
-                cryrpt.Subreports[16].SetDataSource(dtPOLine);
+                cryrpt.Subreports[6].DataSourceConnections.Clear();
+                cryrpt.Subreports[6].SetDataSource(dtPOLine);
 
             }
             else
@@ -2223,8 +2409,8 @@ namespace vvt
             //also check if empty exists it is empty hideSubs it
             if (dtShipTo.Rows.Count != 0)
             {
-                cryrpt.Subreports[20].DataSourceConnections.Clear();
-                cryrpt.Subreports[20].SetDataSource(dtShipTo);
+                cryrpt.Subreports[8].DataSourceConnections.Clear();
+                cryrpt.Subreports[8].SetDataSource(dtShipTo);
 
             }
             else
@@ -2257,22 +2443,22 @@ namespace vvt
             //also check if empty exists it is empty hideSubs it
             if (dtSpecForm.Rows.Count != 0)
             {
-                cryrpt.Subreports[14].DataSourceConnections.Clear();
-                cryrpt.Subreports[14].SetDataSource(dtSpecForm);
+                cryrpt.Subreports[1].DataSourceConnections.Clear();
+                cryrpt.Subreports[1].SetDataSource(dtSpecForm);
 
             }
             else
             {
 
-                string subShipTo = "subShipTo";
-                HideSubs(cryrpt, subShipTo);
+                string subFormSpec = "subFormSpecs";
+                HideSubs(cryrpt, subFormSpec);
 
             }
 
 
             #endregion form spec subRpt
 
-            */
+            
 
             #endregion sub report creation
 
@@ -2282,27 +2468,15 @@ namespace vvt
 
 
 
-            #region set param vals and error check
-            //try set paramter panel values
-            try
-            {
-                cryrpt.SetParameterValue("Job-ID", jobNumberUser);
+            #region display rpt
 
-                cryrpt.SetParameterValue("System-ID", "Viso");
-
-            }
-            catch (CrystalDecisions.Shared.CrystalReportsException)
-            {
-                MessageBox.Show("Aw snap! X.X Error while loading report, please refresh! (If problem keeps occuring see Kyle in mailing please!)");
-            }
             LaunchOrigin.crystalReportViewer1.ShowParameterPanelButton = false;
-            LaunchOrigin.crystalReportViewer1.ReuseParameterValuesOnRefresh = true;
             LaunchOrigin.crystalReportViewer1.ReportSource = cryrpt;
 
             LaunchOrigin.crystalReportViewer1.Refresh(); //here is where i get the prompt DB login
 
             label3.Text = "Report loaded.";
-            #endregion set param valeus and error check
+            #endregion display rpt
 
         }//end press/prepress
 
@@ -2358,10 +2532,10 @@ namespace vvt
             #endregion labels/buttons UI
 
             #region start
-            CrystalReport1 cryrpt = new CrystalReport1();
+            CrystalReport2 cryrpt = new CrystalReport2();
 
             //path to report
-            //cryrpt.Load("VVT.test.CrystalReport1.rpt");
+            //cryrpt.Load("VVT.test.CrystalReport2.rpt");
 
             cryrpt.DataSourceConnections.Clear();
 
@@ -2981,10 +3155,10 @@ namespace vvt
             #endregion label/button UI
 
             #region start
-            CrystalReport1 cryrpt = new CrystalReport1();
+            CrystalReport2 cryrpt = new CrystalReport2();
 
             //path to report
-            //cryrpt.Load("VVT.test.CrystalReport1.rpt");
+            //cryrpt.Load("VVT.test.CrystalReport2.rpt");
 
             cryrpt.DataSourceConnections.Clear();
 
@@ -3578,10 +3752,10 @@ namespace vvt
             LaunchOrigin.crystalReportViewer1.ShowParameterPanelButton = false;
             #region start program here
 
-            CrystalReport1 cryrpt = new CrystalReport1();
+            CrystalReport2 cryrpt = new CrystalReport2();
 
             //path to report
-            //cryrpt.Load("VVT.test.CrystalReport1.rpt");
+            //cryrpt.Load("VVT.test.CrystalReport2.rpt");
 
             cryrpt.DataSourceConnections.Clear();
 
@@ -3936,10 +4110,10 @@ namespace vvt
             #endregion label/button UI
 
             #region start
-            CrystalReport1 cryrpt = new CrystalReport1();
+            CrystalReport2 cryrpt = new CrystalReport2();
 
             //path to report
-            //cryrpt.Load("VVT.test.CrystalReport1.rpt");
+            //cryrpt.Load("VVT.test.CrystalReport2.rpt");
 
             cryrpt.DataSourceConnections.Clear();
 
@@ -4644,7 +4818,7 @@ namespace vvt
 
         #region hide subs()
         //used to surpress sub reports
-        public void HideSubs(CrystalReport1 crObj, string str)
+        public void HideSubs(CrystalReport2 crObj, string str)
         {
 
             try
@@ -4665,7 +4839,7 @@ namespace vvt
         #endregion hide subs
 
         #region object index checker
-        public void ObjectIndexCheck(CrystalReport1 crObj)
+        public void ObjectIndexCheck(CrystalReport2 crObj)
         {
 
 

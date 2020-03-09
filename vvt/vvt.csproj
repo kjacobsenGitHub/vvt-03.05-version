@@ -62,6 +62,12 @@
       <DependentUpon>CrystalReport1.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="CrystalReport2.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Datasets\Alteration.cs">
       <DependentUpon>Alteration.xsd</DependentUpon>
     </Compile>
@@ -72,6 +78,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Alteration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\formNotes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>formNotes.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\FormSpecs.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -131,6 +142,10 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CrystalReport1.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +171,17 @@
     </None>
     <None Include="Datasets\Alteration.xss">
       <DependentUpon>Alteration.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\formNotes.xsc">
+      <DependentUpon>formNotes.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\formNotes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>formNotes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\formNotes.xss">
+      <DependentUpon>formNotes.xsd</DependentUpon>
     </None>
     <None Include="Datasets\FormSpecs.xsc">
       <DependentUpon>FormSpecs.xsd</DependentUpon>
