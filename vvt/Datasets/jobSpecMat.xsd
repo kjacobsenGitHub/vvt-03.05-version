@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="jobSpecMat" targetNamespace="http://tempuri.org/jobSpecMat.xsd" xmlns:mstns="http://tempuri.org/jobSpecMat.xsd" xmlns="http://tempuri.org/jobSpecMat.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="jobSpecMat" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="jobSpecMat" msprop:Generator_UserDSName="jobSpecMat">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="jobSpecMatTBL" msprop:Generator_TableClassName="jobSpecMatTBLDataTable" msprop:Generator_TableVarName="tablejobSpecMatTBL" msprop:Generator_RowChangedName="jobSpecMatTBLRowChanged" msprop:Generator_TablePropName="jobSpecMatTBL" msprop:Generator_RowDeletingName="jobSpecMatTBLRowDeleting" msprop:Generator_RowChangingName="jobSpecMatTBLRowChanging" msprop:Generator_RowEvHandlerName="jobSpecMatTBLRowChangeEventHandler" msprop:Generator_RowDeletedName="jobSpecMatTBLRowDeleted" msprop:Generator_RowClassName="jobSpecMatTBLRow" msprop:Generator_UserTableName="jobSpecMatTBL" msprop:Generator_RowEvArgName="jobSpecMatTBLRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Form-ID" msprop:Generator_ColumnVarNameInTable="_columnForm_ID" msprop:Generator_ColumnPropNameInRow="_Form_ID" msprop:Generator_ColumnPropNameInTable="_Form_IDColumn" msprop:Generator_UserColumnName="Form-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" type="xs:string" minOccurs="0" />
+              <xs:element name="Inventory-Item-ID" msprop:Generator_ColumnVarNameInTable="_columnInventory_Item_ID" msprop:Generator_ColumnPropNameInRow="_Inventory_Item_ID" msprop:Generator_ColumnPropNameInTable="_Inventory_Item_IDColumn" msprop:Generator_UserColumnName="Inventory-Item-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Inventory-Item-Desc" msprop:Generator_ColumnVarNameInTable="_columnInventory_Item_Desc" msprop:Generator_ColumnPropNameInRow="_Inventory_Item_Desc" msprop:Generator_ColumnPropNameInTable="_Inventory_Item_DescColumn" msprop:Generator_UserColumnName="Inventory-Item-Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="Material-Type" msprop:Generator_ColumnVarNameInTable="_columnMaterial_Type" msprop:Generator_ColumnPropNameInRow="_Material_Type" msprop:Generator_ColumnPropNameInTable="_Material_TypeColumn" msprop:Generator_UserColumnName="Material-Type" type="xs:string" minOccurs="0" />
+              <xs:element name="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnPropNameInTable="LengthColumn" msprop:Generator_UserColumnName="Length" type="xs:string" minOccurs="0" />
+              <xs:element name="Width" msprop:Generator_ColumnVarNameInTable="columnWidth" msprop:Generator_ColumnPropNameInRow="Width" msprop:Generator_ColumnPropNameInTable="WidthColumn" msprop:Generator_UserColumnName="Width" type="xs:string" minOccurs="0" />
+              <xs:element name="Gross-Sheets" msprop:Generator_ColumnVarNameInTable="_columnGross_Sheets" msprop:Generator_ColumnPropNameInRow="_Gross_Sheets" msprop:Generator_ColumnPropNameInTable="_Gross_SheetsColumn" msprop:Generator_UserColumnName="Gross-Sheets" type="xs:string" minOccurs="0" />
+              <xs:element name="Gross-Weight" msprop:Generator_ColumnVarNameInTable="_columnGross_Weight" msprop:Generator_ColumnPropNameInRow="_Gross_Weight" msprop:Generator_ColumnPropNameInTable="_Gross_WeightColumn" msprop:Generator_UserColumnName="Gross-Weight" type="xs:string" minOccurs="0" />
+              <xs:element name="Page-Grain" msprop:Generator_ColumnVarNameInTable="_columnPage_Grain" msprop:Generator_ColumnPropNameInRow="_Page_Grain" msprop:Generator_ColumnPropNameInTable="_Page_GrainColumn" msprop:Generator_UserColumnName="Page-Grain" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

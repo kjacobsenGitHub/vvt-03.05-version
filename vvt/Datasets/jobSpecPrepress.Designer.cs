@@ -20,17 +20,17 @@ namespace vvt.Datasets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("formNotes")]
+    [global::System.Xml.Serialization.XmlRootAttribute("jobSpecPrepress")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class formNotes : global::System.Data.DataSet {
+    public partial class jobSpecPrepress : global::System.Data.DataSet {
         
-        private formNotesTBLDataTable tableformNotesTBL;
+        private jobSpecPrepressTBLDataTable tablejobSpecPrepressTBL;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public formNotes() {
+        public jobSpecPrepress() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace vvt.Datasets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected formNotes(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected jobSpecPrepress(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace vvt.Datasets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["formNotesTBL"] != null)) {
-                    base.Tables.Add(new formNotesTBLDataTable(ds.Tables["formNotesTBL"]));
+                if ((ds.Tables["jobSpecPrepressTBL"] != null)) {
+                    base.Tables.Add(new jobSpecPrepressTBLDataTable(ds.Tables["jobSpecPrepressTBL"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace vvt.Datasets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public formNotesTBLDataTable formNotesTBL {
+        public jobSpecPrepressTBLDataTable jobSpecPrepressTBL {
             get {
-                return this.tableformNotesTBL;
+                return this.tablejobSpecPrepressTBL;
             }
         }
         
@@ -127,7 +127,7 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            formNotes cln = ((formNotes)(base.Clone()));
+            jobSpecPrepress cln = ((jobSpecPrepress)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace vvt.Datasets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["formNotesTBL"] != null)) {
-                    base.Tables.Add(new formNotesTBLDataTable(ds.Tables["formNotesTBL"]));
+                if ((ds.Tables["jobSpecPrepressTBL"] != null)) {
+                    base.Tables.Add(new jobSpecPrepressTBLDataTable(ds.Tables["jobSpecPrepressTBL"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableformNotesTBL = ((formNotesTBLDataTable)(base.Tables["formNotesTBL"]));
+            this.tablejobSpecPrepressTBL = ((jobSpecPrepressTBLDataTable)(base.Tables["jobSpecPrepressTBL"]));
             if ((initTable == true)) {
-                if ((this.tableformNotesTBL != null)) {
-                    this.tableformNotesTBL.InitVars();
+                if ((this.tablejobSpecPrepressTBL != null)) {
+                    this.tablejobSpecPrepressTBL.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "formNotes";
+            this.DataSetName = "jobSpecPrepress";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/formNotes.xsd";
+            this.Namespace = "http://tempuri.org/jobSpecPrepress.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableformNotesTBL = new formNotesTBLDataTable();
-            base.Tables.Add(this.tableformNotesTBL);
+            this.tablejobSpecPrepressTBL = new jobSpecPrepressTBLDataTable();
+            base.Tables.Add(this.tablejobSpecPrepressTBL);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeformNotesTBL() {
+        private bool ShouldSerializejobSpecPrepressTBL() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            formNotes ds = new formNotes();
+            jobSpecPrepress ds = new jobSpecPrepress();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,31 @@ namespace vvt.Datasets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void formNotesTBLRowChangeEventHandler(object sender, formNotesTBLRowChangeEvent e);
+        public delegate void jobSpecPrepressTBLRowChangeEventHandler(object sender, jobSpecPrepressTBLRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class formNotesTBLDataTable : global::System.Data.TypedTableBase<formNotesTBLRow> {
+        public partial class jobSpecPrepressTBLDataTable : global::System.Data.TypedTableBase<jobSpecPrepressTBLRow> {
             
             private global::System.Data.DataColumn _columnForm_ID;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn _columnSpec_Desc;
+            
+            private global::System.Data.DataColumn _columnWork_Center_ID;
+            
+            private global::System.Data.DataColumn _columnOperation_ID;
+            
+            private global::System.Data.DataColumn columnQuantity;
+            
+            private global::System.Data.DataColumn columnHours;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLDataTable() {
-                this.TableName = "formNotesTBL";
+            public jobSpecPrepressTBLDataTable() {
+                this.TableName = "jobSpecPrepressTBL";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +302,7 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal formNotesTBLDataTable(global::System.Data.DataTable table) {
+            internal jobSpecPrepressTBLDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,7 +319,7 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected formNotesTBLDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected jobSpecPrepressTBLDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -326,9 +334,41 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn _Spec_DescColumn {
                 get {
-                    return this.columnDescription;
+                    return this._columnSpec_Desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Work_Center_IDColumn {
+                get {
+                    return this._columnWork_Center_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Operation_IDColumn {
+                get {
+                    return this._columnOperation_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn QuantityColumn {
+                get {
+                    return this.columnQuantity;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn HoursColumn {
+                get {
+                    return this.columnHours;
                 }
             }
             
@@ -343,46 +383,50 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow this[int index] {
+            public jobSpecPrepressTBLRow this[int index] {
                 get {
-                    return ((formNotesTBLRow)(this.Rows[index]));
+                    return ((jobSpecPrepressTBLRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowChanging;
+            public event jobSpecPrepressTBLRowChangeEventHandler jobSpecPrepressTBLRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowChanged;
+            public event jobSpecPrepressTBLRowChangeEventHandler jobSpecPrepressTBLRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowDeleting;
+            public event jobSpecPrepressTBLRowChangeEventHandler jobSpecPrepressTBLRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowDeleted;
+            public event jobSpecPrepressTBLRowChangeEventHandler jobSpecPrepressTBLRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddformNotesTBLRow(formNotesTBLRow row) {
+            public void AddjobSpecPrepressTBLRow(jobSpecPrepressTBLRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow AddformNotesTBLRow(string _Form_ID, string Description) {
-                formNotesTBLRow rowformNotesTBLRow = ((formNotesTBLRow)(this.NewRow()));
+            public jobSpecPrepressTBLRow AddjobSpecPrepressTBLRow(string _Form_ID, string _Spec_Desc, string _Work_Center_ID, string _Operation_ID, string Quantity, string Hours) {
+                jobSpecPrepressTBLRow rowjobSpecPrepressTBLRow = ((jobSpecPrepressTBLRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _Form_ID,
-                        Description};
-                rowformNotesTBLRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowformNotesTBLRow);
-                return rowformNotesTBLRow;
+                        _Spec_Desc,
+                        _Work_Center_ID,
+                        _Operation_ID,
+                        Quantity,
+                        Hours};
+                rowjobSpecPrepressTBLRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowjobSpecPrepressTBLRow);
+                return rowjobSpecPrepressTBLRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                formNotesTBLDataTable cln = ((formNotesTBLDataTable)(base.Clone()));
+                jobSpecPrepressTBLDataTable cln = ((jobSpecPrepressTBLDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -390,14 +434,18 @@ namespace vvt.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new formNotesTBLDataTable();
+                return new jobSpecPrepressTBLDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this._columnForm_ID = base.Columns["Form-ID"];
-                this.columnDescription = base.Columns["Description"];
+                this._columnSpec_Desc = base.Columns["Spec-Desc"];
+                this._columnWork_Center_ID = base.Columns["Work-Center-ID"];
+                this._columnOperation_ID = base.Columns["Operation-ID"];
+                this.columnQuantity = base.Columns["Quantity"];
+                this.columnHours = base.Columns["Hours"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -407,34 +455,48 @@ namespace vvt.Datasets {
                 this._columnForm_ID.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnForm_ID");
                 this._columnForm_ID.ExtendedProperties.Add("Generator_UserColumnName", "Form-ID");
                 base.Columns.Add(this._columnForm_ID);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this._columnSpec_Desc = new global::System.Data.DataColumn("Spec-Desc", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnSpec_Desc.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnSpec_Desc");
+                this._columnSpec_Desc.ExtendedProperties.Add("Generator_UserColumnName", "Spec-Desc");
+                base.Columns.Add(this._columnSpec_Desc);
+                this._columnWork_Center_ID = new global::System.Data.DataColumn("Work-Center-ID", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnWork_Center_ID.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnWork_Center_ID");
+                this._columnWork_Center_ID.ExtendedProperties.Add("Generator_UserColumnName", "Work-Center-ID");
+                base.Columns.Add(this._columnWork_Center_ID);
+                this._columnOperation_ID = new global::System.Data.DataColumn("Operation-ID", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnOperation_ID.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnOperation_ID");
+                this._columnOperation_ID.ExtendedProperties.Add("Generator_UserColumnName", "Operation-ID");
+                base.Columns.Add(this._columnOperation_ID);
+                this.columnQuantity = new global::System.Data.DataColumn("Quantity", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnQuantity);
+                this.columnHours = new global::System.Data.DataColumn("Hours", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHours);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow NewformNotesTBLRow() {
-                return ((formNotesTBLRow)(this.NewRow()));
+            public jobSpecPrepressTBLRow NewjobSpecPrepressTBLRow() {
+                return ((jobSpecPrepressTBLRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new formNotesTBLRow(builder);
+                return new jobSpecPrepressTBLRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(formNotesTBLRow);
+                return typeof(jobSpecPrepressTBLRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.formNotesTBLRowChanged != null)) {
-                    this.formNotesTBLRowChanged(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.jobSpecPrepressTBLRowChanged != null)) {
+                    this.jobSpecPrepressTBLRowChanged(this, new jobSpecPrepressTBLRowChangeEvent(((jobSpecPrepressTBLRow)(e.Row)), e.Action));
                 }
             }
             
@@ -442,8 +504,8 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.formNotesTBLRowChanging != null)) {
-                    this.formNotesTBLRowChanging(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.jobSpecPrepressTBLRowChanging != null)) {
+                    this.jobSpecPrepressTBLRowChanging(this, new jobSpecPrepressTBLRowChangeEvent(((jobSpecPrepressTBLRow)(e.Row)), e.Action));
                 }
             }
             
@@ -451,8 +513,8 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.formNotesTBLRowDeleted != null)) {
-                    this.formNotesTBLRowDeleted(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.jobSpecPrepressTBLRowDeleted != null)) {
+                    this.jobSpecPrepressTBLRowDeleted(this, new jobSpecPrepressTBLRowChangeEvent(((jobSpecPrepressTBLRow)(e.Row)), e.Action));
                 }
             }
             
@@ -460,14 +522,14 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.formNotesTBLRowDeleting != null)) {
-                    this.formNotesTBLRowDeleting(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.jobSpecPrepressTBLRowDeleting != null)) {
+                    this.jobSpecPrepressTBLRowDeleting(this, new jobSpecPrepressTBLRowChangeEvent(((jobSpecPrepressTBLRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveformNotesTBLRow(formNotesTBLRow row) {
+            public void RemovejobSpecPrepressTBLRow(jobSpecPrepressTBLRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -476,7 +538,7 @@ namespace vvt.Datasets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                formNotes ds = new formNotes();
+                jobSpecPrepress ds = new jobSpecPrepress();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -494,7 +556,7 @@ namespace vvt.Datasets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "formNotesTBLDataTable";
+                attribute2.FixedValue = "jobSpecPrepressTBLDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -538,15 +600,15 @@ namespace vvt.Datasets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class formNotesTBLRow : global::System.Data.DataRow {
+        public partial class jobSpecPrepressTBLRow : global::System.Data.DataRow {
             
-            private formNotesTBLDataTable tableformNotesTBL;
+            private jobSpecPrepressTBLDataTable tablejobSpecPrepressTBL;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal formNotesTBLRow(global::System.Data.DataRowBuilder rb) : 
+            internal jobSpecPrepressTBLRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableformNotesTBL = ((formNotesTBLDataTable)(this.Table));
+                this.tablejobSpecPrepressTBL = ((jobSpecPrepressTBLDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,55 +616,167 @@ namespace vvt.Datasets {
             public string _Form_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableformNotesTBL._Form_IDColumn]));
+                        return ((string)(this[this.tablejobSpecPrepressTBL._Form_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Form-ID\' in table \'formNotesTBL\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Form-ID\' in table \'jobSpecPrepressTBL\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableformNotesTBL._Form_IDColumn] = value;
+                    this[this.tablejobSpecPrepressTBL._Form_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Description {
+            public string _Spec_Desc {
                 get {
                     try {
-                        return ((string)(this[this.tableformNotesTBL.DescriptionColumn]));
+                        return ((string)(this[this.tablejobSpecPrepressTBL._Spec_DescColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'formNotesTBL\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Spec-Desc\' in table \'jobSpecPrepressTBL\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableformNotesTBL.DescriptionColumn] = value;
+                    this[this.tablejobSpecPrepressTBL._Spec_DescColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Work_Center_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecPrepressTBL._Work_Center_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Work-Center-ID\' in table \'jobSpecPrepressTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecPrepressTBL._Work_Center_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Operation_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecPrepressTBL._Operation_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Operation-ID\' in table \'jobSpecPrepressTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecPrepressTBL._Operation_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Quantity {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecPrepressTBL.QuantityColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Quantity\' in table \'jobSpecPrepressTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecPrepressTBL.QuantityColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Hours {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecPrepressTBL.HoursColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Hours\' in table \'jobSpecPrepressTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecPrepressTBL.HoursColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is_Form_IDNull() {
-                return this.IsNull(this.tableformNotesTBL._Form_IDColumn);
+                return this.IsNull(this.tablejobSpecPrepressTBL._Form_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set_Form_IDNull() {
-                this[this.tableformNotesTBL._Form_IDColumn] = global::System.Convert.DBNull;
+                this[this.tablejobSpecPrepressTBL._Form_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableformNotesTBL.DescriptionColumn);
+            public bool Is_Spec_DescNull() {
+                return this.IsNull(this.tablejobSpecPrepressTBL._Spec_DescColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableformNotesTBL.DescriptionColumn] = global::System.Convert.DBNull;
+            public void Set_Spec_DescNull() {
+                this[this.tablejobSpecPrepressTBL._Spec_DescColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Work_Center_IDNull() {
+                return this.IsNull(this.tablejobSpecPrepressTBL._Work_Center_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Work_Center_IDNull() {
+                this[this.tablejobSpecPrepressTBL._Work_Center_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Operation_IDNull() {
+                return this.IsNull(this.tablejobSpecPrepressTBL._Operation_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Operation_IDNull() {
+                this[this.tablejobSpecPrepressTBL._Operation_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsQuantityNull() {
+                return this.IsNull(this.tablejobSpecPrepressTBL.QuantityColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetQuantityNull() {
+                this[this.tablejobSpecPrepressTBL.QuantityColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsHoursNull() {
+                return this.IsNull(this.tablejobSpecPrepressTBL.HoursColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetHoursNull() {
+                this[this.tablejobSpecPrepressTBL.HoursColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -610,22 +784,22 @@ namespace vvt.Datasets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class formNotesTBLRowChangeEvent : global::System.EventArgs {
+        public class jobSpecPrepressTBLRowChangeEvent : global::System.EventArgs {
             
-            private formNotesTBLRow eventRow;
+            private jobSpecPrepressTBLRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRowChangeEvent(formNotesTBLRow row, global::System.Data.DataRowAction action) {
+            public jobSpecPrepressTBLRowChangeEvent(jobSpecPrepressTBLRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow Row {
+            public jobSpecPrepressTBLRow Row {
                 get {
                     return this.eventRow;
                 }

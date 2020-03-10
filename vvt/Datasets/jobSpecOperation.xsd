@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="jobSpecOperation" targetNamespace="http://tempuri.org/jobSpecOperation.xsd" xmlns:mstns="http://tempuri.org/jobSpecOperation.xsd" xmlns="http://tempuri.org/jobSpecOperation.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="jobSpecOperation" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="jobSpecOperation" msprop:Generator_UserDSName="jobSpecOperation">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="jobSpecOp" msprop:Generator_TableClassName="jobSpecOpDataTable" msprop:Generator_TableVarName="tablejobSpecOp" msprop:Generator_TablePropName="jobSpecOp" msprop:Generator_RowDeletingName="jobSpecOpRowDeleting" msprop:Generator_RowChangingName="jobSpecOpRowChanging" msprop:Generator_RowEvHandlerName="jobSpecOpRowChangeEventHandler" msprop:Generator_RowDeletedName="jobSpecOpRowDeleted" msprop:Generator_UserTableName="jobSpecOp" msprop:Generator_RowChangedName="jobSpecOpRowChanged" msprop:Generator_RowEvArgName="jobSpecOpRowChangeEvent" msprop:Generator_RowClassName="jobSpecOpRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Form-ID" msprop:Generator_ColumnVarNameInTable="_columnForm_ID" msprop:Generator_ColumnPropNameInRow="_Form_ID" msprop:Generator_ColumnPropNameInTable="_Form_IDColumn" msprop:Generator_UserColumnName="Form-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Spec-Desc" msprop:Generator_ColumnVarNameInTable="_columnSpec_Desc" msprop:Generator_ColumnPropNameInRow="_Spec_Desc" msprop:Generator_ColumnPropNameInTable="_Spec_DescColumn" msprop:Generator_UserColumnName="Spec-Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty-Makeready" msprop:Generator_ColumnVarNameInTable="_columnQty_Makeready" msprop:Generator_ColumnPropNameInRow="_Qty_Makeready" msprop:Generator_ColumnPropNameInTable="_Qty_MakereadyColumn" msprop:Generator_UserColumnName="Qty-Makeready" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty-Net" msprop:Generator_ColumnVarNameInTable="_columnQty_Net" msprop:Generator_ColumnPropNameInRow="_Qty_Net" msprop:Generator_ColumnPropNameInTable="_Qty_NetColumn" msprop:Generator_UserColumnName="Qty-Net" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty-Spoilage" msprop:Generator_ColumnVarNameInTable="_columnQty_Spoilage" msprop:Generator_ColumnPropNameInRow="_Qty_Spoilage" msprop:Generator_ColumnPropNameInTable="_Qty_SpoilageColumn" msprop:Generator_UserColumnName="Qty-Spoilage" type="xs:string" minOccurs="0" />
+              <xs:element name="Number-Out-for-Oper" msprop:Generator_ColumnVarNameInTable="_columnNumber_Out_for_Oper" msprop:Generator_ColumnPropNameInRow="_Number_Out_for_Oper" msprop:Generator_ColumnPropNameInTable="_Number_Out_for_OperColumn" msprop:Generator_UserColumnName="Number-Out-for-Oper" type="xs:string" minOccurs="0" />
+              <xs:element name="Width" msprop:Generator_ColumnVarNameInTable="columnWidth" msprop:Generator_ColumnPropNameInRow="Width" msprop:Generator_ColumnPropNameInTable="WidthColumn" msprop:Generator_UserColumnName="Width" type="xs:string" minOccurs="0" />
+              <xs:element name="Length" msprop:Generator_ColumnVarNameInTable="columnLength" msprop:Generator_ColumnPropNameInRow="Length" msprop:Generator_ColumnPropNameInTable="LengthColumn" msprop:Generator_UserColumnName="Length" type="xs:string" minOccurs="0" />
+              <xs:element name="Hours-Makeready" msprop:Generator_ColumnVarNameInTable="_columnHours_Makeready" msprop:Generator_ColumnPropNameInRow="_Hours_Makeready" msprop:Generator_ColumnPropNameInTable="_Hours_MakereadyColumn" msprop:Generator_UserColumnName="Hours-Makeready" type="xs:string" minOccurs="0" />
+              <xs:element name="Hours-Run" msprop:Generator_ColumnVarNameInTable="_columnHours_Run" msprop:Generator_ColumnPropNameInRow="_Hours_Run" msprop:Generator_ColumnPropNameInTable="_Hours_RunColumn" msprop:Generator_UserColumnName="Hours-Run" type="xs:string" minOccurs="0" />
+              <xs:element name="Hours-Cleanup" msprop:Generator_ColumnVarNameInTable="_columnHours_Cleanup" msprop:Generator_ColumnPropNameInRow="_Hours_Cleanup" msprop:Generator_ColumnPropNameInTable="_Hours_CleanupColumn" msprop:Generator_UserColumnName="Hours-Cleanup" type="xs:string" minOccurs="0" />
+              <xs:element name="Operation-Type" msprop:Generator_ColumnVarNameInTable="_columnOperation_Type" msprop:Generator_ColumnPropNameInRow="_Operation_Type" msprop:Generator_ColumnPropNameInTable="_Operation_TypeColumn" msprop:Generator_UserColumnName="Operation-Type" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

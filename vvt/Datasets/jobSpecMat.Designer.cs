@@ -20,17 +20,17 @@ namespace vvt.Datasets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("formNotes")]
+    [global::System.Xml.Serialization.XmlRootAttribute("jobSpecMat")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class formNotes : global::System.Data.DataSet {
+    public partial class jobSpecMat : global::System.Data.DataSet {
         
-        private formNotesTBLDataTable tableformNotesTBL;
+        private jobSpecMatTBLDataTable tablejobSpecMatTBL;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public formNotes() {
+        public jobSpecMat() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace vvt.Datasets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected formNotes(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected jobSpecMat(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace vvt.Datasets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["formNotesTBL"] != null)) {
-                    base.Tables.Add(new formNotesTBLDataTable(ds.Tables["formNotesTBL"]));
+                if ((ds.Tables["jobSpecMatTBL"] != null)) {
+                    base.Tables.Add(new jobSpecMatTBLDataTable(ds.Tables["jobSpecMatTBL"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace vvt.Datasets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public formNotesTBLDataTable formNotesTBL {
+        public jobSpecMatTBLDataTable jobSpecMatTBL {
             get {
-                return this.tableformNotesTBL;
+                return this.tablejobSpecMatTBL;
             }
         }
         
@@ -127,7 +127,7 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            formNotes cln = ((formNotes)(base.Clone()));
+            jobSpecMat cln = ((jobSpecMat)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace vvt.Datasets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["formNotesTBL"] != null)) {
-                    base.Tables.Add(new formNotesTBLDataTable(ds.Tables["formNotesTBL"]));
+                if ((ds.Tables["jobSpecMatTBL"] != null)) {
+                    base.Tables.Add(new jobSpecMatTBLDataTable(ds.Tables["jobSpecMatTBL"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableformNotesTBL = ((formNotesTBLDataTable)(base.Tables["formNotesTBL"]));
+            this.tablejobSpecMatTBL = ((jobSpecMatTBLDataTable)(base.Tables["jobSpecMatTBL"]));
             if ((initTable == true)) {
-                if ((this.tableformNotesTBL != null)) {
-                    this.tableformNotesTBL.InitVars();
+                if ((this.tablejobSpecMatTBL != null)) {
+                    this.tablejobSpecMatTBL.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "formNotes";
+            this.DataSetName = "jobSpecMat";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/formNotes.xsd";
+            this.Namespace = "http://tempuri.org/jobSpecMat.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableformNotesTBL = new formNotesTBLDataTable();
-            base.Tables.Add(this.tableformNotesTBL);
+            this.tablejobSpecMatTBL = new jobSpecMatTBLDataTable();
+            base.Tables.Add(this.tablejobSpecMatTBL);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeformNotesTBL() {
+        private bool ShouldSerializejobSpecMatTBL() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            formNotes ds = new formNotes();
+            jobSpecMat ds = new jobSpecMat();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,39 @@ namespace vvt.Datasets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void formNotesTBLRowChangeEventHandler(object sender, formNotesTBLRowChangeEvent e);
+        public delegate void jobSpecMatTBLRowChangeEventHandler(object sender, jobSpecMatTBLRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class formNotesTBLDataTable : global::System.Data.TypedTableBase<formNotesTBLRow> {
+        public partial class jobSpecMatTBLDataTable : global::System.Data.TypedTableBase<jobSpecMatTBLRow> {
             
             private global::System.Data.DataColumn _columnForm_ID;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn columnNotes;
+            
+            private global::System.Data.DataColumn _columnInventory_Item_ID;
+            
+            private global::System.Data.DataColumn _columnInventory_Item_Desc;
+            
+            private global::System.Data.DataColumn _columnMaterial_Type;
+            
+            private global::System.Data.DataColumn columnLength;
+            
+            private global::System.Data.DataColumn columnWidth;
+            
+            private global::System.Data.DataColumn _columnGross_Sheets;
+            
+            private global::System.Data.DataColumn _columnGross_Weight;
+            
+            private global::System.Data.DataColumn _columnPage_Grain;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLDataTable() {
-                this.TableName = "formNotesTBL";
+            public jobSpecMatTBLDataTable() {
+                this.TableName = "jobSpecMatTBL";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +310,7 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal formNotesTBLDataTable(global::System.Data.DataTable table) {
+            internal jobSpecMatTBLDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,7 +327,7 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected formNotesTBLDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected jobSpecMatTBLDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -326,9 +342,73 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn NotesColumn {
                 get {
-                    return this.columnDescription;
+                    return this.columnNotes;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Inventory_Item_IDColumn {
+                get {
+                    return this._columnInventory_Item_ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Inventory_Item_DescColumn {
+                get {
+                    return this._columnInventory_Item_Desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Material_TypeColumn {
+                get {
+                    return this._columnMaterial_Type;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LengthColumn {
+                get {
+                    return this.columnLength;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WidthColumn {
+                get {
+                    return this.columnWidth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Gross_SheetsColumn {
+                get {
+                    return this._columnGross_Sheets;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Gross_WeightColumn {
+                get {
+                    return this._columnGross_Weight;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Page_GrainColumn {
+                get {
+                    return this._columnPage_Grain;
                 }
             }
             
@@ -343,46 +423,54 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow this[int index] {
+            public jobSpecMatTBLRow this[int index] {
                 get {
-                    return ((formNotesTBLRow)(this.Rows[index]));
+                    return ((jobSpecMatTBLRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowChanging;
+            public event jobSpecMatTBLRowChangeEventHandler jobSpecMatTBLRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowChanged;
+            public event jobSpecMatTBLRowChangeEventHandler jobSpecMatTBLRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowDeleting;
+            public event jobSpecMatTBLRowChangeEventHandler jobSpecMatTBLRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowDeleted;
+            public event jobSpecMatTBLRowChangeEventHandler jobSpecMatTBLRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddformNotesTBLRow(formNotesTBLRow row) {
+            public void AddjobSpecMatTBLRow(jobSpecMatTBLRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow AddformNotesTBLRow(string _Form_ID, string Description) {
-                formNotesTBLRow rowformNotesTBLRow = ((formNotesTBLRow)(this.NewRow()));
+            public jobSpecMatTBLRow AddjobSpecMatTBLRow(string _Form_ID, string Notes, string _Inventory_Item_ID, string _Inventory_Item_Desc, string _Material_Type, string Length, string Width, string _Gross_Sheets, string _Gross_Weight, string _Page_Grain) {
+                jobSpecMatTBLRow rowjobSpecMatTBLRow = ((jobSpecMatTBLRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _Form_ID,
-                        Description};
-                rowformNotesTBLRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowformNotesTBLRow);
-                return rowformNotesTBLRow;
+                        Notes,
+                        _Inventory_Item_ID,
+                        _Inventory_Item_Desc,
+                        _Material_Type,
+                        Length,
+                        Width,
+                        _Gross_Sheets,
+                        _Gross_Weight,
+                        _Page_Grain};
+                rowjobSpecMatTBLRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowjobSpecMatTBLRow);
+                return rowjobSpecMatTBLRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                formNotesTBLDataTable cln = ((formNotesTBLDataTable)(base.Clone()));
+                jobSpecMatTBLDataTable cln = ((jobSpecMatTBLDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -390,14 +478,22 @@ namespace vvt.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new formNotesTBLDataTable();
+                return new jobSpecMatTBLDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this._columnForm_ID = base.Columns["Form-ID"];
-                this.columnDescription = base.Columns["Description"];
+                this.columnNotes = base.Columns["Notes"];
+                this._columnInventory_Item_ID = base.Columns["Inventory-Item-ID"];
+                this._columnInventory_Item_Desc = base.Columns["Inventory-Item-Desc"];
+                this._columnMaterial_Type = base.Columns["Material-Type"];
+                this.columnLength = base.Columns["Length"];
+                this.columnWidth = base.Columns["Width"];
+                this._columnGross_Sheets = base.Columns["Gross-Sheets"];
+                this._columnGross_Weight = base.Columns["Gross-Weight"];
+                this._columnPage_Grain = base.Columns["Page-Grain"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -407,34 +503,62 @@ namespace vvt.Datasets {
                 this._columnForm_ID.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnForm_ID");
                 this._columnForm_ID.ExtendedProperties.Add("Generator_UserColumnName", "Form-ID");
                 base.Columns.Add(this._columnForm_ID);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this.columnNotes = new global::System.Data.DataColumn("Notes", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNotes);
+                this._columnInventory_Item_ID = new global::System.Data.DataColumn("Inventory-Item-ID", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnInventory_Item_ID.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnInventory_Item_ID");
+                this._columnInventory_Item_ID.ExtendedProperties.Add("Generator_UserColumnName", "Inventory-Item-ID");
+                base.Columns.Add(this._columnInventory_Item_ID);
+                this._columnInventory_Item_Desc = new global::System.Data.DataColumn("Inventory-Item-Desc", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnInventory_Item_Desc.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnInventory_Item_Desc");
+                this._columnInventory_Item_Desc.ExtendedProperties.Add("Generator_UserColumnName", "Inventory-Item-Desc");
+                base.Columns.Add(this._columnInventory_Item_Desc);
+                this._columnMaterial_Type = new global::System.Data.DataColumn("Material-Type", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnMaterial_Type.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnMaterial_Type");
+                this._columnMaterial_Type.ExtendedProperties.Add("Generator_UserColumnName", "Material-Type");
+                base.Columns.Add(this._columnMaterial_Type);
+                this.columnLength = new global::System.Data.DataColumn("Length", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLength);
+                this.columnWidth = new global::System.Data.DataColumn("Width", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWidth);
+                this._columnGross_Sheets = new global::System.Data.DataColumn("Gross-Sheets", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnGross_Sheets.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnGross_Sheets");
+                this._columnGross_Sheets.ExtendedProperties.Add("Generator_UserColumnName", "Gross-Sheets");
+                base.Columns.Add(this._columnGross_Sheets);
+                this._columnGross_Weight = new global::System.Data.DataColumn("Gross-Weight", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnGross_Weight.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnGross_Weight");
+                this._columnGross_Weight.ExtendedProperties.Add("Generator_UserColumnName", "Gross-Weight");
+                base.Columns.Add(this._columnGross_Weight);
+                this._columnPage_Grain = new global::System.Data.DataColumn("Page-Grain", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnPage_Grain.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnPage_Grain");
+                this._columnPage_Grain.ExtendedProperties.Add("Generator_UserColumnName", "Page-Grain");
+                base.Columns.Add(this._columnPage_Grain);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow NewformNotesTBLRow() {
-                return ((formNotesTBLRow)(this.NewRow()));
+            public jobSpecMatTBLRow NewjobSpecMatTBLRow() {
+                return ((jobSpecMatTBLRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new formNotesTBLRow(builder);
+                return new jobSpecMatTBLRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(formNotesTBLRow);
+                return typeof(jobSpecMatTBLRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.formNotesTBLRowChanged != null)) {
-                    this.formNotesTBLRowChanged(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.jobSpecMatTBLRowChanged != null)) {
+                    this.jobSpecMatTBLRowChanged(this, new jobSpecMatTBLRowChangeEvent(((jobSpecMatTBLRow)(e.Row)), e.Action));
                 }
             }
             
@@ -442,8 +566,8 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.formNotesTBLRowChanging != null)) {
-                    this.formNotesTBLRowChanging(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.jobSpecMatTBLRowChanging != null)) {
+                    this.jobSpecMatTBLRowChanging(this, new jobSpecMatTBLRowChangeEvent(((jobSpecMatTBLRow)(e.Row)), e.Action));
                 }
             }
             
@@ -451,8 +575,8 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.formNotesTBLRowDeleted != null)) {
-                    this.formNotesTBLRowDeleted(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.jobSpecMatTBLRowDeleted != null)) {
+                    this.jobSpecMatTBLRowDeleted(this, new jobSpecMatTBLRowChangeEvent(((jobSpecMatTBLRow)(e.Row)), e.Action));
                 }
             }
             
@@ -460,14 +584,14 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.formNotesTBLRowDeleting != null)) {
-                    this.formNotesTBLRowDeleting(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.jobSpecMatTBLRowDeleting != null)) {
+                    this.jobSpecMatTBLRowDeleting(this, new jobSpecMatTBLRowChangeEvent(((jobSpecMatTBLRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveformNotesTBLRow(formNotesTBLRow row) {
+            public void RemovejobSpecMatTBLRow(jobSpecMatTBLRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -476,7 +600,7 @@ namespace vvt.Datasets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                formNotes ds = new formNotes();
+                jobSpecMat ds = new jobSpecMat();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -494,7 +618,7 @@ namespace vvt.Datasets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "formNotesTBLDataTable";
+                attribute2.FixedValue = "jobSpecMatTBLDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -538,15 +662,15 @@ namespace vvt.Datasets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class formNotesTBLRow : global::System.Data.DataRow {
+        public partial class jobSpecMatTBLRow : global::System.Data.DataRow {
             
-            private formNotesTBLDataTable tableformNotesTBL;
+            private jobSpecMatTBLDataTable tablejobSpecMatTBL;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal formNotesTBLRow(global::System.Data.DataRowBuilder rb) : 
+            internal jobSpecMatTBLRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableformNotesTBL = ((formNotesTBLDataTable)(this.Table));
+                this.tablejobSpecMatTBL = ((jobSpecMatTBLDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,55 +678,279 @@ namespace vvt.Datasets {
             public string _Form_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableformNotesTBL._Form_IDColumn]));
+                        return ((string)(this[this.tablejobSpecMatTBL._Form_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Form-ID\' in table \'formNotesTBL\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Form-ID\' in table \'jobSpecMatTBL\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableformNotesTBL._Form_IDColumn] = value;
+                    this[this.tablejobSpecMatTBL._Form_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Description {
+            public string Notes {
                 get {
                     try {
-                        return ((string)(this[this.tableformNotesTBL.DescriptionColumn]));
+                        return ((string)(this[this.tablejobSpecMatTBL.NotesColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'formNotesTBL\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Notes\' in table \'jobSpecMatTBL\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableformNotesTBL.DescriptionColumn] = value;
+                    this[this.tablejobSpecMatTBL.NotesColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Inventory_Item_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecMatTBL._Inventory_Item_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Inventory-Item-ID\' in table \'jobSpecMatTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecMatTBL._Inventory_Item_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Inventory_Item_Desc {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecMatTBL._Inventory_Item_DescColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Inventory-Item-Desc\' in table \'jobSpecMatTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecMatTBL._Inventory_Item_DescColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Material_Type {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecMatTBL._Material_TypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Material-Type\' in table \'jobSpecMatTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecMatTBL._Material_TypeColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Length {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecMatTBL.LengthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Length\' in table \'jobSpecMatTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecMatTBL.LengthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Width {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecMatTBL.WidthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Width\' in table \'jobSpecMatTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecMatTBL.WidthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Gross_Sheets {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecMatTBL._Gross_SheetsColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Gross-Sheets\' in table \'jobSpecMatTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecMatTBL._Gross_SheetsColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Gross_Weight {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecMatTBL._Gross_WeightColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Gross-Weight\' in table \'jobSpecMatTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecMatTBL._Gross_WeightColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Page_Grain {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobSpecMatTBL._Page_GrainColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Page-Grain\' in table \'jobSpecMatTBL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobSpecMatTBL._Page_GrainColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is_Form_IDNull() {
-                return this.IsNull(this.tableformNotesTBL._Form_IDColumn);
+                return this.IsNull(this.tablejobSpecMatTBL._Form_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set_Form_IDNull() {
-                this[this.tableformNotesTBL._Form_IDColumn] = global::System.Convert.DBNull;
+                this[this.tablejobSpecMatTBL._Form_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableformNotesTBL.DescriptionColumn);
+            public bool IsNotesNull() {
+                return this.IsNull(this.tablejobSpecMatTBL.NotesColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableformNotesTBL.DescriptionColumn] = global::System.Convert.DBNull;
+            public void SetNotesNull() {
+                this[this.tablejobSpecMatTBL.NotesColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Inventory_Item_IDNull() {
+                return this.IsNull(this.tablejobSpecMatTBL._Inventory_Item_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Inventory_Item_IDNull() {
+                this[this.tablejobSpecMatTBL._Inventory_Item_IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Inventory_Item_DescNull() {
+                return this.IsNull(this.tablejobSpecMatTBL._Inventory_Item_DescColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Inventory_Item_DescNull() {
+                this[this.tablejobSpecMatTBL._Inventory_Item_DescColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Material_TypeNull() {
+                return this.IsNull(this.tablejobSpecMatTBL._Material_TypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Material_TypeNull() {
+                this[this.tablejobSpecMatTBL._Material_TypeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLengthNull() {
+                return this.IsNull(this.tablejobSpecMatTBL.LengthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLengthNull() {
+                this[this.tablejobSpecMatTBL.LengthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWidthNull() {
+                return this.IsNull(this.tablejobSpecMatTBL.WidthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWidthNull() {
+                this[this.tablejobSpecMatTBL.WidthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Gross_SheetsNull() {
+                return this.IsNull(this.tablejobSpecMatTBL._Gross_SheetsColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Gross_SheetsNull() {
+                this[this.tablejobSpecMatTBL._Gross_SheetsColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Gross_WeightNull() {
+                return this.IsNull(this.tablejobSpecMatTBL._Gross_WeightColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Gross_WeightNull() {
+                this[this.tablejobSpecMatTBL._Gross_WeightColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Page_GrainNull() {
+                return this.IsNull(this.tablejobSpecMatTBL._Page_GrainColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Page_GrainNull() {
+                this[this.tablejobSpecMatTBL._Page_GrainColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -610,22 +958,22 @@ namespace vvt.Datasets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class formNotesTBLRowChangeEvent : global::System.EventArgs {
+        public class jobSpecMatTBLRowChangeEvent : global::System.EventArgs {
             
-            private formNotesTBLRow eventRow;
+            private jobSpecMatTBLRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRowChangeEvent(formNotesTBLRow row, global::System.Data.DataRowAction action) {
+            public jobSpecMatTBLRowChangeEvent(jobSpecMatTBLRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow Row {
+            public jobSpecMatTBLRow Row {
                 get {
                     return this.eventRow;
                 }

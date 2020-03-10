@@ -20,17 +20,17 @@ namespace vvt.Datasets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("formNotes")]
+    [global::System.Xml.Serialization.XmlRootAttribute("pressTBL")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class formNotes : global::System.Data.DataSet {
+    public partial class pressTBL : global::System.Data.DataSet {
         
-        private formNotesTBLDataTable tableformNotesTBL;
+        private pressDTDataTable tablepressDT;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public formNotes() {
+        public pressTBL() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace vvt.Datasets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected formNotes(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected pressTBL(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace vvt.Datasets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["formNotesTBL"] != null)) {
-                    base.Tables.Add(new formNotesTBLDataTable(ds.Tables["formNotesTBL"]));
+                if ((ds.Tables["pressDT"] != null)) {
+                    base.Tables.Add(new pressDTDataTable(ds.Tables["pressDT"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace vvt.Datasets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public formNotesTBLDataTable formNotesTBL {
+        public pressDTDataTable pressDT {
             get {
-                return this.tableformNotesTBL;
+                return this.tablepressDT;
             }
         }
         
@@ -127,7 +127,7 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            formNotes cln = ((formNotes)(base.Clone()));
+            pressTBL cln = ((pressTBL)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace vvt.Datasets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["formNotesTBL"] != null)) {
-                    base.Tables.Add(new formNotesTBLDataTable(ds.Tables["formNotesTBL"]));
+                if ((ds.Tables["pressDT"] != null)) {
+                    base.Tables.Add(new pressDTDataTable(ds.Tables["pressDT"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableformNotesTBL = ((formNotesTBLDataTable)(base.Tables["formNotesTBL"]));
+            this.tablepressDT = ((pressDTDataTable)(base.Tables["pressDT"]));
             if ((initTable == true)) {
-                if ((this.tableformNotesTBL != null)) {
-                    this.tableformNotesTBL.InitVars();
+                if ((this.tablepressDT != null)) {
+                    this.tablepressDT.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "formNotes";
+            this.DataSetName = "pressTBL";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/formNotes.xsd";
+            this.Namespace = "http://tempuri.org/pressTBL.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableformNotesTBL = new formNotesTBLDataTable();
-            base.Tables.Add(this.tableformNotesTBL);
+            this.tablepressDT = new pressDTDataTable();
+            base.Tables.Add(this.tablepressDT);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeformNotesTBL() {
+        private bool ShouldSerializepressDT() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            formNotes ds = new formNotes();
+            pressTBL ds = new pressTBL();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,41 @@ namespace vvt.Datasets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void formNotesTBLRowChangeEventHandler(object sender, formNotesTBLRowChangeEvent e);
+        public delegate void pressDTRowChangeEventHandler(object sender, pressDTRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class formNotesTBLDataTable : global::System.Data.TypedTableBase<formNotesTBLRow> {
+        public partial class pressDTDataTable : global::System.Data.TypedTableBase<pressDTRow> {
             
             private global::System.Data.DataColumn _columnForm_ID;
             
-            private global::System.Data.DataColumn columnDescription;
+            private global::System.Data.DataColumn _columnSpec_Desc;
+            
+            private global::System.Data.DataColumn _columnQty_Makeready;
+            
+            private global::System.Data.DataColumn _columnQty_Net;
+            
+            private global::System.Data.DataColumn _columnQty_Spoilage;
+            
+            private global::System.Data.DataColumn columnWidth;
+            
+            private global::System.Data.DataColumn columnLength;
+            
+            private global::System.Data.DataColumn _columnHours_Makeready;
+            
+            private global::System.Data.DataColumn _columnHours_Run;
+            
+            private global::System.Data.DataColumn _columnHours_Cleanup;
+            
+            private global::System.Data.DataColumn _columnOperation_Type;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLDataTable() {
-                this.TableName = "formNotesTBL";
+            public pressDTDataTable() {
+                this.TableName = "pressDT";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +312,7 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal formNotesTBLDataTable(global::System.Data.DataTable table) {
+            internal pressDTDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,7 +329,7 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected formNotesTBLDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected pressDTDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -326,9 +344,81 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn DescriptionColumn {
+            public global::System.Data.DataColumn _Spec_DescColumn {
                 get {
-                    return this.columnDescription;
+                    return this._columnSpec_Desc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Qty_MakereadyColumn {
+                get {
+                    return this._columnQty_Makeready;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Qty_NetColumn {
+                get {
+                    return this._columnQty_Net;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Qty_SpoilageColumn {
+                get {
+                    return this._columnQty_Spoilage;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn WidthColumn {
+                get {
+                    return this.columnWidth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn LengthColumn {
+                get {
+                    return this.columnLength;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Hours_MakereadyColumn {
+                get {
+                    return this._columnHours_Makeready;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Hours_RunColumn {
+                get {
+                    return this._columnHours_Run;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Hours_CleanupColumn {
+                get {
+                    return this._columnHours_Cleanup;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Operation_TypeColumn {
+                get {
+                    return this._columnOperation_Type;
                 }
             }
             
@@ -343,46 +433,55 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow this[int index] {
+            public pressDTRow this[int index] {
                 get {
-                    return ((formNotesTBLRow)(this.Rows[index]));
+                    return ((pressDTRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowChanging;
+            public event pressDTRowChangeEventHandler pressDTRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowChanged;
+            public event pressDTRowChangeEventHandler pressDTRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowDeleting;
+            public event pressDTRowChangeEventHandler pressDTRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event formNotesTBLRowChangeEventHandler formNotesTBLRowDeleted;
+            public event pressDTRowChangeEventHandler pressDTRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddformNotesTBLRow(formNotesTBLRow row) {
+            public void AddpressDTRow(pressDTRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow AddformNotesTBLRow(string _Form_ID, string Description) {
-                formNotesTBLRow rowformNotesTBLRow = ((formNotesTBLRow)(this.NewRow()));
+            public pressDTRow AddpressDTRow(string _Form_ID, string _Spec_Desc, string _Qty_Makeready, string _Qty_Net, string _Qty_Spoilage, string Width, string Length, string _Hours_Makeready, string _Hours_Run, string _Hours_Cleanup, string _Operation_Type) {
+                pressDTRow rowpressDTRow = ((pressDTRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         _Form_ID,
-                        Description};
-                rowformNotesTBLRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowformNotesTBLRow);
-                return rowformNotesTBLRow;
+                        _Spec_Desc,
+                        _Qty_Makeready,
+                        _Qty_Net,
+                        _Qty_Spoilage,
+                        Width,
+                        Length,
+                        _Hours_Makeready,
+                        _Hours_Run,
+                        _Hours_Cleanup,
+                        _Operation_Type};
+                rowpressDTRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowpressDTRow);
+                return rowpressDTRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                formNotesTBLDataTable cln = ((formNotesTBLDataTable)(base.Clone()));
+                pressDTDataTable cln = ((pressDTDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -390,14 +489,23 @@ namespace vvt.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new formNotesTBLDataTable();
+                return new pressDTDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this._columnForm_ID = base.Columns["Form-ID"];
-                this.columnDescription = base.Columns["Description"];
+                this._columnSpec_Desc = base.Columns["Spec-Desc"];
+                this._columnQty_Makeready = base.Columns["Qty-Makeready"];
+                this._columnQty_Net = base.Columns["Qty-Net"];
+                this._columnQty_Spoilage = base.Columns["Qty-Spoilage"];
+                this.columnWidth = base.Columns["Width"];
+                this.columnLength = base.Columns["Length"];
+                this._columnHours_Makeready = base.Columns["Hours-Makeready"];
+                this._columnHours_Run = base.Columns["Hours-Run"];
+                this._columnHours_Cleanup = base.Columns["Hours-Cleanup"];
+                this._columnOperation_Type = base.Columns["Operation-Type"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -407,34 +515,68 @@ namespace vvt.Datasets {
                 this._columnForm_ID.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnForm_ID");
                 this._columnForm_ID.ExtendedProperties.Add("Generator_UserColumnName", "Form-ID");
                 base.Columns.Add(this._columnForm_ID);
-                this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDescription);
+                this._columnSpec_Desc = new global::System.Data.DataColumn("Spec-Desc", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnSpec_Desc.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnSpec_Desc");
+                this._columnSpec_Desc.ExtendedProperties.Add("Generator_UserColumnName", "Spec-Desc");
+                base.Columns.Add(this._columnSpec_Desc);
+                this._columnQty_Makeready = new global::System.Data.DataColumn("Qty-Makeready", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnQty_Makeready.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnQty_Makeready");
+                this._columnQty_Makeready.ExtendedProperties.Add("Generator_UserColumnName", "Qty-Makeready");
+                base.Columns.Add(this._columnQty_Makeready);
+                this._columnQty_Net = new global::System.Data.DataColumn("Qty-Net", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnQty_Net.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnQty_Net");
+                this._columnQty_Net.ExtendedProperties.Add("Generator_UserColumnName", "Qty-Net");
+                base.Columns.Add(this._columnQty_Net);
+                this._columnQty_Spoilage = new global::System.Data.DataColumn("Qty-Spoilage", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnQty_Spoilage.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnQty_Spoilage");
+                this._columnQty_Spoilage.ExtendedProperties.Add("Generator_UserColumnName", "Qty-Spoilage");
+                base.Columns.Add(this._columnQty_Spoilage);
+                this.columnWidth = new global::System.Data.DataColumn("Width", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnWidth);
+                this.columnLength = new global::System.Data.DataColumn("Length", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLength);
+                this._columnHours_Makeready = new global::System.Data.DataColumn("Hours-Makeready", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnHours_Makeready.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnHours_Makeready");
+                this._columnHours_Makeready.ExtendedProperties.Add("Generator_UserColumnName", "Hours-Makeready");
+                base.Columns.Add(this._columnHours_Makeready);
+                this._columnHours_Run = new global::System.Data.DataColumn("Hours-Run", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnHours_Run.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnHours_Run");
+                this._columnHours_Run.ExtendedProperties.Add("Generator_UserColumnName", "Hours-Run");
+                base.Columns.Add(this._columnHours_Run);
+                this._columnHours_Cleanup = new global::System.Data.DataColumn("Hours-Cleanup", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnHours_Cleanup.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnHours_Cleanup");
+                this._columnHours_Cleanup.ExtendedProperties.Add("Generator_UserColumnName", "Hours-Cleanup");
+                base.Columns.Add(this._columnHours_Cleanup);
+                this._columnOperation_Type = new global::System.Data.DataColumn("Operation-Type", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnOperation_Type.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnOperation_Type");
+                this._columnOperation_Type.ExtendedProperties.Add("Generator_UserColumnName", "Operation-Type");
+                base.Columns.Add(this._columnOperation_Type);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow NewformNotesTBLRow() {
-                return ((formNotesTBLRow)(this.NewRow()));
+            public pressDTRow NewpressDTRow() {
+                return ((pressDTRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new formNotesTBLRow(builder);
+                return new pressDTRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(formNotesTBLRow);
+                return typeof(pressDTRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.formNotesTBLRowChanged != null)) {
-                    this.formNotesTBLRowChanged(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.pressDTRowChanged != null)) {
+                    this.pressDTRowChanged(this, new pressDTRowChangeEvent(((pressDTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -442,8 +584,8 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.formNotesTBLRowChanging != null)) {
-                    this.formNotesTBLRowChanging(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.pressDTRowChanging != null)) {
+                    this.pressDTRowChanging(this, new pressDTRowChangeEvent(((pressDTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -451,8 +593,8 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.formNotesTBLRowDeleted != null)) {
-                    this.formNotesTBLRowDeleted(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.pressDTRowDeleted != null)) {
+                    this.pressDTRowDeleted(this, new pressDTRowChangeEvent(((pressDTRow)(e.Row)), e.Action));
                 }
             }
             
@@ -460,14 +602,14 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.formNotesTBLRowDeleting != null)) {
-                    this.formNotesTBLRowDeleting(this, new formNotesTBLRowChangeEvent(((formNotesTBLRow)(e.Row)), e.Action));
+                if ((this.pressDTRowDeleting != null)) {
+                    this.pressDTRowDeleting(this, new pressDTRowChangeEvent(((pressDTRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveformNotesTBLRow(formNotesTBLRow row) {
+            public void RemovepressDTRow(pressDTRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -476,7 +618,7 @@ namespace vvt.Datasets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                formNotes ds = new formNotes();
+                pressTBL ds = new pressTBL();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -494,7 +636,7 @@ namespace vvt.Datasets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "formNotesTBLDataTable";
+                attribute2.FixedValue = "pressDTDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -538,15 +680,15 @@ namespace vvt.Datasets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class formNotesTBLRow : global::System.Data.DataRow {
+        public partial class pressDTRow : global::System.Data.DataRow {
             
-            private formNotesTBLDataTable tableformNotesTBL;
+            private pressDTDataTable tablepressDT;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal formNotesTBLRow(global::System.Data.DataRowBuilder rb) : 
+            internal pressDTRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableformNotesTBL = ((formNotesTBLDataTable)(this.Table));
+                this.tablepressDT = ((pressDTDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -554,55 +696,307 @@ namespace vvt.Datasets {
             public string _Form_ID {
                 get {
                     try {
-                        return ((string)(this[this.tableformNotesTBL._Form_IDColumn]));
+                        return ((string)(this[this.tablepressDT._Form_IDColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Form-ID\' in table \'formNotesTBL\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Form-ID\' in table \'pressDT\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableformNotesTBL._Form_IDColumn] = value;
+                    this[this.tablepressDT._Form_IDColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string Description {
+            public string _Spec_Desc {
                 get {
                     try {
-                        return ((string)(this[this.tableformNotesTBL.DescriptionColumn]));
+                        return ((string)(this[this.tablepressDT._Spec_DescColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Description\' in table \'formNotesTBL\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Spec-Desc\' in table \'pressDT\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableformNotesTBL.DescriptionColumn] = value;
+                    this[this.tablepressDT._Spec_DescColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Qty_Makeready {
+                get {
+                    try {
+                        return ((string)(this[this.tablepressDT._Qty_MakereadyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Qty-Makeready\' in table \'pressDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepressDT._Qty_MakereadyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Qty_Net {
+                get {
+                    try {
+                        return ((string)(this[this.tablepressDT._Qty_NetColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Qty-Net\' in table \'pressDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepressDT._Qty_NetColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Qty_Spoilage {
+                get {
+                    try {
+                        return ((string)(this[this.tablepressDT._Qty_SpoilageColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Qty-Spoilage\' in table \'pressDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepressDT._Qty_SpoilageColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Width {
+                get {
+                    try {
+                        return ((string)(this[this.tablepressDT.WidthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Width\' in table \'pressDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepressDT.WidthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Length {
+                get {
+                    try {
+                        return ((string)(this[this.tablepressDT.LengthColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Length\' in table \'pressDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepressDT.LengthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Hours_Makeready {
+                get {
+                    try {
+                        return ((string)(this[this.tablepressDT._Hours_MakereadyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Hours-Makeready\' in table \'pressDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepressDT._Hours_MakereadyColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Hours_Run {
+                get {
+                    try {
+                        return ((string)(this[this.tablepressDT._Hours_RunColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Hours-Run\' in table \'pressDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepressDT._Hours_RunColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Hours_Cleanup {
+                get {
+                    try {
+                        return ((string)(this[this.tablepressDT._Hours_CleanupColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Hours-Cleanup\' in table \'pressDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepressDT._Hours_CleanupColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Operation_Type {
+                get {
+                    try {
+                        return ((string)(this[this.tablepressDT._Operation_TypeColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Operation-Type\' in table \'pressDT\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablepressDT._Operation_TypeColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is_Form_IDNull() {
-                return this.IsNull(this.tableformNotesTBL._Form_IDColumn);
+                return this.IsNull(this.tablepressDT._Form_IDColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set_Form_IDNull() {
-                this[this.tableformNotesTBL._Form_IDColumn] = global::System.Convert.DBNull;
+                this[this.tablepressDT._Form_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsDescriptionNull() {
-                return this.IsNull(this.tableformNotesTBL.DescriptionColumn);
+            public bool Is_Spec_DescNull() {
+                return this.IsNull(this.tablepressDT._Spec_DescColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetDescriptionNull() {
-                this[this.tableformNotesTBL.DescriptionColumn] = global::System.Convert.DBNull;
+            public void Set_Spec_DescNull() {
+                this[this.tablepressDT._Spec_DescColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Qty_MakereadyNull() {
+                return this.IsNull(this.tablepressDT._Qty_MakereadyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Qty_MakereadyNull() {
+                this[this.tablepressDT._Qty_MakereadyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Qty_NetNull() {
+                return this.IsNull(this.tablepressDT._Qty_NetColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Qty_NetNull() {
+                this[this.tablepressDT._Qty_NetColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Qty_SpoilageNull() {
+                return this.IsNull(this.tablepressDT._Qty_SpoilageColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Qty_SpoilageNull() {
+                this[this.tablepressDT._Qty_SpoilageColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsWidthNull() {
+                return this.IsNull(this.tablepressDT.WidthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetWidthNull() {
+                this[this.tablepressDT.WidthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsLengthNull() {
+                return this.IsNull(this.tablepressDT.LengthColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetLengthNull() {
+                this[this.tablepressDT.LengthColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Hours_MakereadyNull() {
+                return this.IsNull(this.tablepressDT._Hours_MakereadyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Hours_MakereadyNull() {
+                this[this.tablepressDT._Hours_MakereadyColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Hours_RunNull() {
+                return this.IsNull(this.tablepressDT._Hours_RunColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Hours_RunNull() {
+                this[this.tablepressDT._Hours_RunColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Hours_CleanupNull() {
+                return this.IsNull(this.tablepressDT._Hours_CleanupColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Hours_CleanupNull() {
+                this[this.tablepressDT._Hours_CleanupColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Operation_TypeNull() {
+                return this.IsNull(this.tablepressDT._Operation_TypeColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Operation_TypeNull() {
+                this[this.tablepressDT._Operation_TypeColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -610,22 +1004,22 @@ namespace vvt.Datasets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class formNotesTBLRowChangeEvent : global::System.EventArgs {
+        public class pressDTRowChangeEvent : global::System.EventArgs {
             
-            private formNotesTBLRow eventRow;
+            private pressDTRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRowChangeEvent(formNotesTBLRow row, global::System.Data.DataRowAction action) {
+            public pressDTRowChangeEvent(pressDTRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public formNotesTBLRow Row {
+            public pressDTRow Row {
                 get {
                     return this.eventRow;
                 }
