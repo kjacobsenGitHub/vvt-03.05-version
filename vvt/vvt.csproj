@@ -69,6 +69,11 @@
       <DependentUpon>CrystalReport2.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Datasets\810Notes.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>810Notes.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\Alteration.cs">
       <DependentUpon>Alteration.xsd</DependentUpon>
     </Compile>
@@ -79,6 +84,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Alteration.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\binderyMat.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>binderyMat.xsd</DependentUpon>
     </Compile>
     <Compile Include="Datasets\formNotes.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -190,6 +200,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Datasets\810Notes.xsc">
+      <DependentUpon>810Notes.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\810Notes.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>810Notes.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\810Notes.xss">
+      <DependentUpon>810Notes.xsd</DependentUpon>
+    </None>
     <None Include="Datasets\Alteration.xsc">
       <DependentUpon>Alteration.xsd</DependentUpon>
     </None>
@@ -200,6 +221,17 @@
     </None>
     <None Include="Datasets\Alteration.xss">
       <DependentUpon>Alteration.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\binderyMat.xsc">
+      <DependentUpon>binderyMat.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\binderyMat.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>binderyMat.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\binderyMat.xss">
+      <DependentUpon>binderyMat.xsd</DependentUpon>
     </None>
     <None Include="Datasets\formNotes.xsc">
       <DependentUpon>formNotes.xsd</DependentUpon>

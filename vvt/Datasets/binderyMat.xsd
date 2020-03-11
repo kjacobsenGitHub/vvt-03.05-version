@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="binderyMat" targetNamespace="http://tempuri.org/binderyMat.xsd" xmlns:mstns="http://tempuri.org/binderyMat.xsd" xmlns="http://tempuri.org/binderyMat.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="binderyMat" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="binderyMat" msprop:Generator_UserDSName="binderyMat">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="jobSpecMatTbl" msprop:Generator_TableClassName="jobSpecMatTblDataTable" msprop:Generator_TableVarName="tablejobSpecMatTbl" msprop:Generator_TablePropName="jobSpecMatTbl" msprop:Generator_RowDeletingName="jobSpecMatTblRowDeleting" msprop:Generator_RowChangingName="jobSpecMatTblRowChanging" msprop:Generator_RowEvHandlerName="jobSpecMatTblRowChangeEventHandler" msprop:Generator_RowDeletedName="jobSpecMatTblRowDeleted" msprop:Generator_UserTableName="jobSpecMatTbl" msprop:Generator_RowChangedName="jobSpecMatTblRowChanged" msprop:Generator_RowEvArgName="jobSpecMatTblRowChangeEvent" msprop:Generator_RowClassName="jobSpecMatTblRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Form-ID" msprop:Generator_ColumnVarNameInTable="_columnForm_ID" msprop:Generator_ColumnPropNameInRow="_Form_ID" msprop:Generator_ColumnPropNameInTable="_Form_IDColumn" msprop:Generator_UserColumnName="Form-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Inventory-Item-ID" msprop:Generator_ColumnVarNameInTable="_columnInventory_Item_ID" msprop:Generator_ColumnPropNameInRow="_Inventory_Item_ID" msprop:Generator_ColumnPropNameInTable="_Inventory_Item_IDColumn" msprop:Generator_UserColumnName="Inventory-Item-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty-Gross-Costing" msprop:Generator_ColumnVarNameInTable="_columnQty_Gross_Costing" msprop:Generator_ColumnPropNameInRow="_Qty_Gross_Costing" msprop:Generator_ColumnPropNameInTable="_Qty_Gross_CostingColumn" msprop:Generator_UserColumnName="Qty-Gross-Costing" type="xs:string" minOccurs="0" />
+              <xs:element name="Qty-Net-Costing" msprop:Generator_ColumnVarNameInTable="_columnQty_Net_Costing" msprop:Generator_ColumnPropNameInRow="_Qty_Net_Costing" msprop:Generator_ColumnPropNameInTable="_Qty_Net_CostingColumn" msprop:Generator_UserColumnName="Qty-Net-Costing" type="xs:string" minOccurs="0" />
+              <xs:element name="Inventory-Item-Desc" msprop:Generator_ColumnVarNameInTable="_columnInventory_Item_Desc" msprop:Generator_ColumnPropNameInRow="_Inventory_Item_Desc" msprop:Generator_ColumnPropNameInTable="_Inventory_Item_DescColumn" msprop:Generator_UserColumnName="Inventory-Item-Desc" type="xs:string" minOccurs="0" />
+              <xs:element name="Material-Type" msprop:Generator_ColumnVarNameInTable="_columnMaterial_Type" msprop:Generator_ColumnPropNameInRow="_Material_Type" msprop:Generator_ColumnPropNameInTable="_Material_TypeColumn" msprop:Generator_UserColumnName="Material-Type" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

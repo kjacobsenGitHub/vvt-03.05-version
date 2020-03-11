@@ -82,7 +82,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection12 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection5 {
             get {
                 return this.ReportDefinition.Sections[4];
             }
@@ -114,7 +114,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection16 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection17 {
             get {
                 return this.ReportDefinition.Sections[8];
             }
@@ -122,7 +122,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection17 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection18 {
             get {
                 return this.ReportDefinition.Sections[9];
             }
@@ -130,7 +130,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection18 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection19 {
             get {
                 return this.ReportDefinition.Sections[10];
             }
@@ -138,7 +138,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection19 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection20 {
             get {
                 return this.ReportDefinition.Sections[11];
             }
@@ -146,7 +146,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection20 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection6 {
             get {
                 return this.ReportDefinition.Sections[12];
             }
@@ -154,7 +154,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection6 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection7 {
             get {
                 return this.ReportDefinition.Sections[13];
             }
@@ -162,7 +162,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection7 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection8 {
             get {
                 return this.ReportDefinition.Sections[14];
             }
@@ -170,7 +170,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection8 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection9 {
             get {
                 return this.ReportDefinition.Sections[15];
             }
@@ -178,7 +178,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection9 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection3 {
             get {
                 return this.ReportDefinition.Sections[16];
             }
@@ -186,7 +186,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection3 {
+        public CrystalDecisions.CrystalReports.Engine.Section DetailSection4 {
             get {
                 return this.ReportDefinition.Sections[17];
             }
@@ -194,7 +194,7 @@ namespace vvt {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.CrystalReports.Engine.Section DetailSection10 {
+        public CrystalDecisions.CrystalReports.Engine.Section billingSection {
             get {
                 return this.ReportDefinition.Sections[18];
             }

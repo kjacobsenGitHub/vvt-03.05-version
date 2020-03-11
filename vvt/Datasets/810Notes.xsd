@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_x0038_10Notes" targetNamespace="http://tempuri.org/810Notes.xsd" xmlns:mstns="http://tempuri.org/810Notes.xsd" xmlns="http://tempuri.org/810Notes.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_x0038_10Notes" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="_810Notes" msprop:Generator_UserDSName="810Notes">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="_x0038_10TBL" msprop:Generator_TableClassName="_810TBLDataTable" msprop:Generator_TableVarName="table810TBL" msprop:Generator_TablePropName="_810TBL" msprop:Generator_RowDeletingName="_810TBLRowDeleting" msprop:Generator_RowChangingName="_810TBLRowChanging" msprop:Generator_RowEvHandlerName="_810TBLRowChangeEventHandler" msprop:Generator_RowDeletedName="_810TBLRowDeleted" msprop:Generator_UserTableName="810TBL" msprop:Generator_RowChangedName="_810TBLRowChanged" msprop:Generator_RowEvArgName="_810TBLRowChangeEvent" msprop:Generator_RowClassName="_810TBLRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Work-Center-ID" msprop:Generator_ColumnVarNameInTable="_columnWork_Center_ID" msprop:Generator_ColumnPropNameInRow="_Work_Center_ID" msprop:Generator_ColumnPropNameInTable="_Work_Center_IDColumn" msprop:Generator_UserColumnName="Work-Center-ID" type="xs:string" minOccurs="0" />
+              <xs:element name="Notes" msprop:Generator_ColumnVarNameInTable="columnNotes" msprop:Generator_ColumnPropNameInRow="Notes" msprop:Generator_ColumnPropNameInTable="NotesColumn" msprop:Generator_UserColumnName="Notes" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
