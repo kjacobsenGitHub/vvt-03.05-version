@@ -221,14 +221,18 @@ namespace vvt
                 dateProm2 = cryrpt.ReportDefinition.ReportObjects["dateProm2"] as TextObject;
                 dateProm2.Text = dtHeader.Rows[0]["Date-Promised"].ToString();
 
-                //qty
+                //qty, format from "3400" -> "3,400"
                 CrystalDecisions.CrystalReports.Engine.TextObject qty;
                 qty = cryrpt.ReportDefinition.ReportObjects["qty"] as TextObject;
-                qty.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty.Text = String.Format("{0:N0}", qtyFormat);
 
                 CrystalDecisions.CrystalReports.Engine.TextObject qty2;
                 qty2 = cryrpt.ReportDefinition.ReportObjects["qty2"] as TextObject;
-                qty2.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat2 = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty2.Text = String.Format("{0:N0}",qtyFormat2);
+
+                //end formatting qty
 
                 //job contact
                 CrystalDecisions.CrystalReports.Engine.TextObject jobContact;
@@ -276,30 +280,34 @@ namespace vvt
 
             }
 
-            //set the Customer info text objects
-            //cust name
-            CrystalDecisions.CrystalReports.Engine.TextObject custName;
-            custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
-            custName.Text = dtCust.Rows[0]["cust-name"].ToString();
+            try
+            {
+                //set the Customer info text objects
+                //cust name
+                CrystalDecisions.CrystalReports.Engine.TextObject custName;
+                custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
+                custName.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-            CrystalDecisions.CrystalReports.Engine.TextObject custName2;
-            custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
-            custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
+                CrystalDecisions.CrystalReports.Engine.TextObject custName2;
+                custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
+                custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-            //address -> add 1 and 2 and 3 combined
-            CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
-            custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
-            custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
+                //address -> add 1 and 2 and 3 combined
+                CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
+                custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
+                custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
 
-            //city state zip customer
-            CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
-            custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
-            custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
+                //city state zip customer
+                CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
+                custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
+                custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
 
-            //customerPhone
-            CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
-            custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
-            custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
+                //customerPhone
+                CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
+                custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
+                custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
+            }
+            catch (Exception ex) { }
 
             //sales agent query and txt obj change
             //why this does not work i have no fkin clue, making stack overflwo see what the brians can thunk up
@@ -1099,14 +1107,18 @@ namespace vvt
                 dateProm2 = cryrpt.ReportDefinition.ReportObjects["dateProm2"] as TextObject;
                 dateProm2.Text = dtHeader.Rows[0]["Date-Promised"].ToString();
 
-                //qty
+                //qty, format from "3400" -> "3,400"
                 CrystalDecisions.CrystalReports.Engine.TextObject qty;
                 qty = cryrpt.ReportDefinition.ReportObjects["qty"] as TextObject;
-                qty.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty.Text = String.Format("{0:N0}", qtyFormat);
 
                 CrystalDecisions.CrystalReports.Engine.TextObject qty2;
                 qty2 = cryrpt.ReportDefinition.ReportObjects["qty2"] as TextObject;
-                qty2.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat2 = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty2.Text = String.Format("{0:N0}", qtyFormat2);
+
+                //end formatting qty
 
                 //job contact
                 CrystalDecisions.CrystalReports.Engine.TextObject jobContact;
@@ -2137,14 +2149,18 @@ namespace vvt
                 dateProm2 = cryrpt.ReportDefinition.ReportObjects["dateProm2"] as TextObject;
                 dateProm2.Text = dtHeader.Rows[0]["Date-Promised"].ToString();
 
-                //qty
+                //qty, format from "3400" -> "3,400"
                 CrystalDecisions.CrystalReports.Engine.TextObject qty;
                 qty = cryrpt.ReportDefinition.ReportObjects["qty"] as TextObject;
-                qty.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty.Text = String.Format("{0:N0}", qtyFormat);
 
                 CrystalDecisions.CrystalReports.Engine.TextObject qty2;
                 qty2 = cryrpt.ReportDefinition.ReportObjects["qty2"] as TextObject;
-                qty2.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat2 = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty2.Text = String.Format("{0:N0}", qtyFormat2);
+
+                //end formatting qty
 
                 //job contact
                 CrystalDecisions.CrystalReports.Engine.TextObject jobContact;
@@ -3067,14 +3083,18 @@ namespace vvt
                 dateProm2 = cryrpt.ReportDefinition.ReportObjects["dateProm2"] as TextObject;
                 dateProm2.Text = dtHeader.Rows[0]["Date-Promised"].ToString();
 
-                //qty
+                //qty, format from "3400" -> "3,400"
                 CrystalDecisions.CrystalReports.Engine.TextObject qty;
                 qty = cryrpt.ReportDefinition.ReportObjects["qty"] as TextObject;
-                qty.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty.Text = String.Format("{0:N0}", qtyFormat);
 
                 CrystalDecisions.CrystalReports.Engine.TextObject qty2;
                 qty2 = cryrpt.ReportDefinition.ReportObjects["qty2"] as TextObject;
-                qty2.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat2 = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty2.Text = String.Format("{0:N0}", qtyFormat2);
+
+                //end formatting qty
 
                 //job contact
                 CrystalDecisions.CrystalReports.Engine.TextObject jobContact;
@@ -4301,14 +4321,18 @@ namespace vvt
                 dateProm2 = cryrpt.ReportDefinition.ReportObjects["dateProm2"] as TextObject;
                 dateProm2.Text = dtHeader.Rows[0]["Date-Promised"].ToString();
 
-                //qty
+                //qty, format from "3400" -> "3,400"
                 CrystalDecisions.CrystalReports.Engine.TextObject qty;
                 qty = cryrpt.ReportDefinition.ReportObjects["qty"] as TextObject;
-                qty.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty.Text = String.Format("{0:N0}", qtyFormat);
 
                 CrystalDecisions.CrystalReports.Engine.TextObject qty2;
                 qty2 = cryrpt.ReportDefinition.ReportObjects["qty2"] as TextObject;
-                qty2.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat2 = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty2.Text = String.Format("{0:N0}", qtyFormat2);
+
+                //end formatting qty
 
                 //job contact
                 CrystalDecisions.CrystalReports.Engine.TextObject jobContact;
@@ -5066,14 +5090,18 @@ namespace vvt
                 dateProm2 = cryrpt.ReportDefinition.ReportObjects["dateProm2"] as TextObject;
                 dateProm2.Text = dtHeader.Rows[0]["Date-Promised"].ToString();
 
-                //qty
+                //qty, format from "3400" -> "3,400"
                 CrystalDecisions.CrystalReports.Engine.TextObject qty;
                 qty = cryrpt.ReportDefinition.ReportObjects["qty"] as TextObject;
-                qty.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty.Text = String.Format("{0:N0}", qtyFormat);
 
                 CrystalDecisions.CrystalReports.Engine.TextObject qty2;
                 qty2 = cryrpt.ReportDefinition.ReportObjects["qty2"] as TextObject;
-                qty2.Text = dtHeader.Rows[0]["Quantity-Ordered"].ToString();
+                int qtyFormat2 = Convert.ToInt32(dtHeader.Rows[0]["Quantity-Ordered"].ToString());
+                qty2.Text = String.Format("{0:N0}", qtyFormat2);
+
+                //end formatting qty
 
                 //job contact
                 CrystalDecisions.CrystalReports.Engine.TextObject jobContact;
