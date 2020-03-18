@@ -149,9 +149,12 @@ namespace vvt
                 //open th econnection and error check
                 OdbcConnection dbConn = new OdbcConnection(connectStr);
 
+                dbConn.ConnectionTimeout = 150;
+
                 try
                 {
                     dbConn.Open();
+
                 }
                 catch (Exception ex)
                 {
@@ -309,7 +312,13 @@ namespace vvt
                         CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
                         custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
                         custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
-                    }
+
+                    //customer number
+                    CrystalDecisions.CrystalReports.Engine.TextObject custNum;
+                    custNum = cryrpt.ReportDefinition.ReportObjects["custNum"] as TextObject;
+                    custNum.Text = dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+ 
+                }
                     catch (Exception ex) { }
 
                     //sales agent query and txt obj change
@@ -333,6 +342,8 @@ namespace vvt
                     }
 
 
+                try
+                {
                     //sales agent name
                     CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
                     salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
@@ -342,6 +353,8 @@ namespace vvt
                     CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
                     salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
                     salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+                }
+                catch (Exception ex) { }
 
                     //csr query and txt obj change
                     String headerCSR = "SELECT \"CSR-Name\" FROM PUB.CSR WHERE \"CSR-ID\"=" + "'" + dtHeader.Rows[0]["CSR-ID"].ToString() + "'";
@@ -1044,7 +1057,7 @@ namespace vvt
 
                 //open th econnection and error check
                 OdbcConnection dbConn = new OdbcConnection(connectStr);
-
+                dbConn.ConnectionTimeout = 150;
                 try
                 {
                     dbConn.Open();
@@ -1180,35 +1193,42 @@ namespace vvt
                 }
 
                 //set the Customer info text objects
-                //cust name
-                CrystalDecisions.CrystalReports.Engine.TextObject custName;
-                custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
-                custName.Text = dtCust.Rows[0]["cust-name"].ToString();
+                try
+                {
+                    //cust name
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName;
+                    custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
+                    custName.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                CrystalDecisions.CrystalReports.Engine.TextObject custName2;
-                custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
-                custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName2;
+                    custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
+                    custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                //address -> add 1 and 2 and 3 combined
-                CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
-                custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
-                custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
+                    //address -> add 1 and 2 and 3 combined
+                    CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
+                    custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
+                    custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
 
-                //city state zip customer
-                CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
-                custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
-                custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
+                    //city state zip customer
+                    CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
+                    custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
+                    custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
 
-                //customerPhone
-                CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
-                custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
-                custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
+                    //customerPhone
+                    CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
+                    custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
+                    custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
 
+                    //customer number
+                    CrystalDecisions.CrystalReports.Engine.TextObject custNum;
+                    custNum = cryrpt.ReportDefinition.ReportObjects["custNum"] as TextObject;
+                    custNum.Text = dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+                }
+                catch (Exception ex) { }
                 //sales agent query and txt obj change
                 //why this does not work i have no fkin clue, making stack overflwo see what the brians can thunk up
                 String headerSalesAgent = "SELECT \"Sales-Agent-Name\" FROM PUB.\"sales-agent\" WHERE \"Sales-agent-id\" = " + "'" + dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "'";
 
-                // String headerSalesAgent = "SELECT \"Sales-agent-id\" , \"Sales-Agent-Name\" FROM PUB.\"sales-agent\"";
 
                 DataTable dtSalesAgent = new DataTable();
                 try //to sql and fill adapter and DT
@@ -1224,17 +1244,19 @@ namespace vvt
 
                 }
 
+                try
+                {
+                    //sales agent name
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
+                    salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
+                    salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
 
-                //sales agent name
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
-                salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
-                salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
-
-                //sales rep ID for billing
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
-                salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
-                salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
-
+                    //sales rep ID for billing
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
+                    salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
+                    salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+                }
+                catch (Exception ex) { }
                 //csr query and txt obj change
                 String headerCSR = "SELECT \"CSR-Name\" FROM PUB.CSR WHERE \"CSR-ID\"=" + "'" + dtHeader.Rows[0]["CSR-ID"].ToString() + "'";
 
@@ -1905,14 +1927,19 @@ namespace vvt
                 }
 
                 dtStock.Columns.Add("Page-Grain");
-                string val = dtPG.Rows[0]["Page-Grain"].ToString();
 
-                foreach (DataRow dr in dtStock.Rows)
+                try
                 {
+                    string val = dtPG.Rows[0]["Page-Grain"].ToString();
 
-                    dr["Page-Grain"] = val;
+                    foreach (DataRow dr in dtStock.Rows)
+                    {
 
+                        dr["Page-Grain"] = val;
+
+                    }
                 }
+                catch (Exception ex) { }
 
                 //also check if empty exists it is empty hideSubs it
                 if (dtStock.Rows.Count != 0)
@@ -2094,7 +2121,7 @@ namespace vvt
 
                 //open th econnection and error check
                 OdbcConnection dbConn = new OdbcConnection(connectStr);
-
+                dbConn.ConnectionTimeout = 150;
                 try
                 {
                     dbConn.Open();
@@ -2231,35 +2258,42 @@ namespace vvt
 
                 //set the Customer info text objects
                 //cust name
-                CrystalDecisions.CrystalReports.Engine.TextObject custName;
-                custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
-                custName.Text = dtCust.Rows[0]["cust-name"].ToString();
+                try
+                {
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName;
+                    custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
+                    custName.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                CrystalDecisions.CrystalReports.Engine.TextObject custName2;
-                custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
-                custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName2;
+                    custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
+                    custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                //address -> add 1 and 2 and 3 combined
-                CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
-                custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
-                custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
+                    //address -> add 1 and 2 and 3 combined
+                    CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
+                    custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
+                    custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
 
-                //city state zip customer
-                CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
-                custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
-                custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
+                    //city state zip customer
+                    CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
+                    custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
+                    custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
 
-                //customerPhone
-                CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
-                custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
-                custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
+                    //customerPhone
+                    CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
+                    custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
+                    custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
 
+                    //customer number
+                    CrystalDecisions.CrystalReports.Engine.TextObject custNum;
+                    custNum = cryrpt.ReportDefinition.ReportObjects["custNum"] as TextObject;
+                    custNum.Text = dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+
+                }
+                catch (Exception ex) { }
                 //sales agent query and txt obj change
                 //why this does not work i have no fkin clue, making stack overflwo see what the brians can thunk up
                 String headerSalesAgent = "SELECT \"Sales-Agent-Name\" FROM PUB.\"sales-agent\" WHERE \"Sales-agent-id\" = " + "'" + dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "'";
-
-                // String headerSalesAgent = "SELECT \"Sales-agent-id\" , \"Sales-Agent-Name\" FROM PUB.\"sales-agent\"";
-
+                
                 DataTable dtSalesAgent = new DataTable();
                 try //to sql and fill adapter and DT
                 {
@@ -2274,17 +2308,19 @@ namespace vvt
 
                 }
 
+                try
+                {
+                    //sales agent name
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
+                    salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
+                    salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
 
-                //sales agent name
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
-                salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
-                salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
-
-                //sales rep ID for billing
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
-                salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
-                salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
-
+                    //sales rep ID for billing
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
+                    salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
+                    salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+                }
+                catch (Exception ex) { }
                 //csr query and txt obj change
                 String headerCSR = "SELECT \"CSR-Name\" FROM PUB.CSR WHERE \"CSR-ID\"=" + "'" + dtHeader.Rows[0]["CSR-ID"].ToString() + "'";
 
@@ -2771,22 +2807,28 @@ namespace vvt
                 }
 
                 dtStock.Columns.Add("Page-Grain");
-                string val = dtPG.Rows[0]["Page-Grain"].ToString();
 
-                foreach (DataRow dr in dtStock.Rows)
+                try
                 {
+                    string val = dtPG.Rows[0]["Page-Grain"].ToString();
 
-                    dr["Page-Grain"] = val;
+                    foreach (DataRow dr in dtStock.Rows)
+                    {
 
+                        dr["Page-Grain"] = val;
+
+                    }
                 }
+                catch (Exception ex) { }
 
                 //also check if empty exists it is empty hideSubs it
                 if (dtStock.Rows.Count != 0)
-                {
-                    cryrpt.Subreports[15].DataSourceConnections.Clear();
-                    cryrpt.Subreports[15].SetDataSource(dtStock);
+                    {
+                        cryrpt.Subreports[15].DataSourceConnections.Clear();
+                        cryrpt.Subreports[15].SetDataSource(dtStock);
 
-                }
+                    }
+             
                 else
                 {
 
@@ -3038,7 +3080,7 @@ namespace vvt
 
                 //open th econnection and error check
                 OdbcConnection dbConn = new OdbcConnection(connectStr);
-
+                dbConn.ConnectionTimeout = 150;
                 try
                 {
                     dbConn.Open();
@@ -3175,28 +3217,37 @@ namespace vvt
 
                 //set the Customer info text objects
                 //cust name
-                CrystalDecisions.CrystalReports.Engine.TextObject custName;
-                custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
-                custName.Text = dtCust.Rows[0]["cust-name"].ToString();
+                try
+                {
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName;
+                    custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
+                    custName.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                CrystalDecisions.CrystalReports.Engine.TextObject custName2;
-                custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
-                custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName2;
+                    custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
+                    custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                //address -> add 1 and 2 and 3 combined
-                CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
-                custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
-                custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
+                    //address -> add 1 and 2 and 3 combined
+                    CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
+                    custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
+                    custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
 
-                //city state zip customer
-                CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
-                custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
-                custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
+                    //city state zip customer
+                    CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
+                    custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
+                    custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
 
-                //customerPhone
-                CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
-                custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
-                custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
+                    //customerPhone
+                    CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
+                    custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
+                    custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
+
+                    //customer number
+                    CrystalDecisions.CrystalReports.Engine.TextObject custNum;
+                    custNum = cryrpt.ReportDefinition.ReportObjects["custNum"] as TextObject;
+                    custNum.Text = dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+                }
+                catch (Exception ex) { }
 
                 //sales agent query and txt obj change
                 //why this does not work i have no fkin clue, making stack overflwo see what the brians can thunk up
@@ -3218,16 +3269,19 @@ namespace vvt
 
                 }
 
+                try
+                {
+                    //sales agent name
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
+                    salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
+                    salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
 
-                //sales agent name
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
-                salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
-                salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
-
-                //sales rep ID for billing
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
-                salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
-                salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+                    //sales rep ID for billing
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
+                    salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
+                    salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+                }
+                catch (Exception ex) { }
 
                 //csr query and txt obj change
                 String headerCSR = "SELECT \"CSR-Name\" FROM PUB.CSR WHERE \"CSR-ID\"=" + "'" + dtHeader.Rows[0]["CSR-ID"].ToString() + "'";
@@ -4001,14 +4055,19 @@ namespace vvt
                 }
 
                 dtStock.Columns.Add("Page-Grain");
-                string val = dtPG.Rows[0]["Page-Grain"].ToString();
 
-                foreach (DataRow dr in dtStock.Rows)
+                try
                 {
+                    string val = dtPG.Rows[0]["Page-Grain"].ToString();
 
-                    dr["Page-Grain"] = val;
+                    foreach (DataRow dr in dtStock.Rows)
+                    {
 
+                        dr["Page-Grain"] = val;
+
+                    }
                 }
+                catch (Exception ex) { }
 
                 //also check if empty exists it is empty hideSubs it
                 if (dtStock.Rows.Count != 0)
@@ -4284,7 +4343,7 @@ namespace vvt
 
                 //open th econnection and error check
                 OdbcConnection dbConn = new OdbcConnection(connectStr);
-
+                dbConn.ConnectionTimeout = 150;
                 try
                 {
                     dbConn.Open();
@@ -4418,31 +4477,39 @@ namespace vvt
 
                 }
 
-                //set the Customer info text objects
-                //cust name
-                CrystalDecisions.CrystalReports.Engine.TextObject custName;
-                custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
-                custName.Text = dtCust.Rows[0]["cust-name"].ToString();
+                try
+                {
+                    //set the Customer info text objects
+                    //cust name
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName;
+                    custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
+                    custName.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                CrystalDecisions.CrystalReports.Engine.TextObject custName2;
-                custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
-                custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName2;
+                    custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
+                    custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                //address -> add 1 and 2 and 3 combined
-                CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
-                custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
-                custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
+                    //address -> add 1 and 2 and 3 combined
+                    CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
+                    custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
+                    custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
 
-                //city state zip customer
-                CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
-                custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
-                custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
+                    //city state zip customer
+                    CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
+                    custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
+                    custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
 
-                //customerPhone
-                CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
-                custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
-                custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
+                    //customerPhone
+                    CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
+                    custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
+                    custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
 
+                    //customer number
+                    CrystalDecisions.CrystalReports.Engine.TextObject custNum;
+                    custNum = cryrpt.ReportDefinition.ReportObjects["custNum"] as TextObject;
+                    custNum.Text = dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+                }
+                catch (Exception ex) { }
                 //sales agent query and txt obj change
                 //why this does not work i have no fkin clue, making stack overflwo see what the brians can thunk up
                 String headerSalesAgent = "SELECT \"Sales-Agent-Name\" FROM PUB.\"sales-agent\" WHERE \"Sales-agent-id\" = " + "'" + dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "'";
@@ -4463,16 +4530,19 @@ namespace vvt
 
                 }
 
+                try
+                {
+                    //sales agent name
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
+                    salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
+                    salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
 
-                //sales agent name
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
-                salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
-                salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
-
-                //sales rep ID for billing
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
-                salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
-                salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+                    //sales rep ID for billing
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
+                    salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
+                    salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+                }
+                catch (Exception ex) { }
 
                 //csr query and txt obj change
                 String headerCSR = "SELECT \"CSR-Name\" FROM PUB.CSR WHERE \"CSR-ID\"=" + "'" + dtHeader.Rows[0]["CSR-ID"].ToString() + "'";
@@ -5061,7 +5131,7 @@ namespace vvt
 
                 //open th econnection and error check
                 OdbcConnection dbConn = new OdbcConnection(connectStr);
-
+                dbConn.ConnectionTimeout = 150;
                 try
                 {
                     dbConn.Open();
@@ -5195,34 +5265,44 @@ namespace vvt
 
                 }
 
-                //set the Customer info text objects
-                //cust name
-                CrystalDecisions.CrystalReports.Engine.TextObject custName;
-                custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
-                custName.Text = dtCust.Rows[0]["cust-name"].ToString();
+                try
+                {
+                    //set the Customer info text objects
+                    //cust name
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName;
+                    custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
+                    custName.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                CrystalDecisions.CrystalReports.Engine.TextObject custName2;
-                custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
-                custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
+                    CrystalDecisions.CrystalReports.Engine.TextObject custName2;
+                    custName2 = cryrpt.ReportDefinition.ReportObjects["custName2"] as TextObject;
+                    custName2.Text = dtCust.Rows[0]["cust-name"].ToString();
 
-                //address -> add 1 and 2 and 3 combined
-                CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
-                custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
-                custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
+                    //address -> add 1 and 2 and 3 combined
+                    CrystalDecisions.CrystalReports.Engine.TextObject custAdd;
+                    custAdd = cryrpt.ReportDefinition.ReportObjects["custAddress"] as TextObject;
+                    custAdd.Text = dtCust.Rows[0]["Address-1"].ToString() + " " + dtCust.Rows[0]["Address-2"].ToString() + " " + dtCust.Rows[0]["Address-3"].ToString();
 
-                //city state zip customer
-                CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
-                custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
-                custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
+                    //city state zip customer
+                    CrystalDecisions.CrystalReports.Engine.TextObject custCSZ;
+                    custCSZ = cryrpt.ReportDefinition.ReportObjects["custCSZ"] as TextObject;
+                    custCSZ.Text = dtCust.Rows[0]["City"].ToString() + " " + dtCust.Rows[0]["State"].ToString() + " " + dtCust.Rows[0]["Zip"].ToString();
 
-                //customerPhone
-                CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
-                custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
-                custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
+                    //customerPhone
+                    CrystalDecisions.CrystalReports.Engine.TextObject custPhone;
+                    custPhone = cryrpt.ReportDefinition.ReportObjects["custPhone"] as TextObject;
+                    custPhone.Text = dtCust.Rows[0]["Phone"].ToString();
 
-                //sales agent query and txt obj change
-                //why this does not work i have no fkin clue, making stack overflwo see what the brians can thunk up
-                String headerSalesAgent = "SELECT \"Sales-Agent-Name\" FROM PUB.\"sales-agent\" WHERE \"Sales-agent-id\" = " + "'" + dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "'";
+                    //customer number
+                    CrystalDecisions.CrystalReports.Engine.TextObject custNum;
+                    custNum = cryrpt.ReportDefinition.ReportObjects["custNum"] as TextObject;
+                    custNum.Text = dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+
+                    //sales agent query and txt obj change
+                  
+                }
+                catch (Exception ex) { }
+
+                    String headerSalesAgent = "SELECT \"Sales-Agent-Name\" FROM PUB.\"sales-agent\" WHERE \"Sales-agent-id\" = " + "'" + dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "'";
 
                 // String headerSalesAgent = "SELECT \"Sales-agent-id\" , \"Sales-Agent-Name\" FROM PUB.\"sales-agent\"";
 
@@ -5240,16 +5320,20 @@ namespace vvt
 
                 }
 
+                try
+                {
+                    //sales agent name
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
+                    salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
+                    salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
 
-                //sales agent name
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep;
-                salesRep = cryrpt.ReportDefinition.ReportObjects["salesRep"] as TextObject;
-                salesRep.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString() + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+                    //sales rep ID for billing
+                    CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
+                    salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
+                    salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
+                }
+                catch (Exception ex) { }
 
-                //sales rep ID for billing
-                CrystalDecisions.CrystalReports.Engine.TextObject salesRep2;
-                salesRep2 = cryrpt.ReportDefinition.ReportObjects["salesRep2"] as TextObject;
-                salesRep2.Text = dtHeader.Rows[0]["Sales-Rep-ID"].ToString();// + "-" + dtSalesAgent.Rows[0]["Sales-Agent-Name"].ToString();
 
                 //csr query and txt obj change
                 String headerCSR = "SELECT \"CSR-Name\" FROM PUB.CSR WHERE \"CSR-ID\"=" + "'" + dtHeader.Rows[0]["CSR-ID"].ToString() + "'";
