@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="JobMailingVersion" targetNamespace="http://tempuri.org/JobMailingVersion.xsd" xmlns:mstns="http://tempuri.org/JobMailingVersion.xsd" xmlns="http://tempuri.org/JobMailingVersion.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="JobMailingVersion" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="JobMailingVersion" msprop:Generator_UserDSName="JobMailingVersion">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="jobMailVersion" msprop:Generator_TableClassName="jobMailVersionDataTable" msprop:Generator_TableVarName="tablejobMailVersion" msprop:Generator_TablePropName="jobMailVersion" msprop:Generator_RowDeletingName="jobMailVersionRowDeleting" msprop:Generator_RowChangingName="jobMailVersionRowChanging" msprop:Generator_RowEvHandlerName="jobMailVersionRowChangeEventHandler" msprop:Generator_RowDeletedName="jobMailVersionRowDeleted" msprop:Generator_UserTableName="jobMailVersion" msprop:Generator_RowChangedName="jobMailVersionRowChanged" msprop:Generator_RowEvArgName="jobMailVersionRowChangeEvent" msprop:Generator_RowClassName="jobMailVersionRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Version-Number" msprop:Generator_ColumnVarNameInTable="_columnVersion_Number" msprop:Generator_ColumnPropNameInRow="_Version_Number" msprop:Generator_ColumnPropNameInTable="_Version_NumberColumn" msprop:Generator_UserColumnName="Version-Number" type="xs:string" minOccurs="0" />
+              <xs:element name="Version-Description" msprop:Generator_ColumnVarNameInTable="_columnVersion_Description" msprop:Generator_ColumnPropNameInRow="_Version_Description" msprop:Generator_ColumnPropNameInTable="_Version_DescriptionColumn" msprop:Generator_UserColumnName="Version-Description" type="xs:string" minOccurs="0" />
+              <xs:element name="Version-Qty" msprop:Generator_ColumnVarNameInTable="_columnVersion_Qty" msprop:Generator_ColumnPropNameInRow="_Version_Qty" msprop:Generator_ColumnPropNameInTable="_Version_QtyColumn" msprop:Generator_UserColumnName="Version-Qty" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

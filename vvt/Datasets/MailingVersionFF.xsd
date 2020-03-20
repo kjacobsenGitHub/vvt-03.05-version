@@ -12,10 +12,11 @@
   <xs:element name="MailingVersionFF" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MailingVersionFF" msprop:Generator_UserDSName="MailingVersionFF">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MailingVersionFFTable" msprop:Generator_TableClassName="MailingVersionFFTableDataTable" msprop:Generator_TableVarName="tableMailingVersionFFTable" msprop:Generator_TablePropName="MailingVersionFFTable" msprop:Generator_RowDeletingName="MailingVersionFFTableRowDeleting" msprop:Generator_RowChangingName="MailingVersionFFTableRowChanging" msprop:Generator_RowEvHandlerName="MailingVersionFFTableRowChangeEventHandler" msprop:Generator_RowDeletedName="MailingVersionFFTableRowDeleted" msprop:Generator_UserTableName="MailingVersionFFTable" msprop:Generator_RowChangedName="MailingVersionFFTableRowChanged" msprop:Generator_RowEvArgName="MailingVersionFFTableRowChangeEvent" msprop:Generator_RowClassName="MailingVersionFFTableRow">
+        <xs:element name="MailingVersionFFTable" msprop:Generator_TableClassName="MailingVersionFFTableDataTable" msprop:Generator_TableVarName="tableMailingVersionFFTable" msprop:Generator_RowChangedName="MailingVersionFFTableRowChanged" msprop:Generator_TablePropName="MailingVersionFFTable" msprop:Generator_RowDeletingName="MailingVersionFFTableRowDeleting" msprop:Generator_RowChangingName="MailingVersionFFTableRowChanging" msprop:Generator_RowEvHandlerName="MailingVersionFFTableRowChangeEventHandler" msprop:Generator_RowDeletedName="MailingVersionFFTableRowDeleted" msprop:Generator_RowClassName="MailingVersionFFTableRow" msprop:Generator_UserTableName="MailingVersionFFTable" msprop:Generator_RowEvArgName="MailingVersionFFTableRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FFvalue" msprop:Generator_ColumnVarNameInTable="columnFFvalue" msprop:Generator_ColumnPropNameInRow="FFvalue" msprop:Generator_ColumnPropNameInTable="FFvalueColumn" msprop:Generator_UserColumnName="FFvalue" type="xs:string" minOccurs="0" />
+              <xs:element name="FFname" msprop:Generator_ColumnVarNameInTable="columnFFname" msprop:Generator_ColumnPropNameInRow="FFname" msprop:Generator_ColumnPropNameInTable="FFnameColumn" msprop:Generator_UserColumnName="FFname" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

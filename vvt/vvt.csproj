@@ -104,6 +104,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>JobComments.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\JobMailingVersion.cs">
+      <DependentUpon>JobMailingVersion.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Datasets\JobMailingVersion.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobMailingVersion.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\jobSpecMat.cs">
       <DependentUpon>jobSpecMat.xsd</DependentUpon>
     </Compile>
@@ -266,6 +274,17 @@
     </None>
     <None Include="Datasets\JobComments.xss">
       <DependentUpon>JobComments.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\JobMailingVersion.xsc">
+      <DependentUpon>JobMailingVersion.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\JobMailingVersion.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JobMailingVersion.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\JobMailingVersion.xss">
+      <DependentUpon>JobMailingVersion.xsd</DependentUpon>
     </None>
     <None Include="Datasets\jobSpecMat.xsc">
       <DependentUpon>jobSpecMat.xsd</DependentUpon>

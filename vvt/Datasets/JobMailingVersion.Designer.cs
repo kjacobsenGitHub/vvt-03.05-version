@@ -20,17 +20,17 @@ namespace vvt.Datasets {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("MailingVersionFF")]
+    [global::System.Xml.Serialization.XmlRootAttribute("JobMailingVersion")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class MailingVersionFF : global::System.Data.DataSet {
+    public partial class JobMailingVersion : global::System.Data.DataSet {
         
-        private MailingVersionFFTableDataTable tableMailingVersionFFTable;
+        private jobMailVersionDataTable tablejobMailVersion;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public MailingVersionFF() {
+        public JobMailingVersion() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace vvt.Datasets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected MailingVersionFF(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected JobMailingVersion(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace vvt.Datasets {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["MailingVersionFFTable"] != null)) {
-                    base.Tables.Add(new MailingVersionFFTableDataTable(ds.Tables["MailingVersionFFTable"]));
+                if ((ds.Tables["jobMailVersion"] != null)) {
+                    base.Tables.Add(new jobMailVersionDataTable(ds.Tables["jobMailVersion"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace vvt.Datasets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public MailingVersionFFTableDataTable MailingVersionFFTable {
+        public jobMailVersionDataTable jobMailVersion {
             get {
-                return this.tableMailingVersionFFTable;
+                return this.tablejobMailVersion;
             }
         }
         
@@ -127,7 +127,7 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            MailingVersionFF cln = ((MailingVersionFF)(base.Clone()));
+            JobMailingVersion cln = ((JobMailingVersion)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace vvt.Datasets {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["MailingVersionFFTable"] != null)) {
-                    base.Tables.Add(new MailingVersionFFTableDataTable(ds.Tables["MailingVersionFFTable"]));
+                if ((ds.Tables["jobMailVersion"] != null)) {
+                    base.Tables.Add(new jobMailVersionDataTable(ds.Tables["jobMailVersion"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableMailingVersionFFTable = ((MailingVersionFFTableDataTable)(base.Tables["MailingVersionFFTable"]));
+            this.tablejobMailVersion = ((jobMailVersionDataTable)(base.Tables["jobMailVersion"]));
             if ((initTable == true)) {
-                if ((this.tableMailingVersionFFTable != null)) {
-                    this.tableMailingVersionFFTable.InitVars();
+                if ((this.tablejobMailVersion != null)) {
+                    this.tablejobMailVersion.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "MailingVersionFF";
+            this.DataSetName = "JobMailingVersion";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/MailingVersionFF.xsd";
+            this.Namespace = "http://tempuri.org/JobMailingVersion.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableMailingVersionFFTable = new MailingVersionFFTableDataTable();
-            base.Tables.Add(this.tableMailingVersionFFTable);
+            this.tablejobMailVersion = new jobMailVersionDataTable();
+            base.Tables.Add(this.tablejobMailVersion);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeMailingVersionFFTable() {
+        private bool ShouldSerializejobMailVersion() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace vvt.Datasets {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            MailingVersionFF ds = new MailingVersionFF();
+            JobMailingVersion ds = new JobMailingVersion();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,23 +270,25 @@ namespace vvt.Datasets {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void MailingVersionFFTableRowChangeEventHandler(object sender, MailingVersionFFTableRowChangeEvent e);
+        public delegate void jobMailVersionRowChangeEventHandler(object sender, jobMailVersionRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class MailingVersionFFTableDataTable : global::System.Data.TypedTableBase<MailingVersionFFTableRow> {
+        public partial class jobMailVersionDataTable : global::System.Data.TypedTableBase<jobMailVersionRow> {
             
-            private global::System.Data.DataColumn columnFFvalue;
+            private global::System.Data.DataColumn _columnVersion_Number;
             
-            private global::System.Data.DataColumn columnFFname;
+            private global::System.Data.DataColumn _columnVersion_Description;
+            
+            private global::System.Data.DataColumn _columnVersion_Qty;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MailingVersionFFTableDataTable() {
-                this.TableName = "MailingVersionFFTable";
+            public jobMailVersionDataTable() {
+                this.TableName = "jobMailVersion";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -294,7 +296,7 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal MailingVersionFFTableDataTable(global::System.Data.DataTable table) {
+            internal jobMailVersionDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -311,24 +313,32 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected MailingVersionFFTableDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected jobMailVersionDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FFvalueColumn {
+            public global::System.Data.DataColumn _Version_NumberColumn {
                 get {
-                    return this.columnFFvalue;
+                    return this._columnVersion_Number;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn FFnameColumn {
+            public global::System.Data.DataColumn _Version_DescriptionColumn {
                 get {
-                    return this.columnFFname;
+                    return this._columnVersion_Description;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Version_QtyColumn {
+                get {
+                    return this._columnVersion_Qty;
                 }
             }
             
@@ -343,46 +353,47 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MailingVersionFFTableRow this[int index] {
+            public jobMailVersionRow this[int index] {
                 get {
-                    return ((MailingVersionFFTableRow)(this.Rows[index]));
+                    return ((jobMailVersionRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MailingVersionFFTableRowChangeEventHandler MailingVersionFFTableRowChanging;
+            public event jobMailVersionRowChangeEventHandler jobMailVersionRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MailingVersionFFTableRowChangeEventHandler MailingVersionFFTableRowChanged;
+            public event jobMailVersionRowChangeEventHandler jobMailVersionRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MailingVersionFFTableRowChangeEventHandler MailingVersionFFTableRowDeleting;
+            public event jobMailVersionRowChangeEventHandler jobMailVersionRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event MailingVersionFFTableRowChangeEventHandler MailingVersionFFTableRowDeleted;
+            public event jobMailVersionRowChangeEventHandler jobMailVersionRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddMailingVersionFFTableRow(MailingVersionFFTableRow row) {
+            public void AddjobMailVersionRow(jobMailVersionRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MailingVersionFFTableRow AddMailingVersionFFTableRow(string FFvalue, string FFname) {
-                MailingVersionFFTableRow rowMailingVersionFFTableRow = ((MailingVersionFFTableRow)(this.NewRow()));
+            public jobMailVersionRow AddjobMailVersionRow(string _Version_Number, string _Version_Description, string _Version_Qty) {
+                jobMailVersionRow rowjobMailVersionRow = ((jobMailVersionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        FFvalue,
-                        FFname};
-                rowMailingVersionFFTableRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowMailingVersionFFTableRow);
-                return rowMailingVersionFFTableRow;
+                        _Version_Number,
+                        _Version_Description,
+                        _Version_Qty};
+                rowjobMailVersionRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowjobMailVersionRow);
+                return rowjobMailVersionRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                MailingVersionFFTableDataTable cln = ((MailingVersionFFTableDataTable)(base.Clone()));
+                jobMailVersionDataTable cln = ((jobMailVersionDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -390,49 +401,58 @@ namespace vvt.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new MailingVersionFFTableDataTable();
+                return new jobMailVersionDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnFFvalue = base.Columns["FFvalue"];
-                this.columnFFname = base.Columns["FFname"];
+                this._columnVersion_Number = base.Columns["Version-Number"];
+                this._columnVersion_Description = base.Columns["Version-Description"];
+                this._columnVersion_Qty = base.Columns["Version-Qty"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnFFvalue = new global::System.Data.DataColumn("FFvalue", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFFvalue);
-                this.columnFFname = new global::System.Data.DataColumn("FFname", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnFFname);
+                this._columnVersion_Number = new global::System.Data.DataColumn("Version-Number", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnVersion_Number.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnVersion_Number");
+                this._columnVersion_Number.ExtendedProperties.Add("Generator_UserColumnName", "Version-Number");
+                base.Columns.Add(this._columnVersion_Number);
+                this._columnVersion_Description = new global::System.Data.DataColumn("Version-Description", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnVersion_Description.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnVersion_Description");
+                this._columnVersion_Description.ExtendedProperties.Add("Generator_UserColumnName", "Version-Description");
+                base.Columns.Add(this._columnVersion_Description);
+                this._columnVersion_Qty = new global::System.Data.DataColumn("Version-Qty", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnVersion_Qty.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnVersion_Qty");
+                this._columnVersion_Qty.ExtendedProperties.Add("Generator_UserColumnName", "Version-Qty");
+                base.Columns.Add(this._columnVersion_Qty);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MailingVersionFFTableRow NewMailingVersionFFTableRow() {
-                return ((MailingVersionFFTableRow)(this.NewRow()));
+            public jobMailVersionRow NewjobMailVersionRow() {
+                return ((jobMailVersionRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new MailingVersionFFTableRow(builder);
+                return new jobMailVersionRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(MailingVersionFFTableRow);
+                return typeof(jobMailVersionRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.MailingVersionFFTableRowChanged != null)) {
-                    this.MailingVersionFFTableRowChanged(this, new MailingVersionFFTableRowChangeEvent(((MailingVersionFFTableRow)(e.Row)), e.Action));
+                if ((this.jobMailVersionRowChanged != null)) {
+                    this.jobMailVersionRowChanged(this, new jobMailVersionRowChangeEvent(((jobMailVersionRow)(e.Row)), e.Action));
                 }
             }
             
@@ -440,8 +460,8 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.MailingVersionFFTableRowChanging != null)) {
-                    this.MailingVersionFFTableRowChanging(this, new MailingVersionFFTableRowChangeEvent(((MailingVersionFFTableRow)(e.Row)), e.Action));
+                if ((this.jobMailVersionRowChanging != null)) {
+                    this.jobMailVersionRowChanging(this, new jobMailVersionRowChangeEvent(((jobMailVersionRow)(e.Row)), e.Action));
                 }
             }
             
@@ -449,8 +469,8 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.MailingVersionFFTableRowDeleted != null)) {
-                    this.MailingVersionFFTableRowDeleted(this, new MailingVersionFFTableRowChangeEvent(((MailingVersionFFTableRow)(e.Row)), e.Action));
+                if ((this.jobMailVersionRowDeleted != null)) {
+                    this.jobMailVersionRowDeleted(this, new jobMailVersionRowChangeEvent(((jobMailVersionRow)(e.Row)), e.Action));
                 }
             }
             
@@ -458,14 +478,14 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.MailingVersionFFTableRowDeleting != null)) {
-                    this.MailingVersionFFTableRowDeleting(this, new MailingVersionFFTableRowChangeEvent(((MailingVersionFFTableRow)(e.Row)), e.Action));
+                if ((this.jobMailVersionRowDeleting != null)) {
+                    this.jobMailVersionRowDeleting(this, new jobMailVersionRowChangeEvent(((jobMailVersionRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveMailingVersionFFTableRow(MailingVersionFFTableRow row) {
+            public void RemovejobMailVersionRow(jobMailVersionRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -474,7 +494,7 @@ namespace vvt.Datasets {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                MailingVersionFF ds = new MailingVersionFF();
+                JobMailingVersion ds = new JobMailingVersion();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -492,7 +512,7 @@ namespace vvt.Datasets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "MailingVersionFFTableDataTable";
+                attribute2.FixedValue = "jobMailVersionDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -536,71 +556,99 @@ namespace vvt.Datasets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class MailingVersionFFTableRow : global::System.Data.DataRow {
+        public partial class jobMailVersionRow : global::System.Data.DataRow {
             
-            private MailingVersionFFTableDataTable tableMailingVersionFFTable;
+            private jobMailVersionDataTable tablejobMailVersion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal MailingVersionFFTableRow(global::System.Data.DataRowBuilder rb) : 
+            internal jobMailVersionRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableMailingVersionFFTable = ((MailingVersionFFTableDataTable)(this.Table));
+                this.tablejobMailVersion = ((jobMailVersionDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string FFvalue {
+            public string _Version_Number {
                 get {
                     try {
-                        return ((string)(this[this.tableMailingVersionFFTable.FFvalueColumn]));
+                        return ((string)(this[this.tablejobMailVersion._Version_NumberColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FFvalue\' in table \'MailingVersionFFTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Version-Number\' in table \'jobMailVersion\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMailingVersionFFTable.FFvalueColumn] = value;
+                    this[this.tablejobMailVersion._Version_NumberColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string FFname {
+            public string _Version_Description {
                 get {
                     try {
-                        return ((string)(this[this.tableMailingVersionFFTable.FFnameColumn]));
+                        return ((string)(this[this.tablejobMailVersion._Version_DescriptionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'FFname\' in table \'MailingVersionFFTable\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Version-Description\' in table \'jobMailVersion\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableMailingVersionFFTable.FFnameColumn] = value;
+                    this[this.tablejobMailVersion._Version_DescriptionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFFvalueNull() {
-                return this.IsNull(this.tableMailingVersionFFTable.FFvalueColumn);
+            public string _Version_Qty {
+                get {
+                    try {
+                        return ((string)(this[this.tablejobMailVersion._Version_QtyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Version-Qty\' in table \'jobMailVersion\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablejobMailVersion._Version_QtyColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFFvalueNull() {
-                this[this.tableMailingVersionFFTable.FFvalueColumn] = global::System.Convert.DBNull;
+            public bool Is_Version_NumberNull() {
+                return this.IsNull(this.tablejobMailVersion._Version_NumberColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsFFnameNull() {
-                return this.IsNull(this.tableMailingVersionFFTable.FFnameColumn);
+            public void Set_Version_NumberNull() {
+                this[this.tablejobMailVersion._Version_NumberColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetFFnameNull() {
-                this[this.tableMailingVersionFFTable.FFnameColumn] = global::System.Convert.DBNull;
+            public bool Is_Version_DescriptionNull() {
+                return this.IsNull(this.tablejobMailVersion._Version_DescriptionColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Version_DescriptionNull() {
+                this[this.tablejobMailVersion._Version_DescriptionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Version_QtyNull() {
+                return this.IsNull(this.tablejobMailVersion._Version_QtyColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Version_QtyNull() {
+                this[this.tablejobMailVersion._Version_QtyColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -608,22 +656,22 @@ namespace vvt.Datasets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class MailingVersionFFTableRowChangeEvent : global::System.EventArgs {
+        public class jobMailVersionRowChangeEvent : global::System.EventArgs {
             
-            private MailingVersionFFTableRow eventRow;
+            private jobMailVersionRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MailingVersionFFTableRowChangeEvent(MailingVersionFFTableRow row, global::System.Data.DataRowAction action) {
+            public jobMailVersionRowChangeEvent(jobMailVersionRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MailingVersionFFTableRow Row {
+            public jobMailVersionRow Row {
                 get {
                     return this.eventRow;
                 }
