@@ -281,6 +281,8 @@ namespace vvt.Datasets {
             
             private global::System.Data.DataColumn _columnFree_Field_Char;
             
+            private global::System.Data.DataColumn columnFFname;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public Free_FieldsDataTable() {
@@ -324,6 +326,14 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FFnameColumn {
+                get {
+                    return this.columnFFname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -359,10 +369,11 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public Free_FieldsRow AddFree_FieldsRow(string _Free_Field_Char) {
+            public Free_FieldsRow AddFree_FieldsRow(string _Free_Field_Char, string FFname) {
                 Free_FieldsRow rowFree_FieldsRow = ((Free_FieldsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        _Free_Field_Char};
+                        _Free_Field_Char,
+                        FFname};
                 rowFree_FieldsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowFree_FieldsRow);
                 return rowFree_FieldsRow;
@@ -386,6 +397,7 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this._columnFree_Field_Char = base.Columns["Free-Field-Char"];
+                this.columnFFname = base.Columns["FFname"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -395,6 +407,8 @@ namespace vvt.Datasets {
                 this._columnFree_Field_Char.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnFree_Field_Char");
                 this._columnFree_Field_Char.ExtendedProperties.Add("Generator_UserColumnName", "Free-Field-Char");
                 base.Columns.Add(this._columnFree_Field_Char);
+                this.columnFFname = new global::System.Data.DataColumn("FFname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFFname);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -553,6 +567,22 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string FFname {
+                get {
+                    try {
+                        return ((string)(this[this.tableFree_Fields.FFnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FFname\' in table \'Free Fields\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableFree_Fields.FFnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is_Free_Field_CharNull() {
                 return this.IsNull(this.tableFree_Fields._Free_Field_CharColumn);
             }
@@ -561,6 +591,18 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set_Free_Field_CharNull() {
                 this[this.tableFree_Fields._Free_Field_CharColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFFnameNull() {
+                return this.IsNull(this.tableFree_Fields.FFnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFFnameNull() {
+                this[this.tableFree_Fields.FFnameColumn] = global::System.Convert.DBNull;
             }
         }
         

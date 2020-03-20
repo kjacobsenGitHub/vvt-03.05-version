@@ -749,6 +749,11 @@ namespace vvt
 
                         //copy DT and pop off first nine
                         DataTable dtMailV2 = dtMailVersion.Copy();
+                        //first suppress from back 17-14
+                        dtMailV2.Rows[17].Delete();
+                        dtMailV2.Rows[16].Delete();
+                        dtMailV2.Rows[15].Delete();
+                        dtMailV2.Rows[14].Delete();
                         dtMailV2.Rows[0].Delete();
                         dtMailV2.Rows[1].Delete();
                         dtMailV2.Rows[2].Delete();
@@ -761,6 +766,10 @@ namespace vvt
                         dtMailV2.AcceptChanges();
 
                         //remove last 9 from dtMailversion
+                        dtMailVersion.Rows[5].Delete();
+                        dtMailVersion.Rows[6].Delete();
+                        dtMailVersion.Rows[7].Delete();
+                        dtMailVersion.Rows[8].Delete();
                         dtMailVersion.Rows[9].Delete();
                         dtMailVersion.Rows[10].Delete();
                         dtMailVersion.Rows[11].Delete();
@@ -844,16 +853,25 @@ namespace vvt
 
                     //and change second column name to match CR report value "FFvalue"
                     dtMailFF.Columns["Free-Field-Char"].ColumnName = "FFval";
+                dtMailFF.Columns.Add("FFname");
 
-                    //now clear datasource connecctions and set them with dt
-                    //also check if empty exists it is empty hideSubs it
-                    if (dtMailFF.Rows.Count != 0)
+                dtMailFF.Rows[0]["FFname"] = "Mailpeice Size";
+                dtMailFF.Rows[1]["FFname"] = "Customer Sign-Offs";
+                dtMailFF.Rows[2]["FFname"] = "Inserting";
+                dtMailFF.Rows[3]["FFname"] = "Tab/Seal/Glue";
+                dtMailFF.Rows[4]["FFname"] = "Samples for Postage";
+
+
+                //now clear datasource connecctions and set them with dt
+                //also check if empty exists it is empty hideSubs it
+                if (dtMailFF.Rows.Count != 0)
                     {
 
-                    //not liniong up coorectly 
-                      //  dtMailFF.Rows.RemoveAt(4);
 
-                        cryrpt.Subreports["subMailFreeFields"].DataSourceConnections.Clear();
+                    dtMailFF.Rows[4].Delete();
+                    dtMailFF.AcceptChanges();
+
+                    cryrpt.Subreports["subMailFreeFields"].DataSourceConnections.Clear();
                         cryrpt.Subreports["subMailFreeFields"].SetDataSource(dtMailFF);
 
                     }
@@ -933,18 +951,28 @@ namespace vvt
                     dtFF.Rows[1]["Free-Field-Char"] = lastJob;
 
                     dtFF.Columns.Remove("Free-Field-Decimal");
+                dtFF.Columns.Add("FFname");
+                dtFF.Rows[0]["FFname"] = "Customer To Supply";
+                dtFF.Rows[1]["FFname"] = "Last Job#";
+                dtFF.Rows[2]["FFname"] = "Type of Proof Needed";
+                dtFF.Rows[3]["FFname"] = "Proof Needed By";
+                dtFF.Rows[4]["FFname"] = "Coating";
+                dtFF.Rows[5]["FFname"] = "Perf Score";
+                dtFF.Rows[6]["FFname"] = "Certification";
+                dtFF.Rows[7]["FFname"] = "Mailing Services";
+                dtFF.Rows[8]["FFname"] = "Litho/Digital/DSF/ASI";
 
-                    //also check if empty exists it is empty hideSubs it
-                    if (dtFF.Rows.Count != 0)
+
+                //also check if empty exists it is empty hideSubs it
+                if (dtFF.Rows.Count != 0)
                     {
-                    /* suppose to remove some rows but it does not work as my unbound string is not
-                     * updated to reflect the deleted rows 
+                
                     dtFF.Rows.RemoveAt(6);
                     dtFF.Rows.RemoveAt(4);
                     dtFF.Rows.RemoveAt(3);
                     dtFF.Rows.RemoveAt(2);
                     dtFF.Rows.RemoveAt(0);
-                    */
+                    dtFF.AcceptChanges();
 
                     //will have to do same process as adding field to the dataSet as in Mail Version
                     //also need to flag DSF jobs 
@@ -1896,6 +1924,13 @@ namespace vvt
 
                 //and change second column name to match CR report value "FFvalue"
                 dtMailFF.Columns["Free-Field-Char"].ColumnName = "FFval";
+                dtMailFF.Columns.Add("FFname");
+
+                dtMailFF.Rows[0]["FFname"] = "Mailpeice Size";
+                dtMailFF.Rows[1]["FFname"] = "Customer Sign-Offs";
+                dtMailFF.Rows[2]["FFname"] = "Inserting";
+                dtMailFF.Rows[3]["FFname"] = "Tab/Seal/Glue";
+                dtMailFF.Rows[4]["FFname"] = "Samples for Postage";
 
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
@@ -1982,6 +2017,17 @@ namespace vvt
                 dtFF.Rows[1]["Free-Field-Char"] = lastJob;
 
                 dtFF.Columns.Remove("Free-Field-Decimal");
+
+                dtFF.Columns.Add("FFname");
+                dtFF.Rows[0]["FFname"] = "Customer To Supply";
+                dtFF.Rows[1]["FFname"] = "Last Job#";
+                dtFF.Rows[2]["FFname"] = "Type of Proof Needed";
+                dtFF.Rows[3]["FFname"] = "Proof Needed By";
+                dtFF.Rows[4]["FFname"] = "Coating";
+                dtFF.Rows[5]["FFname"] = "Perf Score";
+                dtFF.Rows[6]["FFname"] = "Certification";
+                dtFF.Rows[7]["FFname"] = "Mailing Services";
+                dtFF.Rows[8]["FFname"] = "Litho/Digital/DSF/ASI";
 
                 //also check if empty exists it is empty hideSubs it
                 if (dtFF.Rows.Count != 0)
@@ -2979,6 +3025,17 @@ namespace vvt
                 dtFF.Rows[1]["Free-Field-Char"] = lastJob;
 
                 dtFF.Columns.Remove("Free-Field-Decimal");
+
+                dtFF.Columns.Add("FFname");
+                dtFF.Rows[0]["FFname"] = "Customer To Supply";
+                dtFF.Rows[1]["FFname"] = "Last Job#";
+                dtFF.Rows[2]["FFname"] = "Type of Proof Needed";
+                dtFF.Rows[3]["FFname"] = "Proof Needed By";
+                dtFF.Rows[4]["FFname"] = "Coating";
+                dtFF.Rows[5]["FFname"] = "Perf Score";
+                dtFF.Rows[6]["FFname"] = "Certification";
+                dtFF.Rows[7]["FFname"] = "Mailing Services";
+                dtFF.Rows[8]["FFname"] = "Litho/Digital/DSF/ASI";
 
                 //also check if empty exists it is empty hideSubs it
                 if (dtFF.Rows.Count != 0)
@@ -4172,6 +4229,13 @@ namespace vvt
 
                 //and change second column name to match CR report value "FFvalue"
                 dtMailFF.Columns["Free-Field-Char"].ColumnName = "FFval";
+                dtMailFF.Columns.Add("FFname");
+
+                dtMailFF.Rows[0]["FFname"] = "Mailpeice Size";
+                dtMailFF.Rows[1]["FFname"] = "Customer Sign-Offs";
+                dtMailFF.Rows[2]["FFname"] = "Inserting";
+                dtMailFF.Rows[3]["FFname"] = "Tab/Seal/Glue";
+                dtMailFF.Rows[4]["FFname"] = "Samples for Postage";
 
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
@@ -4329,6 +4393,17 @@ namespace vvt
                 dtFF.Rows[1]["Free-Field-Char"] = lastJob;
 
                 dtFF.Columns.Remove("Free-Field-Decimal");
+
+                dtFF.Columns.Add("FFname");
+                dtFF.Rows[0]["FFname"] = "Customer To Supply";
+                dtFF.Rows[1]["FFname"] = "Last Job#";
+                dtFF.Rows[2]["FFname"] = "Type of Proof Needed";
+                dtFF.Rows[3]["FFname"] = "Proof Needed By";
+                dtFF.Rows[4]["FFname"] = "Coating";
+                dtFF.Rows[5]["FFname"] = "Perf Score";
+                dtFF.Rows[6]["FFname"] = "Certification";
+                dtFF.Rows[7]["FFname"] = "Mailing Services";
+                dtFF.Rows[8]["FFname"] = "Litho/Digital/DSF/ASI";
 
                 //also check if empty exists it is empty hideSubs it
                 if (dtFF.Rows.Count != 0)

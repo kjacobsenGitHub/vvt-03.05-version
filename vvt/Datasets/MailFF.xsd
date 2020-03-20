@@ -12,10 +12,11 @@
   <xs:element name="MailFF" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="MailFF" msprop:Generator_UserDSName="MailFF">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="MailFF" msprop:Generator_TableClassName="MailFFDataTable" msprop:Generator_TableVarName="tableMailFF" msprop:Generator_TablePropName="_MailFF" msprop:Generator_RowDeletingName="MailFFRowDeleting" msprop:Generator_RowChangingName="MailFFRowChanging" msprop:Generator_RowEvHandlerName="MailFFRowChangeEventHandler" msprop:Generator_RowDeletedName="MailFFRowDeleted" msprop:Generator_UserTableName="MailFF" msprop:Generator_RowChangedName="MailFFRowChanged" msprop:Generator_RowEvArgName="MailFFRowChangeEvent" msprop:Generator_RowClassName="MailFFRow">
+        <xs:element name="MailFF" msprop:Generator_TableClassName="MailFFDataTable" msprop:Generator_TableVarName="tableMailFF" msprop:Generator_RowChangedName="MailFFRowChanged" msprop:Generator_TablePropName="_MailFF" msprop:Generator_RowDeletingName="MailFFRowDeleting" msprop:Generator_RowChangingName="MailFFRowChanging" msprop:Generator_RowEvHandlerName="MailFFRowChangeEventHandler" msprop:Generator_RowDeletedName="MailFFRowDeleted" msprop:Generator_RowClassName="MailFFRow" msprop:Generator_UserTableName="MailFF" msprop:Generator_RowEvArgName="MailFFRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FFval" msprop:Generator_ColumnVarNameInTable="columnFFval" msprop:Generator_ColumnPropNameInRow="FFval" msprop:Generator_ColumnPropNameInTable="FFvalColumn" msprop:Generator_UserColumnName="FFval" type="xs:string" minOccurs="0" />
+              <xs:element name="FFname" msprop:Generator_ColumnVarNameInTable="columnFFname" msprop:Generator_ColumnPropNameInRow="FFname" msprop:Generator_ColumnPropNameInTable="FFnameColumn" msprop:Generator_UserColumnName="FFname" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -12,10 +12,11 @@
   <xs:element name="FreeFields" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="FreeFields" msprop:Generator_UserDSName="FreeFields">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Free_x0020_Fields" msprop:Generator_TableClassName="Free_FieldsDataTable" msprop:Generator_TableVarName="tableFree_Fields" msprop:Generator_TablePropName="Free_Fields" msprop:Generator_RowDeletingName="Free_FieldsRowDeleting" msprop:Generator_RowChangingName="Free_FieldsRowChanging" msprop:Generator_RowEvHandlerName="Free_FieldsRowChangeEventHandler" msprop:Generator_RowDeletedName="Free_FieldsRowDeleted" msprop:Generator_UserTableName="Free Fields" msprop:Generator_RowChangedName="Free_FieldsRowChanged" msprop:Generator_RowEvArgName="Free_FieldsRowChangeEvent" msprop:Generator_RowClassName="Free_FieldsRow">
+        <xs:element name="Free_x0020_Fields" msprop:Generator_TableClassName="Free_FieldsDataTable" msprop:Generator_TableVarName="tableFree_Fields" msprop:Generator_RowChangedName="Free_FieldsRowChanged" msprop:Generator_TablePropName="Free_Fields" msprop:Generator_RowDeletingName="Free_FieldsRowDeleting" msprop:Generator_RowChangingName="Free_FieldsRowChanging" msprop:Generator_RowEvHandlerName="Free_FieldsRowChangeEventHandler" msprop:Generator_RowDeletedName="Free_FieldsRowDeleted" msprop:Generator_RowClassName="Free_FieldsRow" msprop:Generator_UserTableName="Free Fields" msprop:Generator_RowEvArgName="Free_FieldsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Free-Field-Char" msprop:Generator_ColumnVarNameInTable="_columnFree_Field_Char" msprop:Generator_ColumnPropNameInRow="_Free_Field_Char" msprop:Generator_ColumnPropNameInTable="_Free_Field_CharColumn" msprop:Generator_UserColumnName="Free-Field-Char" type="xs:string" minOccurs="0" />
+              <xs:element name="FFname" msprop:Generator_ColumnVarNameInTable="columnFFname" msprop:Generator_ColumnPropNameInRow="FFname" msprop:Generator_ColumnPropNameInTable="FFnameColumn" msprop:Generator_UserColumnName="FFname" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

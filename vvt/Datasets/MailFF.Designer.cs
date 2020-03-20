@@ -281,6 +281,8 @@ namespace vvt.Datasets {
             
             private global::System.Data.DataColumn columnFFval;
             
+            private global::System.Data.DataColumn columnFFname;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MailFFDataTable() {
@@ -324,6 +326,14 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FFnameColumn {
+                get {
+                    return this.columnFFname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -359,10 +369,11 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MailFFRow AddMailFFRow(string FFval) {
+            public MailFFRow AddMailFFRow(string FFval, string FFname) {
                 MailFFRow rowMailFFRow = ((MailFFRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        FFval};
+                        FFval,
+                        FFname};
                 rowMailFFRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMailFFRow);
                 return rowMailFFRow;
@@ -386,6 +397,7 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.columnFFval = base.Columns["FFval"];
+                this.columnFFname = base.Columns["FFname"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -393,6 +405,8 @@ namespace vvt.Datasets {
             private void InitClass() {
                 this.columnFFval = new global::System.Data.DataColumn("FFval", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnFFval);
+                this.columnFFname = new global::System.Data.DataColumn("FFname", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFFname);
                 this.ExtendedProperties.Add("Generator_TablePropName", "_MailFF");
                 this.ExtendedProperties.Add("Generator_UserTableName", "MailFF");
             }
@@ -553,6 +567,22 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string FFname {
+                get {
+                    try {
+                        return ((string)(this[this.tableMailFF.FFnameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FFname\' in table \'MailFF\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMailFF.FFnameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsFFvalNull() {
                 return this.IsNull(this.tableMailFF.FFvalColumn);
             }
@@ -561,6 +591,18 @@ namespace vvt.Datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetFFvalNull() {
                 this[this.tableMailFF.FFvalColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFFnameNull() {
+                return this.IsNull(this.tableMailFF.FFnameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFFnameNull() {
+                this[this.tableMailFF.FFnameColumn] = global::System.Convert.DBNull;
             }
         }
         
