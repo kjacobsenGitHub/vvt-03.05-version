@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
+using Microsoft.VisualBasic;
 
 //crystal reports
 using CrystalDecisions.Shared;
@@ -646,7 +646,7 @@ namespace vvt
                 #region sub report creater
 
                     #region Mailing Version subReport
-                    string queryMailVersion = "SELECT \"Free-Field-Char\", \"Version-Number\" FROM PUB.MailingVersionFreeField WHERE \"Job-ID\" = " + jobNumberUser;
+                    string queryMailVersion = "SELECT \"Free-Field-Char\" FROM PUB.MailingVersionFreeField WHERE \"Job-ID\" = " + jobNumberUser;
 
                     DataTable dtMailVersion = new DataTable();
 
@@ -680,7 +680,33 @@ namespace vvt
 
                     ErrorLog(error);
                 }
+                //load each version header
+                if (dtJobMailVersion.Rows.Count != 0)
+                {
+                    cryrpt.Subreports["subJobMailVersion"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobMailVersion"].SetDataSource(dtJobMailVersion);
 
+                    if (dtJobMailVersion.Rows.Count > 1)
+                    {
+                        //first one goo now delete row 0
+                        dtJobMailVersion.Rows[0].Delete();
+                        dtJobMailVersion.AcceptChanges();
+                        cryrpt.Subreports["subJobMailVersion2"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subJobMailVersion2"].SetDataSource(dtJobMailVersion);
+                    }
+                    else {
+                        string subJobMailVersion2 = "subJobMailVersion2";
+                        HideSubs(cryrpt, subJobMailVersion2);
+                    }
+                }
+                else {
+
+                    string subJobMailVersion = "subJobMailVersion";
+                    HideSubs(cryrpt, subJobMailVersion);
+                    string subJobMailVersion2 = "subJobMailVersion2";
+                    HideSubs(cryrpt, subJobMailVersion2);
+
+                }
 
                 //and change second column name to match CR report value "FFvalue"
                 dtMailVersion.Columns["Free-Field-Char"].ColumnName = "FFvalue";
@@ -692,7 +718,8 @@ namespace vvt
                     {
 
                     //check how many bversions there are
-                    if (dtMailVersion.Rows.Count > 9) {
+                    if (dtMailVersion.Rows.Count > 9)
+                    {
 
                         //process as 2 mailing versions
 
@@ -720,21 +747,45 @@ namespace vvt
                         }
                         catch (Exception ex) { }
 
-             
-                      
+                        //copy DT and pop off first nine
+                        DataTable dtMailV2 = dtMailVersion.Copy();
+                        dtMailV2.Rows[0].Delete();
+                        dtMailV2.Rows[1].Delete();
+                        dtMailV2.Rows[2].Delete();
+                        dtMailV2.Rows[3].Delete();
+                        dtMailV2.Rows[4].Delete();
+                        dtMailV2.Rows[5].Delete();
+                        dtMailV2.Rows[6].Delete();
+                        dtMailV2.Rows[7].Delete();
+                        dtMailV2.Rows[8].Delete();
+                        dtMailV2.AcceptChanges();
+
+                        //remove last 9 from dtMailversion
+                        dtMailVersion.Rows[9].Delete();
+                        dtMailVersion.Rows[10].Delete();
+                        dtMailVersion.Rows[11].Delete();
+                        dtMailVersion.Rows[12].Delete();
+                        dtMailVersion.Rows[13].Delete();
+                        dtMailVersion.Rows[14].Delete();
+                        dtMailVersion.Rows[15].Delete();
+                        dtMailVersion.Rows[16].Delete();
+                        dtMailVersion.Rows[17].Delete();
+                        dtMailVersion.AcceptChanges();
+
                         //load the subReports with both tables dtJobMailingVersion and dtMailVersion
                         //cannot can only load one at a time, have to make the version info its own subrpt
-                        cryrpt.Subreports[11].DataSourceConnections.Clear();
-                        cryrpt.Subreports[11].SetDataSource(dtMailVersion);
+                        cryrpt.Subreports["subMailVersion"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailVersion"].SetDataSource(dtMailVersion);
 
 
-                        cryrpt.Subreports[12].DataSourceConnections.Clear();
-                        cryrpt.Subreports[12].SetDataSource(dtMailVersion);
+                        cryrpt.Subreports["subMailVersion2"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailVersion2"].SetDataSource(dtMailV2);
 
 
 
                     }//end how many versions check (if >9)
 
+                    else { 
                     try
                     {
                         dtMailVersion.Rows[0]["FFname"] = "Permit Type";
@@ -750,12 +801,12 @@ namespace vvt
                     catch (Exception ex) { }
 
                         //first mail version subrpt
-                        cryrpt.Subreports[11].DataSourceConnections.Clear();
-                        cryrpt.Subreports[11].SetDataSource(dtMailVersion);
+                        cryrpt.Subreports["subMailVersion"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailVersion"].SetDataSource(dtMailVersion);
 
                     string subMailVersionFF2 = "subMailVersion2";
                     HideSubs(cryrpt, subMailVersionFF2);
-
+                        }
 
                 }//end intial check if no records then hide both sub reports
                     else
@@ -802,8 +853,8 @@ namespace vvt
                     //not liniong up coorectly 
                       //  dtMailFF.Rows.RemoveAt(4);
 
-                        cryrpt.Subreports[10].DataSourceConnections.Clear();
-                        cryrpt.Subreports[10].SetDataSource(dtMailFF);
+                        cryrpt.Subreports["subMailFreeFields"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailFreeFields"].SetDataSource(dtMailFF);
 
                     }
                     else
@@ -906,8 +957,8 @@ namespace vvt
 
                     }
 
-                        cryrpt.Subreports[6].DataSourceConnections.Clear();
-                        cryrpt.Subreports[6].SetDataSource(dtFF);
+                        cryrpt.Subreports["subJobFreeFields"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subJobFreeFields"].SetDataSource(dtFF);
 
                     }
                     else
@@ -957,8 +1008,8 @@ namespace vvt
                     if (dt810Notes.Rows.Count != 0)
                     {
 
-                        cryrpt.Subreports[0].DataSourceConnections.Clear();
-                        cryrpt.Subreports[0].SetDataSource(dt810Notes);
+                        cryrpt.Subreports["sub810Notes"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["sub810Notes"].SetDataSource(dt810Notes);
 
                     }
                     else
@@ -1661,25 +1712,167 @@ namespace vvt
                     ErrorLog(error);
                 }
 
+                //sql query jobMailingVersion for {Version #, Description, Qty}
+                string queryJobMailVersion = "SELECT \"Version-Number\", \"Version-Description\", \"Version-Qty\" FROM PUB.JobMailingVersion WHERE \"Job-ID\" = " + jobNumberUser;
+
+                DataTable dtJobMailVersion = new DataTable();
+
+                try //to sql and fill adapter and DT
+                {
+                    OdbcDataAdapter adapJobMailVersion = new OdbcDataAdapter(queryJobMailVersion, dbConn);
+                    adapJobMailVersion.Fill(dtJobMailVersion);
+                }
+                catch (Exception ex)
+                {
+
+                    string error = ex + " : SQL error cannot load OdbcDataAdapter - Job Mailing Version FF report";
+
+                    ErrorLog(error);
+                }
+                //load each version header
+                if (dtJobMailVersion.Rows.Count != 0)
+                {
+                    cryrpt.Subreports["subJobMailVersion"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobMailVersion"].SetDataSource(dtJobMailVersion);
+
+                    if (dtJobMailVersion.Rows.Count > 1)
+                    {
+                        //first one goo now delete row 0
+                        dtJobMailVersion.Rows[0].Delete();
+                        dtJobMailVersion.AcceptChanges();
+                        cryrpt.Subreports["subJobMailVersion2"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subJobMailVersion2"].SetDataSource(dtJobMailVersion);
+                    }
+                    else
+                    {
+                        string subJobMailVersion2 = "subJobMailVersion2";
+                        HideSubs(cryrpt, subJobMailVersion2);
+                    }
+                }
+                else
+                {
+
+                    string subJobMailVersion = "subJobMailVersion";
+                    HideSubs(cryrpt, subJobMailVersion);
+                    string subJobMailVersion2 = "subJobMailVersion2";
+                    HideSubs(cryrpt, subJobMailVersion2);
+
+                }
+
                 //and change second column name to match CR report value "FFvalue"
                 dtMailVersion.Columns["Free-Field-Char"].ColumnName = "FFvalue";
+                dtMailVersion.Columns.Add("FFname");
 
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
                 if (dtMailVersion.Rows.Count != 0)
                 {
 
-                    cryrpt.Subreports[9].DataSourceConnections.Clear();
-                    cryrpt.Subreports[9].SetDataSource(dtMailVersion);
+                    //check how many bversions there are
+                    if (dtMailVersion.Rows.Count > 9)
+                    {
 
-                }
+                        //process as 2 mailing versions
+
+                        try
+                        {
+                            dtMailVersion.Rows[0]["FFname"] = "Permit Type";
+                            dtMailVersion.Rows[1]["FFname"] = "Permit Owner";
+                            dtMailVersion.Rows[2]["FFname"] = "Permit #/city & zip";
+                            dtMailVersion.Rows[3]["FFname"] = "Postage Class";
+                            dtMailVersion.Rows[4]["FFname"] = "Specialty Presort";
+                            dtMailVersion.Rows[5]["FFname"] = "List Type";
+                            dtMailVersion.Rows[6]["FFname"] = "Dedupe";
+                            dtMailVersion.Rows[7]["FFname"] = "Surpression";
+                            dtMailVersion.Rows[8]["FFname"] = "Move Update/NCOA";
+
+                            dtMailVersion.Rows[9]["FFname"] = "Permit Type";
+                            dtMailVersion.Rows[10]["FFname"] = "Permit Owner";
+                            dtMailVersion.Rows[11]["FFname"] = "Permit #/city & zip";
+                            dtMailVersion.Rows[12]["FFname"] = "Postage Class";
+                            dtMailVersion.Rows[13]["FFname"] = "Specialty Presort";
+                            dtMailVersion.Rows[14]["FFname"] = "List Type";
+                            dtMailVersion.Rows[15]["FFname"] = "Dedupe";
+                            dtMailVersion.Rows[16]["FFname"] = "Surpression";
+                            dtMailVersion.Rows[17]["FFname"] = "Move Update/NCOA";
+                        }
+                        catch (Exception ex) { }
+
+                        //copy DT and pop off first nine
+                        DataTable dtMailV2 = dtMailVersion.Copy();
+                        dtMailV2.Rows[0].Delete();
+                        dtMailV2.Rows[1].Delete();
+                        dtMailV2.Rows[2].Delete();
+                        dtMailV2.Rows[3].Delete();
+                        dtMailV2.Rows[4].Delete();
+                        dtMailV2.Rows[5].Delete();
+                        dtMailV2.Rows[6].Delete();
+                        dtMailV2.Rows[7].Delete();
+                        dtMailV2.Rows[8].Delete();
+                        dtMailV2.AcceptChanges();
+
+                        //remove last 9 from dtMailversion
+                        dtMailVersion.Rows[9].Delete();
+                        dtMailVersion.Rows[10].Delete();
+                        dtMailVersion.Rows[11].Delete();
+                        dtMailVersion.Rows[12].Delete();
+                        dtMailVersion.Rows[13].Delete();
+                        dtMailVersion.Rows[14].Delete();
+                        dtMailVersion.Rows[15].Delete();
+                        dtMailVersion.Rows[16].Delete();
+                        dtMailVersion.Rows[17].Delete();
+                        dtMailVersion.AcceptChanges();
+
+                        //load the subReports with both tables dtJobMailingVersion and dtMailVersion
+                        //cannot can only load one at a time, have to make the version info its own subrpt
+                        cryrpt.Subreports["subMailVersion"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailVersion"].SetDataSource(dtMailVersion);
+
+
+                        cryrpt.Subreports["subMailVersion2"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailVersion2"].SetDataSource(dtMailV2);
+
+
+
+                    }//end how many versions check (if >9)
+
+                    else
+                    {
+                        try
+                        {
+                            dtMailVersion.Rows[0]["FFname"] = "Permit Type";
+                            dtMailVersion.Rows[1]["FFname"] = "Permit Owner";
+                            dtMailVersion.Rows[2]["FFname"] = "Permit #/city & zip";
+                            dtMailVersion.Rows[3]["FFname"] = "Postage Class";
+                            dtMailVersion.Rows[4]["FFname"] = "Specialty Presort";
+                            dtMailVersion.Rows[5]["FFname"] = "List Type";
+                            dtMailVersion.Rows[6]["FFname"] = "Dedupe";
+                            dtMailVersion.Rows[7]["FFname"] = "Surpression";
+                            dtMailVersion.Rows[8]["FFname"] = "Move Update/NCOA";
+                        }
+                        catch (Exception ex) { }
+
+                        //first mail version subrpt
+                        cryrpt.Subreports["subMailVersion"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailVersion"].SetDataSource(dtMailVersion);
+
+                        string subMailVersionFF2 = "subMailVersion2";
+                        HideSubs(cryrpt, subMailVersionFF2);
+                    }
+
+                }//end intial check if no records then hide both sub reports
                 else
                 {
 
                     string subMailVersionFF = "subMailVersion";
                     HideSubs(cryrpt, subMailVersionFF);
 
-                }
+                    //hide second one as well
+                    string subMailVersionFF2 = "subMailVersion2";
+                    HideSubs(cryrpt, subMailVersionFF2);
+
+                }//this else if no mailign versions found
+
 
                 #endregion Mailing Version subReport
 
@@ -1708,8 +1901,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtMailFF.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[8].DataSourceConnections.Clear();
-                    cryrpt.Subreports[8].SetDataSource(dtMailFF);
+                    cryrpt.Subreports["subMailFreeFields"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subMailFreeFields"].SetDataSource(dtMailFF);
 
                 }
                 else
@@ -1750,8 +1943,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtJobNotes.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[7].DataSourceConnections.Clear();
-                    cryrpt.Subreports[7].SetDataSource(dtJobNotes);
+                    cryrpt.Subreports["subJobNotes"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobNotes"].SetDataSource(dtJobNotes);
 
                 }
                 else
@@ -1804,8 +1997,8 @@ namespace vvt
 
                     }
 
-                    cryrpt.Subreports[6].DataSourceConnections.Clear();
-                    cryrpt.Subreports[6].SetDataSource(dtFF);
+                    cryrpt.Subreports["subJobFreeFields"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobFreeFields"].SetDataSource(dtFF);
 
                 }
                 else
@@ -1841,8 +2034,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtPOreq.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[12].DataSourceConnections.Clear();
-                    cryrpt.Subreports[12].SetDataSource(dtPOreq);
+                    cryrpt.Subreports["subPOReq"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subPOReq"].SetDataSource(dtPOreq);
 
                 }
                 else
@@ -1877,8 +2070,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtPOLine.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[11].DataSourceConnections.Clear();
-                    cryrpt.Subreports[11].SetDataSource(dtPOLine);
+                    cryrpt.Subreports["subPOLine"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subPOLine"].SetDataSource(dtPOLine);
 
                 }
                 else
@@ -1912,8 +2105,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtSpecForm.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[5].DataSourceConnections.Clear();
-                    cryrpt.Subreports[5].SetDataSource(dtSpecForm);
+                    cryrpt.Subreports["subFormSpecs"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subFormSpecs"].SetDataSource(dtSpecForm);
 
                 }
                 else
@@ -1947,8 +2140,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtFormNotes.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[4].DataSourceConnections.Clear();
-                    cryrpt.Subreports[4].SetDataSource(dtFormNotes);
+                    cryrpt.Subreports["subFormNotes"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subFormNotes"].SetDataSource(dtFormNotes);
 
                 }
                 else
@@ -1982,8 +2175,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtPress.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[14].DataSourceConnections.Clear();
-                    cryrpt.Subreports[14].SetDataSource(dtPress);
+                    cryrpt.Subreports["subPress"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subPress"].SetDataSource(dtPress);
 
                 }
                 else
@@ -2048,8 +2241,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtStock.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[16].DataSourceConnections.Clear();
-                    cryrpt.Subreports[16].SetDataSource(dtStock);
+                    cryrpt.Subreports["subStock"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subStock"].SetDataSource(dtStock);
 
                 }
                 else
@@ -2748,8 +2941,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtJobNotes.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[7].DataSourceConnections.Clear();
-                    cryrpt.Subreports[7].SetDataSource(dtJobNotes);
+                    cryrpt.Subreports["subJobNotes"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobNotes"].SetDataSource(dtJobNotes);
 
                 }
                 else
@@ -2801,8 +2994,8 @@ namespace vvt
 
                     }
 
-                    cryrpt.Subreports[6].DataSourceConnections.Clear();
-                    cryrpt.Subreports[6].SetDataSource(dtFF);
+                    cryrpt.Subreports["subJobFreeFields"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobFreeFields"].SetDataSource(dtFF);
 
                 }
                 else
@@ -2838,8 +3031,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtShipTo.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[15].DataSourceConnections.Clear();
-                    cryrpt.Subreports[15].SetDataSource(dtShipTo);
+                    cryrpt.Subreports["subShipTo"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subShipTo"].SetDataSource(dtShipTo);
 
                 }
                 else
@@ -2872,8 +3065,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtSpecForm.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[5].DataSourceConnections.Clear();
-                    cryrpt.Subreports[5].SetDataSource(dtSpecForm);
+                    cryrpt.Subreports["subFormSpecs"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subFormSpecs"].SetDataSource(dtSpecForm);
 
                 }
                 else
@@ -2939,8 +3132,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtStock.Rows.Count != 0)
                     {
-                        cryrpt.Subreports[16].DataSourceConnections.Clear();
-                        cryrpt.Subreports[16].SetDataSource(dtStock);
+                        cryrpt.Subreports["subStock"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subStock"].SetDataSource(dtStock);
 
                     }
              
@@ -2975,8 +3168,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtBind.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[2].DataSourceConnections.Clear();
-                    cryrpt.Subreports[2].SetDataSource(dtBind);
+                    cryrpt.Subreports["subBindery"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subBindery"].SetDataSource(dtBind);
 
                 }
                 else
@@ -3010,8 +3203,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtBind.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[3].DataSourceConnections.Clear();
-                    cryrpt.Subreports[3].SetDataSource(dtBindMatts);
+                    cryrpt.Subreports["subBinderyMatts"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subBinderyMatts"].SetDataSource(dtBindMatts);
 
                 }
                 else
@@ -3036,6 +3229,12 @@ namespace vvt
 
                 string subMailFF = "subMailFreeFields";
                 HideSubs(cryrpt, subMailFF);
+
+                string subJobMV = "subJobMailVersion";
+                HideSubs(cryrpt, subJobMV);
+
+                string subJobMV2 = "subJobMailVersion2";
+                HideSubs(cryrpt, subJobMV2);
 
                 string subPOreq = "subPOReq";
                 HideSubs(cryrpt, subPOreq);
@@ -3097,6 +3296,7 @@ namespace vvt
 
         int sqlCount = 0;
         #endregion speed(vibe) check
+
         #region full report
         //full report
         private void button11_Click_1(object sender, EventArgs e)
@@ -3776,38 +3976,167 @@ namespace vvt
                     ErrorLog(error);
                 }
 
-                //running totals
-                recordCount += dtMailVersion.Rows.Count;
-                itemCount += dtMailVersion.Columns.Count;
+                //sql query jobMailingVersion for {Version #, Description, Qty}
+                string queryJobMailVersion = "SELECT \"Version-Number\", \"Version-Description\", \"Version-Qty\" FROM PUB.JobMailingVersion WHERE \"Job-ID\" = " + jobNumberUser;
 
-                //current DT
-                recordCurrentCount += dtMailVersion.Rows.Count;
-                itemCurrentCount += dtMailVersion.Columns.Count;
-                Console.WriteLine("Mail Version sbrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
-                sqlCount++;
-                recordCurrentCount = 0;
-                itemCurrentCount = 0;
+                DataTable dtJobMailVersion = new DataTable();
+
+                try //to sql and fill adapter and DT
+                {
+                    OdbcDataAdapter adapJobMailVersion = new OdbcDataAdapter(queryJobMailVersion, dbConn);
+                    adapJobMailVersion.Fill(dtJobMailVersion);
+                }
+                catch (Exception ex)
+                {
+
+                    string error = ex + " : SQL error cannot load OdbcDataAdapter - Job Mailing Version FF report";
+
+                    ErrorLog(error);
+                }
+                //load each version header
+                if (dtJobMailVersion.Rows.Count != 0)
+                {
+                    cryrpt.Subreports["subJobMailVersion"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobMailVersion"].SetDataSource(dtJobMailVersion);
+
+                    if (dtJobMailVersion.Rows.Count > 1)
+                    {
+                        //first one goo now delete row 0
+                        dtJobMailVersion.Rows[0].Delete();
+                        dtJobMailVersion.AcceptChanges();
+                        cryrpt.Subreports["subJobMailVersion2"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subJobMailVersion2"].SetDataSource(dtJobMailVersion);
+                    }
+                    else
+                    {
+                        string subJobMailVersion2 = "subJobMailVersion2";
+                        HideSubs(cryrpt, subJobMailVersion2);
+                    }
+                }
+                else
+                {
+
+                    string subJobMailVersion = "subJobMailVersion";
+                    HideSubs(cryrpt, subJobMailVersion);
+                    string subJobMailVersion2 = "subJobMailVersion2";
+                    HideSubs(cryrpt, subJobMailVersion2);
+
+                }
 
                 //and change second column name to match CR report value "FFvalue"
                 dtMailVersion.Columns["Free-Field-Char"].ColumnName = "FFvalue";
+                dtMailVersion.Columns.Add("FFname");
 
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
                 if (dtMailVersion.Rows.Count != 0)
                 {
 
-                    cryrpt.Subreports[9].DataSourceConnections.Clear();
-                    cryrpt.Subreports[9].SetDataSource(dtMailVersion);
+                    //check how many bversions there are
+                    if (dtMailVersion.Rows.Count > 9)
+                    {
 
-                }
+                        //process as 2 mailing versions
+
+                        try
+                        {
+                            dtMailVersion.Rows[0]["FFname"] = "Permit Type";
+                            dtMailVersion.Rows[1]["FFname"] = "Permit Owner";
+                            dtMailVersion.Rows[2]["FFname"] = "Permit #/city & zip";
+                            dtMailVersion.Rows[3]["FFname"] = "Postage Class";
+                            dtMailVersion.Rows[4]["FFname"] = "Specialty Presort";
+                            dtMailVersion.Rows[5]["FFname"] = "List Type";
+                            dtMailVersion.Rows[6]["FFname"] = "Dedupe";
+                            dtMailVersion.Rows[7]["FFname"] = "Surpression";
+                            dtMailVersion.Rows[8]["FFname"] = "Move Update/NCOA";
+
+                            dtMailVersion.Rows[9]["FFname"] = "Permit Type";
+                            dtMailVersion.Rows[10]["FFname"] = "Permit Owner";
+                            dtMailVersion.Rows[11]["FFname"] = "Permit #/city & zip";
+                            dtMailVersion.Rows[12]["FFname"] = "Postage Class";
+                            dtMailVersion.Rows[13]["FFname"] = "Specialty Presort";
+                            dtMailVersion.Rows[14]["FFname"] = "List Type";
+                            dtMailVersion.Rows[15]["FFname"] = "Dedupe";
+                            dtMailVersion.Rows[16]["FFname"] = "Surpression";
+                            dtMailVersion.Rows[17]["FFname"] = "Move Update/NCOA";
+                        }
+                        catch (Exception ex) { }
+
+                        //copy DT and pop off first nine
+                        DataTable dtMailV2 = dtMailVersion.Copy();
+                        dtMailV2.Rows[0].Delete();
+                        dtMailV2.Rows[1].Delete();
+                        dtMailV2.Rows[2].Delete();
+                        dtMailV2.Rows[3].Delete();
+                        dtMailV2.Rows[4].Delete();
+                        dtMailV2.Rows[5].Delete();
+                        dtMailV2.Rows[6].Delete();
+                        dtMailV2.Rows[7].Delete();
+                        dtMailV2.Rows[8].Delete();
+                        dtMailV2.AcceptChanges();
+
+                        //remove last 9 from dtMailversion
+                        dtMailVersion.Rows[9].Delete();
+                        dtMailVersion.Rows[10].Delete();
+                        dtMailVersion.Rows[11].Delete();
+                        dtMailVersion.Rows[12].Delete();
+                        dtMailVersion.Rows[13].Delete();
+                        dtMailVersion.Rows[14].Delete();
+                        dtMailVersion.Rows[15].Delete();
+                        dtMailVersion.Rows[16].Delete();
+                        dtMailVersion.Rows[17].Delete();
+                        dtMailVersion.AcceptChanges();
+
+                        //load the subReports with both tables dtJobMailingVersion and dtMailVersion
+                        //cannot can only load one at a time, have to make the version info its own subrpt
+                        cryrpt.Subreports["subMailVersion"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailVersion"].SetDataSource(dtMailVersion);
+
+
+                        cryrpt.Subreports["subMailVersion2"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailVersion2"].SetDataSource(dtMailV2);
+
+
+
+                    }//end how many versions check (if >9)
+
+                    else
+                    {
+                        try
+                        {
+                            dtMailVersion.Rows[0]["FFname"] = "Permit Type";
+                            dtMailVersion.Rows[1]["FFname"] = "Permit Owner";
+                            dtMailVersion.Rows[2]["FFname"] = "Permit #/city & zip";
+                            dtMailVersion.Rows[3]["FFname"] = "Postage Class";
+                            dtMailVersion.Rows[4]["FFname"] = "Specialty Presort";
+                            dtMailVersion.Rows[5]["FFname"] = "List Type";
+                            dtMailVersion.Rows[6]["FFname"] = "Dedupe";
+                            dtMailVersion.Rows[7]["FFname"] = "Surpression";
+                            dtMailVersion.Rows[8]["FFname"] = "Move Update/NCOA";
+                        }
+                        catch (Exception ex) { }
+
+                        //first mail version subrpt
+                        cryrpt.Subreports["subMailVersion"].DataSourceConnections.Clear();
+                        cryrpt.Subreports["subMailVersion"].SetDataSource(dtMailVersion);
+
+                        string subMailVersionFF2 = "subMailVersion2";
+                        HideSubs(cryrpt, subMailVersionFF2);
+                    }
+
+                }//end intial check if no records then hide both sub reports
                 else
                 {
 
                     string subMailVersionFF = "subMailVersion";
                     HideSubs(cryrpt, subMailVersionFF);
 
-                }
-                Console.WriteLine("Time for Mailversion subrpt" + DateTime.Now.ToString());
+                    //hide second one as well
+                    string subMailVersionFF2 = "subMailVersion2";
+                    HideSubs(cryrpt, subMailVersionFF2);
+
+                }//this else if no mailign versions found
+
 
                 #endregion Mailing Version subReport
 
@@ -3848,8 +4177,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtMailFF.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[8].DataSourceConnections.Clear();
-                    cryrpt.Subreports[8].SetDataSource(dtMailFF);
+                    cryrpt.Subreports["subMailFreeFields"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subMailFreeFields"].SetDataSource(dtMailFF);
 
                 }
                 else
@@ -3902,8 +4231,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtJobNotes.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[7].DataSourceConnections.Clear();
-                    cryrpt.Subreports[7].SetDataSource(dtJobNotes);
+                    cryrpt.Subreports["subJobNotes"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobNotes"].SetDataSource(dtJobNotes);
 
                 }
                 else
@@ -3951,8 +4280,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtAlt.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[1].DataSourceConnections.Clear();
-                    cryrpt.Subreports[1].SetDataSource(dtAlt);
+                    cryrpt.Subreports["subAlterations"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subAlterations"].SetDataSource(dtAlt);
 
                 }
                 else
@@ -4015,8 +4344,8 @@ namespace vvt
 
                     }
 
-                    cryrpt.Subreports[6].DataSourceConnections.Clear();
-                    cryrpt.Subreports[6].SetDataSource(dtFF);
+                    cryrpt.Subreports["subJobFreeFields"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobFreeFields"].SetDataSource(dtFF);
 
                 }
                 else
@@ -4063,8 +4392,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtPOreq.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[12].DataSourceConnections.Clear();
-                    cryrpt.Subreports[12].SetDataSource(dtPOreq);
+                    cryrpt.Subreports["subPOReq"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subPOReq"].SetDataSource(dtPOreq);
 
                 }
                 else
@@ -4109,8 +4438,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtPOLine.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[11].DataSourceConnections.Clear();
-                    cryrpt.Subreports[11].SetDataSource(dtPOLine);
+                    cryrpt.Subreports["subPOLine"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subPOLine"].SetDataSource(dtPOLine);
 
                 }
                 else
@@ -4156,8 +4485,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtShipTo.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[15].DataSourceConnections.Clear();
-                    cryrpt.Subreports[15].SetDataSource(dtShipTo);
+                    cryrpt.Subreports["subShipTo"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subShipTo"].SetDataSource(dtShipTo);
 
                 }
                 else
@@ -4201,8 +4530,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtSpecForm.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[5].DataSourceConnections.Clear();
-                    cryrpt.Subreports[5].SetDataSource(dtSpecForm);
+                    cryrpt.Subreports["subFormSpecs"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subFormSpecs"].SetDataSource(dtSpecForm);
 
                 }
                 else
@@ -4247,8 +4576,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtFormNotes.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[4].DataSourceConnections.Clear();
-                    cryrpt.Subreports[4].SetDataSource(dtFormNotes);
+                    cryrpt.Subreports["subFormNotes"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subFormNotes"].SetDataSource(dtFormNotes);
 
                 }
                 else
@@ -4293,8 +4622,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtPrepress.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[13].DataSourceConnections.Clear();
-                    cryrpt.Subreports[13].SetDataSource(dtPrepress);
+                    cryrpt.Subreports["subPrepress"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subPrepress"].SetDataSource(dtPrepress);
 
                 }
                 else
@@ -4337,8 +4666,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtPress.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[14].DataSourceConnections.Clear();
-                    cryrpt.Subreports[14].SetDataSource(dtPress);
+                    cryrpt.Subreports["subPress"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subPress"].SetDataSource(dtPress);
 
                 }
                 else
@@ -4425,8 +4754,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtStock.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[16].DataSourceConnections.Clear();
-                    cryrpt.Subreports[16].SetDataSource(dtStock);
+                    cryrpt.Subreports["subStock"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subStock"].SetDataSource(dtStock);
 
                 }
                 else
@@ -4471,8 +4800,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtBind.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[2].DataSourceConnections.Clear();
-                    cryrpt.Subreports[2].SetDataSource(dtBind);
+                    cryrpt.Subreports["subBindery"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subBindery"].SetDataSource(dtBind);
 
                 }
                 else
@@ -4518,8 +4847,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtBindMatts.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[3].DataSourceConnections.Clear();
-                    cryrpt.Subreports[3].SetDataSource(dtBindMatts);
+                    cryrpt.Subreports["subBinderyMatts"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subBinderyMatts"].SetDataSource(dtBindMatts);
 
                 }
                 else
@@ -4580,8 +4909,8 @@ namespace vvt
                 if (dt810Notes.Rows.Count != 0)
                 {
 
-                    cryrpt.Subreports[0].DataSourceConnections.Clear();
-                    cryrpt.Subreports[0].SetDataSource(dt810Notes);
+                    cryrpt.Subreports["sub810Notes"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["sub810Notes"].SetDataSource(dt810Notes);
 
                 }
                 else
@@ -5257,8 +5586,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtJobNotes.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[7].DataSourceConnections.Clear();
-                    cryrpt.Subreports[7].SetDataSource(dtJobNotes);
+                    cryrpt.Subreports["subJobNotes"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subJobNotes"].SetDataSource(dtJobNotes);
 
                 }
                 else
@@ -5293,8 +5622,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtPOreq.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[11].DataSourceConnections.Clear();
-                    cryrpt.Subreports[11].SetDataSource(dtPOreq);
+                    cryrpt.Subreports["subPOReq"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subPOReq"].SetDataSource(dtPOreq);
 
                 }
                 else
@@ -5329,8 +5658,8 @@ namespace vvt
                 //also check if empty exists it is empty hideSubs it
                 if (dtPOLine.Rows.Count != 0)
                 {
-                    cryrpt.Subreports[11].DataSourceConnections.Clear();
-                    cryrpt.Subreports[11].SetDataSource(dtPOLine);
+                    cryrpt.Subreports["subPOLine"].DataSourceConnections.Clear();
+                    cryrpt.Subreports["subPOLine"].SetDataSource(dtPOLine);
 
                 }
                 else
@@ -5391,6 +5720,13 @@ namespace vvt
 
                 string subMailVersionFF2 = "subMailVersion2";
                 HideSubs(cryrpt, subMailVersionFF2);
+
+
+                string subJobMV = "subJobMailVersion";
+                HideSubs(cryrpt, subJobMV);
+
+                string subJobMV2 = "subJobMailVersion2";
+                HideSubs(cryrpt, subJobMV2);
 
                 #endregion hideSubs
 
@@ -5868,9 +6204,18 @@ namespace vvt
                 string sub810Notes = "sub810Notes";
                 HideSubs(cryrpt, sub810Notes);
 
-                
 
-                cryrpt.ReportDefinition.Sections["billingSection"].SectionFormat.EnableSuppress = true;
+                string subJobMV = "subJobMailVersion";
+                HideSubs(cryrpt, subJobMV);
+
+                string subJobMV2 = "subJobMailVersion2";
+                HideSubs(cryrpt, subJobMV2);
+
+                DialogResult input = MessageBox.Show("Billing section needed?", "Print billing section as well?", MessageBoxButtons.YesNo);
+                if (input == DialogResult.No)
+                {
+                    cryrpt.ReportDefinition.Sections["billingSection"].SectionFormat.EnableSuppress = true;
+                }
 
                 #endregion hideSubs
 
