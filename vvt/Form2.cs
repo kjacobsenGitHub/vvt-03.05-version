@@ -855,12 +855,15 @@ namespace vvt
                     dtMailFF.Columns["Free-Field-Char"].ColumnName = "FFval";
                 dtMailFF.Columns.Add("FFname");
 
-                dtMailFF.Rows[0]["FFname"] = "Mailpeice Size";
-                dtMailFF.Rows[1]["FFname"] = "Customer Sign-Offs";
-                dtMailFF.Rows[2]["FFname"] = "Inserting";
-                dtMailFF.Rows[3]["FFname"] = "Tab/Seal/Glue";
-                dtMailFF.Rows[4]["FFname"] = "Samples for Postage";
-
+                try
+                {
+                    dtMailFF.Rows[0]["FFname"] = "Mailpeice Size";
+                    dtMailFF.Rows[1]["FFname"] = "Customer Sign-Offs";
+                    dtMailFF.Rows[2]["FFname"] = "Inserting";
+                    dtMailFF.Rows[3]["FFname"] = "Tab/Seal/Glue";
+                    dtMailFF.Rows[4]["FFname"] = "Samples for Postage";
+                }
+                catch (Exception ex) { }
 
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
@@ -909,6 +912,28 @@ namespace vvt
                     dtJobNotes.Columns["Comment-Date"].ColumnName = "DateEntered";
                     dtJobNotes.Columns["Update-date"].ColumnName = "DateUpdated";
 
+
+                for (int x = dtJobNotes.Rows.Count -1; x >=0 ; x--) {
+
+
+                    DataRow dr = dtJobNotes.Rows[x];
+
+
+                    if (dr["SpecID"].ToString() == "03" || dr["SpecID"].ToString() == "00" || dr["SpecID"].ToString() == "")
+                    {
+
+
+
+                    }
+                    else {
+                        dr.Delete();
+                    }
+
+                    dtJobNotes.AcceptChanges();
+                }
+
+                dtJobNotes.AcceptChanges();
+
                     //now clear datasource connecctions and set them with dt
                     //also check if empty exists it is empty hideSubs it
                     if (dtJobNotes.Rows.Count != 0)
@@ -950,18 +975,21 @@ namespace vvt
                     string lastJob = dtFF.Rows[1]["Free-Field-Decimal"].ToString();
                     dtFF.Rows[1]["Free-Field-Char"] = lastJob;
 
+                try
+                {
                     dtFF.Columns.Remove("Free-Field-Decimal");
-                dtFF.Columns.Add("FFname");
-                dtFF.Rows[0]["FFname"] = "Customer To Supply";
-                dtFF.Rows[1]["FFname"] = "Last Job#";
-                dtFF.Rows[2]["FFname"] = "Type of Proof Needed";
-                dtFF.Rows[3]["FFname"] = "Proof Needed By";
-                dtFF.Rows[4]["FFname"] = "Coating";
-                dtFF.Rows[5]["FFname"] = "Perf Score";
-                dtFF.Rows[6]["FFname"] = "Certification";
-                dtFF.Rows[7]["FFname"] = "Mailing Services";
-                dtFF.Rows[8]["FFname"] = "Litho/Digital/DSF/ASI";
-
+                    dtFF.Columns.Add("FFname");
+                    dtFF.Rows[0]["FFname"] = "Customer To Supply";
+                    dtFF.Rows[1]["FFname"] = "Last Job#";
+                    dtFF.Rows[2]["FFname"] = "Type of Proof Needed";
+                    dtFF.Rows[3]["FFname"] = "Proof Needed By";
+                    dtFF.Rows[4]["FFname"] = "Coating";
+                    dtFF.Rows[5]["FFname"] = "Perf Score";
+                    dtFF.Rows[6]["FFname"] = "Certification";
+                    dtFF.Rows[7]["FFname"] = "Mailing Services";
+                    dtFF.Rows[8]["FFname"] = "Litho/Digital/DSF/ASI";
+                }
+                catch (Exception ex) { }
 
                 //also check if empty exists it is empty hideSubs it
                 if (dtFF.Rows.Count != 0)
@@ -1926,12 +1954,15 @@ namespace vvt
                 dtMailFF.Columns["Free-Field-Char"].ColumnName = "FFval";
                 dtMailFF.Columns.Add("FFname");
 
-                dtMailFF.Rows[0]["FFname"] = "Mailpeice Size";
-                dtMailFF.Rows[1]["FFname"] = "Customer Sign-Offs";
-                dtMailFF.Rows[2]["FFname"] = "Inserting";
-                dtMailFF.Rows[3]["FFname"] = "Tab/Seal/Glue";
-                dtMailFF.Rows[4]["FFname"] = "Samples for Postage";
-
+                try
+                {
+                    dtMailFF.Rows[0]["FFname"] = "Mailpeice Size";
+                    dtMailFF.Rows[1]["FFname"] = "Customer Sign-Offs";
+                    dtMailFF.Rows[2]["FFname"] = "Inserting";
+                    dtMailFF.Rows[3]["FFname"] = "Tab/Seal/Glue";
+                    dtMailFF.Rows[4]["FFname"] = "Samples for Postage";
+                }
+                catch (Exception ex) { }
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
                 if (dtMailFF.Rows.Count != 0)
@@ -1973,6 +2004,30 @@ namespace vvt
                 dtJobNotes.Columns["Created-By"].ColumnName = "EnterBy";
                 dtJobNotes.Columns["Comment-Date"].ColumnName = "DateEntered";
                 dtJobNotes.Columns["Update-date"].ColumnName = "DateUpdated";
+
+
+                for (int x = dtJobNotes.Rows.Count - 1; x >= 0; x--)
+                {
+
+
+                    DataRow dr = dtJobNotes.Rows[x];
+
+
+                    if (dr["SpecID"].ToString() == "01" || dr["SpecID"].ToString() == "00" || dr["SpecID"].ToString() == "" || dr["SpecID"].ToString() == "05" || dr["SpecID"].ToString() == "80")
+                    {
+
+
+
+                    }
+                    else
+                    {
+                        dr.Delete();
+                    }
+
+                    dtJobNotes.AcceptChanges();
+                }
+
+                dtJobNotes.AcceptChanges();
 
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
@@ -2982,6 +3037,31 @@ namespace vvt
                 dtJobNotes.Columns["Created-By"].ColumnName = "EnterBy";
                 dtJobNotes.Columns["Comment-Date"].ColumnName = "DateEntered";
                 dtJobNotes.Columns["Update-date"].ColumnName = "DateUpdated";
+
+
+
+                for (int x = dtJobNotes.Rows.Count - 1; x >= 0; x--)
+                {
+
+
+                    DataRow dr = dtJobNotes.Rows[x];
+
+
+                    if (dr["SpecID"].ToString() == "10" || dr["SpecID"].ToString() == "00" || dr["SpecID"].ToString() == "" || dr["SpecID"].ToString() == "09")
+                    {
+
+
+
+                    }
+                    else
+                    {
+                        dr.Delete();
+                    }
+
+                    dtJobNotes.AcceptChanges();
+                }
+
+                dtJobNotes.AcceptChanges();
 
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
@@ -4231,12 +4311,15 @@ namespace vvt
                 dtMailFF.Columns["Free-Field-Char"].ColumnName = "FFval";
                 dtMailFF.Columns.Add("FFname");
 
-                dtMailFF.Rows[0]["FFname"] = "Mailpeice Size";
-                dtMailFF.Rows[1]["FFname"] = "Customer Sign-Offs";
-                dtMailFF.Rows[2]["FFname"] = "Inserting";
-                dtMailFF.Rows[3]["FFname"] = "Tab/Seal/Glue";
-                dtMailFF.Rows[4]["FFname"] = "Samples for Postage";
-
+                try
+                {
+                    dtMailFF.Rows[0]["FFname"] = "Mailpeice Size";
+                    dtMailFF.Rows[1]["FFname"] = "Customer Sign-Offs";
+                    dtMailFF.Rows[2]["FFname"] = "Inserting";
+                    dtMailFF.Rows[3]["FFname"] = "Tab/Seal/Glue";
+                    dtMailFF.Rows[4]["FFname"] = "Samples for Postage";
+                }
+                catch (Exception ex) { }
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
                 if (dtMailFF.Rows.Count != 0)
@@ -4290,6 +4373,9 @@ namespace vvt
                 dtJobNotes.Columns["Created-By"].ColumnName = "EnterBy";
                 dtJobNotes.Columns["Comment-Date"].ColumnName = "DateEntered";
                 dtJobNotes.Columns["Update-date"].ColumnName = "DateUpdated";
+
+
+
 
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
@@ -5656,6 +5742,30 @@ namespace vvt
                 dtJobNotes.Columns["Created-By"].ColumnName = "EnterBy";
                 dtJobNotes.Columns["Comment-Date"].ColumnName = "DateEntered";
                 dtJobNotes.Columns["Update-date"].ColumnName = "DateUpdated";
+
+
+                for (int x = dtJobNotes.Rows.Count - 1; x >= 0; x--)
+                {
+
+
+                    DataRow dr = dtJobNotes.Rows[x];
+
+
+                    if (dr["SpecID"].ToString() == "10" || dr["SpecID"].ToString() == "00" || dr["SpecID"].ToString() == "" || dr["SpecID"].ToString() == "09" || dr["SpecID"].ToString() == "05")
+                    {
+
+
+
+                    }
+                    else
+                    {
+                        dr.Delete();
+                    }
+
+                    dtJobNotes.AcceptChanges();
+                }
+
+                dtJobNotes.AcceptChanges();
 
                 //now clear datasource connecctions and set them with dt
                 //also check if empty exists it is empty hideSubs it
