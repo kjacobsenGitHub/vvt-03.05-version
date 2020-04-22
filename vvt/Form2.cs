@@ -749,37 +749,42 @@ namespace vvt
 
                         //copy DT and pop off first nine
                         DataTable dtMailV2 = dtMailVersion.Copy();
-                        //first suppress from back 17-14
-                        dtMailV2.Rows[17].Delete();
-                        dtMailV2.Rows[16].Delete();
-                        dtMailV2.Rows[15].Delete();
-                        dtMailV2.Rows[14].Delete();
-                        dtMailV2.Rows[0].Delete();
-                        dtMailV2.Rows[1].Delete();
-                        dtMailV2.Rows[2].Delete();
-                        dtMailV2.Rows[3].Delete();
-                        dtMailV2.Rows[4].Delete();
-                        dtMailV2.Rows[5].Delete();
-                        dtMailV2.Rows[6].Delete();
-                        dtMailV2.Rows[7].Delete();
-                        dtMailV2.Rows[8].Delete();
-                        dtMailV2.AcceptChanges();
 
-                        //remove last 9 from dtMailversion
-                        dtMailVersion.Rows[5].Delete();
-                        dtMailVersion.Rows[6].Delete();
-                        dtMailVersion.Rows[7].Delete();
-                        dtMailVersion.Rows[8].Delete();
-                        dtMailVersion.Rows[9].Delete();
-                        dtMailVersion.Rows[10].Delete();
-                        dtMailVersion.Rows[11].Delete();
-                        dtMailVersion.Rows[12].Delete();
-                        dtMailVersion.Rows[13].Delete();
-                        dtMailVersion.Rows[14].Delete();
-                        dtMailVersion.Rows[15].Delete();
-                        dtMailVersion.Rows[16].Delete();
-                        dtMailVersion.Rows[17].Delete();
-                        dtMailVersion.AcceptChanges();
+                        try
+                        {
+                            //first suppress from back 17-14
+                            dtMailV2.Rows[17].Delete();
+                            dtMailV2.Rows[16].Delete();
+                            dtMailV2.Rows[15].Delete();
+                            dtMailV2.Rows[14].Delete();
+                            dtMailV2.Rows[0].Delete();
+                            dtMailV2.Rows[1].Delete();
+                            dtMailV2.Rows[2].Delete();
+                            dtMailV2.Rows[3].Delete();
+                            dtMailV2.Rows[4].Delete();
+                            dtMailV2.Rows[5].Delete();
+                            dtMailV2.Rows[6].Delete();
+                            dtMailV2.Rows[7].Delete();
+                            dtMailV2.Rows[8].Delete();
+                            dtMailV2.AcceptChanges();
+
+                            //remove last 9 from dtMailversion
+                            dtMailVersion.Rows[5].Delete();
+                            dtMailVersion.Rows[6].Delete();
+                            dtMailVersion.Rows[7].Delete();
+                            dtMailVersion.Rows[8].Delete();
+                            dtMailVersion.Rows[9].Delete();
+                            dtMailVersion.Rows[10].Delete();
+                            dtMailVersion.Rows[11].Delete();
+                            dtMailVersion.Rows[12].Delete();
+                            dtMailVersion.Rows[13].Delete();
+                            dtMailVersion.Rows[14].Delete();
+                            dtMailVersion.Rows[15].Delete();
+                            dtMailVersion.Rows[16].Delete();
+                            dtMailVersion.Rows[17].Delete();
+                            dtMailVersion.AcceptChanges();
+                        }
+                        catch (Exception ex) { }
 
                         //load the subReports with both tables dtJobMailingVersion and dtMailVersion
                         //cannot can only load one at a time, have to make the version info its own subrpt
@@ -1854,30 +1859,36 @@ namespace vvt
                         }
                         catch (Exception ex) { }
 
-                        //copy DT and pop off first nine
                         DataTable dtMailV2 = dtMailVersion.Copy();
-                        dtMailV2.Rows[0].Delete();
-                        dtMailV2.Rows[1].Delete();
-                        dtMailV2.Rows[2].Delete();
-                        dtMailV2.Rows[3].Delete();
-                        dtMailV2.Rows[4].Delete();
-                        dtMailV2.Rows[5].Delete();
-                        dtMailV2.Rows[6].Delete();
-                        dtMailV2.Rows[7].Delete();
-                        dtMailV2.Rows[8].Delete();
-                        dtMailV2.AcceptChanges();
 
-                        //remove last 9 from dtMailversion
-                        dtMailVersion.Rows[9].Delete();
-                        dtMailVersion.Rows[10].Delete();
-                        dtMailVersion.Rows[11].Delete();
-                        dtMailVersion.Rows[12].Delete();
-                        dtMailVersion.Rows[13].Delete();
-                        dtMailVersion.Rows[14].Delete();
-                        dtMailVersion.Rows[15].Delete();
-                        dtMailVersion.Rows[16].Delete();
-                        dtMailVersion.Rows[17].Delete();
-                        dtMailVersion.AcceptChanges();
+                        try
+                        {
+                            //copy DT and pop off first nine
+
+                            dtMailV2.Rows[0].Delete();
+                            dtMailV2.Rows[1].Delete();
+                            dtMailV2.Rows[2].Delete();
+                            dtMailV2.Rows[3].Delete();
+                            dtMailV2.Rows[4].Delete();
+                            dtMailV2.Rows[5].Delete();
+                            dtMailV2.Rows[6].Delete();
+                            dtMailV2.Rows[7].Delete();
+                            dtMailV2.Rows[8].Delete();
+                            dtMailV2.AcceptChanges();
+
+                            //remove last 9 from dtMailversion
+                            dtMailVersion.Rows[9].Delete();
+                            dtMailVersion.Rows[10].Delete();
+                            dtMailVersion.Rows[11].Delete();
+                            dtMailVersion.Rows[12].Delete();
+                            dtMailVersion.Rows[13].Delete();
+                            dtMailVersion.Rows[14].Delete();
+                            dtMailVersion.Rows[15].Delete();
+                            dtMailVersion.Rows[16].Delete();
+                            dtMailVersion.Rows[17].Delete();
+                            dtMailVersion.AcceptChanges();
+                        }
+                        catch (Exception ex) { }
 
                         //load the subReports with both tables dtJobMailingVersion and dtMailVersion
                         //cannot can only load one at a time, have to make the version info its own subrpt
@@ -4201,28 +4212,32 @@ namespace vvt
 
                         //copy DT and pop off first nine
                         DataTable dtMailV2 = dtMailVersion.Copy();
-                        dtMailV2.Rows[0].Delete();
-                        dtMailV2.Rows[1].Delete();
-                        dtMailV2.Rows[2].Delete();
-                        dtMailV2.Rows[3].Delete();
-                        dtMailV2.Rows[4].Delete();
-                        dtMailV2.Rows[5].Delete();
-                        dtMailV2.Rows[6].Delete();
-                        dtMailV2.Rows[7].Delete();
-                        dtMailV2.Rows[8].Delete();
-                        dtMailV2.AcceptChanges();
+                        try
+                        {
+                            dtMailV2.Rows[0].Delete();
+                            dtMailV2.Rows[1].Delete();
+                            dtMailV2.Rows[2].Delete();
+                            dtMailV2.Rows[3].Delete();
+                            dtMailV2.Rows[4].Delete();
+                            dtMailV2.Rows[5].Delete();
+                            dtMailV2.Rows[6].Delete();
+                            dtMailV2.Rows[7].Delete();
+                            dtMailV2.Rows[8].Delete();
+                            dtMailV2.AcceptChanges();
 
-                        //remove last 9 from dtMailversion
-                        dtMailVersion.Rows[9].Delete();
-                        dtMailVersion.Rows[10].Delete();
-                        dtMailVersion.Rows[11].Delete();
-                        dtMailVersion.Rows[12].Delete();
-                        dtMailVersion.Rows[13].Delete();
-                        dtMailVersion.Rows[14].Delete();
-                        dtMailVersion.Rows[15].Delete();
-                        dtMailVersion.Rows[16].Delete();
-                        dtMailVersion.Rows[17].Delete();
-                        dtMailVersion.AcceptChanges();
+                            //remove last 9 from dtMailversion
+                            dtMailVersion.Rows[9].Delete();
+                            dtMailVersion.Rows[10].Delete();
+                            dtMailVersion.Rows[11].Delete();
+                            dtMailVersion.Rows[12].Delete();
+                            dtMailVersion.Rows[13].Delete();
+                            dtMailVersion.Rows[14].Delete();
+                            dtMailVersion.Rows[15].Delete();
+                            dtMailVersion.Rows[16].Delete();
+                            dtMailVersion.Rows[17].Delete();
+                            dtMailVersion.AcceptChanges();
+                        }
+                        catch (Exception ex) { }
 
                         //load the subReports with both tables dtJobMailingVersion and dtMailVersion
                         //cannot can only load one at a time, have to make the version info its own subrpt
