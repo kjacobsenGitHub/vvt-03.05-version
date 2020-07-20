@@ -269,7 +269,7 @@ namespace vvt
                     catch (Exception ex) { }
                     //customer query and text objects
                     String headerCust = "SELECT \"cust-name\", \"Address-1\", \"Address-2\", \"City\", \"" +
-                       "State\", \"Zip\", \"Phone\", \"Address-3\" FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+                       "State\", \"Zip\", \"Phone\", \"Address-3\", \"Group-ID\" FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
 
 
                     DataTable dtCust = new DataTable();
@@ -289,6 +289,17 @@ namespace vvt
                     try
                     {
                         //set the Customer info text objects
+                        //No viso labels
+                        CrystalDecisions.CrystalReports.Engine.TextObject visoLbl;
+                        visoLbl = cryrpt.ReportDefinition.ReportObjects["Text37"] as TextObject;
+                        //if the customer group-ID contains "broker" then
+                        if(dtCust.Rows[0]["Group-ID"].ToString().Contains("broker") || dtCust.Rows[0]["Group-ID"].ToString().Contains("Broker") ){
+                    
+                             visoLbl.Text = "BLIND SHIP";
+                    
+                        }
+                        
+
                         //cust name
                         CrystalDecisions.CrystalReports.Engine.TextObject custName;
                         custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
@@ -1380,7 +1391,7 @@ namespace vvt
                 catch (Exception ex) { }
                 //customer query and text objects
                 String headerCust = "SELECT \"cust-name\", \"Address-1\", \"Address-2\", \"City\", \"" +
-                   "State\", \"Zip\", \"Phone\", \"Address-3\" FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+                   "State\", \"Zip\", \"Phone\", \"Address-3\", \"Group-ID\"FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
 
 
                 DataTable dtCust = new DataTable();
@@ -1400,6 +1411,17 @@ namespace vvt
                 //set the Customer info text objects
                 try
                 {
+
+                      //No viso labels
+                        CrystalDecisions.CrystalReports.Engine.TextObject visoLbl;
+                        visoLbl = cryrpt.ReportDefinition.ReportObjects["Text37"] as TextObject;
+                        //if the customer group-ID contains "broker" then
+                        if(dtCust.Rows[0]["Group-ID"].ToString().Contains("broker") || dtCust.Rows[0]["Group-ID"].ToString().Contains("Broker") ){
+                    
+                            visoLbl.Text = "BLIND SHIP";
+                    
+                        }
+
                     //cust name
                     CrystalDecisions.CrystalReports.Engine.TextObject custName;
                     custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
@@ -2647,8 +2669,10 @@ namespace vvt
                 }
                 catch (Exception ex) { }
                 //customer query and text objects
+  //customer query and text objects
                 String headerCust = "SELECT \"cust-name\", \"Address-1\", \"Address-2\", \"City\", \"" +
-                   "State\", \"Zip\", \"Phone\", \"Address-3\" FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+                   "State\", \"Zip\", \"Phone\", \"Address-3\", \"Group-ID\"FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+
 
 
                 DataTable dtCust = new DataTable();
@@ -2669,6 +2693,17 @@ namespace vvt
                 //cust name
                 try
                 {
+
+                    //No viso labels
+                        CrystalDecisions.CrystalReports.Engine.TextObject visoLbl;
+                        visoLbl = cryrpt.ReportDefinition.ReportObjects["Text37"] as TextObject;
+                        //if the customer group-ID contains "broker" then
+                        if(dtCust.Rows[0]["Group-ID"].ToString().Contains("broker") || dtCust.Rows[0]["Group-ID"].ToString().Contains("Broker") ){
+                    
+                            visoLbl.Text = "BLIND SHIP";
+                    
+                        }
+
                     CrystalDecisions.CrystalReports.Engine.TextObject custName;
                     custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
                     custName.Text = dtCust.Rows[0]["cust-name"].ToString();
@@ -3682,8 +3717,10 @@ namespace vvt
                 catch (Exception ex) { }
 
                 //customer query and text objects
+                 //customer query and text objects
                 String headerCust = "SELECT \"cust-name\", \"Address-1\", \"Address-2\", \"City\", \"" +
-                   "State\", \"Zip\", \"Phone\", \"Address-3\" FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+                   "State\", \"Zip\", \"Phone\", \"Address-3\", \"Group-ID\"FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+
 
 
                 DataTable dtCust = new DataTable();
@@ -3716,6 +3753,18 @@ namespace vvt
                 //cust name
                 try
                 {
+
+                       //No viso labels
+                        CrystalDecisions.CrystalReports.Engine.TextObject visoLbl;
+                        visoLbl = cryrpt.ReportDefinition.ReportObjects["Text37"] as TextObject;
+                        //if the customer group-ID contains "broker" then
+                        if(dtCust.Rows[0]["Group-ID"].ToString().Contains("broker") || dtCust.Rows[0]["Group-ID"].ToString().Contains("Broker") ){
+                    
+                            visoLbl.Text = "BLIND SHIP";
+                    
+                        }
+
+
                     CrystalDecisions.CrystalReports.Engine.TextObject custName;
                     custName = cryrpt.ReportDefinition.ReportObjects["custName"] as TextObject;
                     custName.Text = dtCust.Rows[0]["cust-name"].ToString();
@@ -5354,9 +5403,9 @@ namespace vvt
                     estimate.Text = est;
                 }
                 catch (Exception ex) { }
-                //customer query and text objects
+                  //customer query and text objects
                 String headerCust = "SELECT \"cust-name\", \"Address-1\", \"Address-2\", \"City\", \"" +
-                   "State\", \"Zip\", \"Phone\", \"Address-3\" FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+                   "State\", \"Zip\", \"Phone\", \"Address-3\", \"Group-ID\"FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
 
 
                 DataTable dtCust = new DataTable();
@@ -5375,6 +5424,19 @@ namespace vvt
 
                 try
                 {
+
+
+                      //No viso labels
+                        CrystalDecisions.CrystalReports.Engine.TextObject visoLbl;
+                        visoLbl = cryrpt.ReportDefinition.ReportObjects["Text37"] as TextObject;
+                        //if the customer group-ID contains "broker" then
+                        if(dtCust.Rows[0]["Group-ID"].ToString().Contains("broker") || dtCust.Rows[0]["Group-ID"].ToString().Contains("Broker") ){
+                    
+                            visoLbl.Text = "BLIND SHIP";
+                    
+                        }
+
+
                     //set the Customer info text objects
                     //cust name
                     CrystalDecisions.CrystalReports.Engine.TextObject custName;
@@ -6178,7 +6240,9 @@ namespace vvt
                 catch (Exception ex) { }
                 //customer query and text objects
                 String headerCust = "SELECT \"cust-name\", \"Address-1\", \"Address-2\", \"City\", \"" +
-                   "State\", \"Zip\", \"Phone\", \"Address-3\" FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+                   "State\", \"Zip\", \"Phone\", \"Address-3\", \"Group-ID\"FROM PUB.cust WHERE \"Cust-code\" = " + dtHeader.Rows[0]["Cust-ID-Ordered-by"].ToString();
+
+
 
 
                 DataTable dtCust = new DataTable();
@@ -6197,6 +6261,20 @@ namespace vvt
 
                 try
                 {
+
+
+                    
+                      //No viso labels
+                        CrystalDecisions.CrystalReports.Engine.TextObject visoLbl;
+                        visoLbl = cryrpt.ReportDefinition.ReportObjects["Text37"] as TextObject;
+                        //if the customer group-ID contains "broker" then
+                        if(dtCust.Rows[0]["Group-ID"].ToString().Contains("broker") || dtCust.Rows[0]["Group-ID"].ToString().Contains("Broker") ){
+                    
+                            visoLbl.Text = "BLIND SHIP";
+                    
+                        }
+
+
                     //set the Customer info text objects
                     //cust name
                     CrystalDecisions.CrystalReports.Engine.TextObject custName;
