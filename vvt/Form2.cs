@@ -1091,12 +1091,96 @@ namespace vvt
                         HideSubs(cryrpt, sub810Notes);
 
                     }
-                    #endregion 810 notes
+                #endregion 810 notes
 
-                    #endregion sub report creation
+                #region estimateDetail
+
+                //need to grab the estimate detail, gunna need to do some manipulation to grab that estimateID
+                string estimateID = "SELECT * FROM PUB.JobEstMerge WHERE \"Job-ID\" = " + jobNumberUser;
+
+                DataTable estimateIDTbl = new DataTable();
+                DataTable estDetailLines = new DataTable();
+
+                try //to sql and fill adapter and DT
+                {
+                    OdbcDataAdapter adapEstId = new OdbcDataAdapter(estimateID, dbConn);
+                    adapEstId.Fill(estimateIDTbl);
+                }
+                catch (Exception ex)
+                {
+
+                    string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                    ErrorLog(error);
+                }
+
+                //if empty do ntohing else, new query for that estimate ID
+                if (estimateIDTbl.Rows.Count == 0) { }
+
+                else {
+
+                    string eID = estimateIDTbl.Rows[0]["Estimate-ID"].ToString();
+
+                    //new query for that estimate id
+                    string estDetail = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = "+eID;
+
+                    try //to sql and fill adapter and DT
+                    {
+                        OdbcDataAdapter adapEstIdLines = new OdbcDataAdapter(estDetail, dbConn);
+                        adapEstIdLines.Fill(estDetailLines);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                        ErrorLog(error);
+                    }
+
+                    //when two zero's are found replace with "-"  -> maybe
+
+                }//end else
+                
+                //now clear datasource connecctions and set them with dt
+                //also check if empty exists it is empty hideSubs it
+                if (estDetailLines.Rows.Count != 0)
+                {
+
+                    //get rid of empty rows
+                    for (int i = estDetailLines.Rows.Count - 1; i >= 0; i--) {
+
+                        if (estDetailLines.Rows[i][0].ToString() == "") {
 
 
-                    dbConn.Close();
+                            estDetailLines.Rows[i].Delete();
+
+                        }
+                    
+                    
+                    }//remove whitespace
+
+                    estDetailLines.AcceptChanges();
+
+                    cryrpt.Subreports[4].DataSourceConnections.Clear();
+                    cryrpt.Subreports[4].SetDataSource(estDetailLines);
+
+                }
+                else
+                {
+
+                    string subEstDetail = "subEstimateDetail";
+                    HideSubs(cryrpt, subEstDetail);
+
+                }
+
+
+                #endregion
+
+
+                #endregion sub report creation
+
+
+                dbConn.Close();
                     #endregion DB close connection
 
                     #region hide subs
@@ -2389,7 +2473,91 @@ namespace vvt
 
                 #endregion stock rpt
 
+                #region estimateDetail
 
+                //need to grab the estimate detail, gunna need to do some manipulation to grab that estimateID
+                string estimateID = "SELECT * FROM PUB.JobEstMerge WHERE \"Job-ID\" = " + jobNumberUser;
+
+                DataTable estimateIDTbl = new DataTable();
+                DataTable estDetailLines = new DataTable();
+
+                try //to sql and fill adapter and DT
+                {
+                    OdbcDataAdapter adapEstId = new OdbcDataAdapter(estimateID, dbConn);
+                    adapEstId.Fill(estimateIDTbl);
+                }
+                catch (Exception ex)
+                {
+
+                    string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                    ErrorLog(error);
+                }
+
+                //if empty do ntohing else, new query for that estimate ID
+                if (estimateIDTbl.Rows.Count == 0) { }
+
+                else
+                {
+
+                    string eID = estimateIDTbl.Rows[0]["Estimate-ID"].ToString();
+
+                    //new query for that estimate id
+                    string estDetail = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
+
+                    try //to sql and fill adapter and DT
+                    {
+                        OdbcDataAdapter adapEstIdLines = new OdbcDataAdapter(estDetail, dbConn);
+                        adapEstIdLines.Fill(estDetailLines);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                        ErrorLog(error);
+                    }
+
+                    //when two zero's are found replace with "-"  -> maybe
+
+                }//end else
+
+                //now clear datasource connecctions and set them with dt
+                //also check if empty exists it is empty hideSubs it
+                if (estDetailLines.Rows.Count != 0)
+                {
+
+                    //get rid of empty rows
+                    for (int i = estDetailLines.Rows.Count - 1; i >= 0; i--)
+                    {
+
+                        if (estDetailLines.Rows[i][0].ToString() == "")
+                        {
+
+
+                            estDetailLines.Rows[i].Delete();
+
+                        }
+
+
+                    }//remove whitespace
+
+                    estDetailLines.AcceptChanges();
+
+                    cryrpt.Subreports[4].DataSourceConnections.Clear();
+                    cryrpt.Subreports[4].SetDataSource(estDetailLines);
+
+                }
+                else
+                {
+
+                    string subEstDetail = "subEstimateDetail";
+                    HideSubs(cryrpt, subEstDetail);
+
+                }
+
+
+                #endregion
 
 
                 #endregion sub report creation
@@ -3399,6 +3567,93 @@ namespace vvt
                 }
 
                 #endregion bindery matts rpt
+
+                #region estimateDetail
+
+                //need to grab the estimate detail, gunna need to do some manipulation to grab that estimateID
+                string estimateID = "SELECT * FROM PUB.JobEstMerge WHERE \"Job-ID\" = " + jobNumberUser;
+
+                DataTable estimateIDTbl = new DataTable();
+                DataTable estDetailLines = new DataTable();
+
+                try //to sql and fill adapter and DT
+                {
+                    OdbcDataAdapter adapEstId = new OdbcDataAdapter(estimateID, dbConn);
+                    adapEstId.Fill(estimateIDTbl);
+                }
+                catch (Exception ex)
+                {
+
+                    string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                    ErrorLog(error);
+                }
+
+                //if empty do ntohing else, new query for that estimate ID
+                if (estimateIDTbl.Rows.Count == 0) { }
+
+                else
+                {
+
+                    string eID = estimateIDTbl.Rows[0]["Estimate-ID"].ToString();
+
+                    //new query for that estimate id
+                    string estDetail = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
+
+                    try //to sql and fill adapter and DT
+                    {
+                        OdbcDataAdapter adapEstIdLines = new OdbcDataAdapter(estDetail, dbConn);
+                        adapEstIdLines.Fill(estDetailLines);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                        ErrorLog(error);
+                    }
+
+                    //when two zero's are found replace with "-"  -> maybe
+
+                }//end else
+
+                //now clear datasource connecctions and set them with dt
+                //also check if empty exists it is empty hideSubs it
+                if (estDetailLines.Rows.Count != 0)
+                {
+
+                    //get rid of empty rows
+                    for (int i = estDetailLines.Rows.Count - 1; i >= 0; i--)
+                    {
+
+                        if (estDetailLines.Rows[i][0].ToString() == "")
+                        {
+
+
+                            estDetailLines.Rows[i].Delete();
+
+                        }
+
+
+                    }//remove whitespace
+
+                    estDetailLines.AcceptChanges();
+
+                    cryrpt.Subreports[4].DataSourceConnections.Clear();
+                    cryrpt.Subreports[4].SetDataSource(estDetailLines);
+
+                }
+                else
+                {
+
+                    string subEstDetail = "subEstimateDetail";
+                    HideSubs(cryrpt, subEstDetail);
+
+                }
+
+
+                #endregion
+
 
                 #endregion sub report creation
 
@@ -5148,6 +5403,92 @@ namespace vvt
                 Console.WriteLine("Time for 810 atg notes subrpt" + DateTime.Now.ToString());
                 #endregion 810 notes
 
+                #region estimateDetail
+
+                //need to grab the estimate detail, gunna need to do some manipulation to grab that estimateID
+                string estimateID = "SELECT * FROM PUB.JobEstMerge WHERE \"Job-ID\" = " + jobNumberUser;
+
+                DataTable estimateIDTbl = new DataTable();
+                DataTable estDetailLines = new DataTable();
+
+                try //to sql and fill adapter and DT
+                {
+                    OdbcDataAdapter adapEstId = new OdbcDataAdapter(estimateID, dbConn);
+                    adapEstId.Fill(estimateIDTbl);
+                }
+                catch (Exception ex)
+                {
+
+                    string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                    ErrorLog(error);
+                }
+
+                //if empty do ntohing else, new query for that estimate ID
+                if (estimateIDTbl.Rows.Count == 0) { }
+
+                else
+                {
+
+                    string eID = estimateIDTbl.Rows[0]["Estimate-ID"].ToString();
+
+                    //new query for that estimate id
+                    string estDetail = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
+
+                    try //to sql and fill adapter and DT
+                    {
+                        OdbcDataAdapter adapEstIdLines = new OdbcDataAdapter(estDetail, dbConn);
+                        adapEstIdLines.Fill(estDetailLines);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                        ErrorLog(error);
+                    }
+
+                    //when two zero's are found replace with "-"  -> maybe
+
+                }//end else
+
+                //now clear datasource connecctions and set them with dt
+                //also check if empty exists it is empty hideSubs it
+                if (estDetailLines.Rows.Count != 0)
+                {
+
+                    //get rid of empty rows
+                    for (int i = estDetailLines.Rows.Count - 1; i >= 0; i--)
+                    {
+
+                        if (estDetailLines.Rows[i][0].ToString() == "")
+                        {
+
+
+                            estDetailLines.Rows[i].Delete();
+
+                        }
+
+
+                    }//remove whitespace
+
+                    estDetailLines.AcceptChanges();
+
+                    cryrpt.Subreports[4].DataSourceConnections.Clear();
+                    cryrpt.Subreports[4].SetDataSource(estDetailLines);
+
+                }
+                else
+                {
+
+                    string subEstDetail = "subEstimateDetail";
+                    HideSubs(cryrpt, subEstDetail);
+
+                }
+
+
+                #endregion
+
                 #endregion sub report creation
 
 
@@ -5933,6 +6274,91 @@ namespace vvt
                 }
                 #endregion Po Line info Subrpt
 
+                #region estimateDetail
+
+                //need to grab the estimate detail, gunna need to do some manipulation to grab that estimateID
+                string estimateID = "SELECT * FROM PUB.JobEstMerge WHERE \"Job-ID\" = " + jobNumberUser;
+
+                DataTable estimateIDTbl = new DataTable();
+                DataTable estDetailLines = new DataTable();
+
+                try //to sql and fill adapter and DT
+                {
+                    OdbcDataAdapter adapEstId = new OdbcDataAdapter(estimateID, dbConn);
+                    adapEstId.Fill(estimateIDTbl);
+                }
+                catch (Exception ex)
+                {
+
+                    string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                    ErrorLog(error);
+                }
+
+                //if empty do ntohing else, new query for that estimate ID
+                if (estimateIDTbl.Rows.Count == 0) { }
+
+                else
+                {
+
+                    string eID = estimateIDTbl.Rows[0]["Estimate-ID"].ToString();
+
+                    //new query for that estimate id
+                    string estDetail = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
+
+                    try //to sql and fill adapter and DT
+                    {
+                        OdbcDataAdapter adapEstIdLines = new OdbcDataAdapter(estDetail, dbConn);
+                        adapEstIdLines.Fill(estDetailLines);
+                    }
+                    catch (Exception ex)
+                    {
+
+                        string error = ex + " : SQL error cannot load OdbcDataAdapter - estimate detail report";
+
+                        ErrorLog(error);
+                    }
+
+                    //when two zero's are found replace with "-"  -> maybe
+
+                }//end else
+
+                //now clear datasource connecctions and set them with dt
+                //also check if empty exists it is empty hideSubs it
+                if (estDetailLines.Rows.Count != 0)
+                {
+
+                    //get rid of empty rows
+                    for (int i = estDetailLines.Rows.Count - 1; i >= 0; i--)
+                    {
+
+                        if (estDetailLines.Rows[i][0].ToString() == "")
+                        {
+
+
+                            estDetailLines.Rows[i].Delete();
+
+                        }
+
+
+                    }//remove whitespace
+
+                    estDetailLines.AcceptChanges();
+
+                    cryrpt.Subreports[4].DataSourceConnections.Clear();
+                    cryrpt.Subreports[4].SetDataSource(estDetailLines);
+
+                }
+                else
+                {
+
+                    string subEstDetail = "subEstimateDetail";
+                    HideSubs(cryrpt, subEstDetail);
+
+                }
+
+
+                #endregion
 
                 #endregion sub report creation
 
@@ -6488,6 +6914,9 @@ namespace vvt
 
                 string subJobMV2 = "subJobMailVersion2";
                 HideSubs(cryrpt, subJobMV2);
+
+                string subestiDetail = "subEstimateDetail";
+                HideSubs(cryrpt, subestiDetail);
 
                 DialogResult input = MessageBox.Show("Billing section needed?", "Print billing section as well?", MessageBoxButtons.YesNo);
                 if (input == DialogResult.No)

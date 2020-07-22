@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>binderyMat.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\estimateDetail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>estimateDetail.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\formNotes.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -231,6 +236,17 @@
     </None>
     <None Include="Datasets\binderyMat.xss">
       <DependentUpon>binderyMat.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\estimateDetail.xsc">
+      <DependentUpon>estimateDetail.xsd</DependentUpon>
+    </None>
+    <None Include="Datasets\estimateDetail.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>estimateDetail.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Datasets\estimateDetail.xss">
+      <DependentUpon>estimateDetail.xsd</DependentUpon>
     </None>
     <None Include="Datasets\formNotes.xsc">
       <DependentUpon>formNotes.xsd</DependentUpon>

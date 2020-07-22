@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="estimateDetail" targetNamespace="http://tempuri.org/estimateDetail.xsd" xmlns:mstns="http://tempuri.org/estimateDetail.xsd" xmlns="http://tempuri.org/estimateDetail.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="estimateDetail" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="estimateDetail" msprop:Generator_UserDSName="estimateDetail">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="esitmateDetail" msprop:Generator_TableClassName="esitmateDetailDataTable" msprop:Generator_TableVarName="tableesitmateDetail" msprop:Generator_TablePropName="esitmateDetail" msprop:Generator_RowDeletingName="esitmateDetailRowDeleting" msprop:Generator_RowChangingName="esitmateDetailRowChanging" msprop:Generator_RowEvHandlerName="esitmateDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="esitmateDetailRowDeleted" msprop:Generator_UserTableName="esitmateDetail" msprop:Generator_RowChangedName="esitmateDetailRowChanged" msprop:Generator_RowEvArgName="esitmateDetailRowChangeEvent" msprop:Generator_RowClassName="esitmateDetailRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
