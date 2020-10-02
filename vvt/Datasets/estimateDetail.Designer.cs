@@ -279,6 +279,8 @@ namespace vvt.Datasets {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class esitmateDetailDataTable : global::System.Data.TypedTableBase<esitmateDetailRow> {
             
+            private global::System.Data.DataColumn _columnSegment_ID;
+            
             private global::System.Data.DataColumn columnDescription;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -312,6 +314,14 @@ namespace vvt.Datasets {
             protected esitmateDetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn _Segment_IDColumn {
+                get {
+                    return this._columnSegment_ID;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -359,9 +369,10 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public esitmateDetailRow AddesitmateDetailRow(string Description) {
+            public esitmateDetailRow AddesitmateDetailRow(string _Segment_ID, string Description) {
                 esitmateDetailRow rowesitmateDetailRow = ((esitmateDetailRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
+                        _Segment_ID,
                         Description};
                 rowesitmateDetailRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowesitmateDetailRow);
@@ -385,12 +396,17 @@ namespace vvt.Datasets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
+                this._columnSegment_ID = base.Columns["Segment-ID"];
                 this.columnDescription = base.Columns["Description"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
+                this._columnSegment_ID = new global::System.Data.DataColumn("Segment-ID", typeof(string), null, global::System.Data.MappingType.Element);
+                this._columnSegment_ID.ExtendedProperties.Add("Generator_ColumnVarNameInTable", "_columnSegment_ID");
+                this._columnSegment_ID.ExtendedProperties.Add("Generator_UserColumnName", "Segment-ID");
+                base.Columns.Add(this._columnSegment_ID);
                 this.columnDescription = new global::System.Data.DataColumn("Description", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDescription);
             }
@@ -535,6 +551,22 @@ namespace vvt.Datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string _Segment_ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableesitmateDetail._Segment_IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Segment-ID\' in table \'esitmateDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableesitmateDetail._Segment_IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Description {
                 get {
                     try {
@@ -547,6 +579,18 @@ namespace vvt.Datasets {
                 set {
                     this[this.tableesitmateDetail.DescriptionColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is_Segment_IDNull() {
+                return this.IsNull(this.tableesitmateDetail._Segment_IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set_Segment_IDNull() {
+                this[this.tableesitmateDetail._Segment_IDColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

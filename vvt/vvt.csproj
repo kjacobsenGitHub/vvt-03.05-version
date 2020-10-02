@@ -85,6 +85,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>binderyMat.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Datasets\estimateDetail.cs">
+      <DependentUpon>estimateDetail.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Datasets\estimateDetail.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

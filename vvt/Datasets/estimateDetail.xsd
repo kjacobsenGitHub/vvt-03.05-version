@@ -15,6 +15,7 @@
         <xs:element name="esitmateDetail" msprop:Generator_TableClassName="esitmateDetailDataTable" msprop:Generator_TableVarName="tableesitmateDetail" msprop:Generator_TablePropName="esitmateDetail" msprop:Generator_RowDeletingName="esitmateDetailRowDeleting" msprop:Generator_RowChangingName="esitmateDetailRowChanging" msprop:Generator_RowEvHandlerName="esitmateDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="esitmateDetailRowDeleted" msprop:Generator_UserTableName="esitmateDetail" msprop:Generator_RowChangedName="esitmateDetailRowChanged" msprop:Generator_RowEvArgName="esitmateDetailRowChangeEvent" msprop:Generator_RowClassName="esitmateDetailRow">
           <xs:complexType>
             <xs:sequence>
+              <xs:element name="Segment-ID" msprop:Generator_ColumnVarNameInTable="_columnSegment_ID" msprop:Generator_ColumnPropNameInRow="_Segment_ID" msprop:Generator_ColumnPropNameInTable="_Segment_IDColumn" msprop:Generator_UserColumnName="Segment-ID" type="xs:string" minOccurs="0" />
               <xs:element name="Description" msprop:Generator_ColumnVarNameInTable="columnDescription" msprop:Generator_ColumnPropNameInRow="Description" msprop:Generator_ColumnPropNameInTable="DescriptionColumn" msprop:Generator_UserColumnName="Description" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>

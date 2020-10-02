@@ -1135,7 +1135,7 @@ namespace vvt
                     string subAlt = "subAlterations";
                     HideSubs(cryrpt, subAlt);
 
-                string subEstDetail = "subEstimateDetail";
+                string subEstDetail = "subEstimateDetails";
                 HideSubs(cryrpt, subEstDetail);
 
                  string subEstDetail2 = "subEstimateDetails2";
@@ -2424,7 +2424,7 @@ namespace vvt
                     string eID = estimateIDTbl.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
+                    string estDetail = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
 
                     try //to sql and fill adapter and DT
                     {
@@ -2452,7 +2452,7 @@ namespace vvt
                     for (int i = estDetailLines.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines.Rows[i][0].ToString() == "" || estDetailLines.Rows[i][0].ToString() == "Main Component" || estDetailLines.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines.Rows[i][1].ToString() == "" || estDetailLines.Rows[i][1].ToString() == "Main Component" || estDetailLines.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -2472,7 +2472,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail = "subEstimateDetail";
+                    string subEstDetail = "subEstimateDetails";
                     HideSubs(cryrpt, subEstDetail);
 
                 }
@@ -2510,7 +2510,7 @@ namespace vvt
                     string eID2 = estimateIDTbl2.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail2 = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID2;
+                    string estDetail2 = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID2;
 
                     try //to sql and fill adapter and DT
                     {
@@ -2538,7 +2538,7 @@ namespace vvt
                     for (int i = estDetailLines2.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines2.Rows[i][0].ToString() == "" || estDetailLines2.Rows[i][0].ToString() == "Main Component" || estDetailLines2.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines2.Rows[i][1].ToString() == "" || estDetailLines2.Rows[i][1].ToString() == "Main Component" || estDetailLines2.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -2557,7 +2557,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail2 = "subEstimateDetail";
+                    string subEstDetail2 = "subEstimateDetails2";
                     HideSubs(cryrpt, subEstDetail2);
 
                 }
@@ -2595,7 +2595,7 @@ namespace vvt
                     string eID3 = estimateIDTbl3.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail3 = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID3;
+                    string estDetail3 = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID3;
 
                     try //to sql and fill adapter and DT
                     {
@@ -2623,7 +2623,7 @@ namespace vvt
                     for (int i = estDetailLines3.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines3.Rows[i][0].ToString() == "" || estDetailLines3.Rows[i][0].ToString() == "Main Component" || estDetailLines3.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines3.Rows[i][1].ToString() == "" || estDetailLines3.Rows[i][1].ToString() == "Main Component" || estDetailLines3.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -2643,7 +2643,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail3 = "subEstimateDetail3";
+                    string subEstDetail3 = "subEstimateDetails3";
                     HideSubs(cryrpt, subEstDetail3);
 
                 }
@@ -3685,7 +3685,7 @@ namespace vvt
                     string eID = estimateIDTbl.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
+                    string estDetail = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
 
                     try //to sql and fill adapter and DT
                     {
@@ -3713,7 +3713,7 @@ namespace vvt
                     for (int i = estDetailLines.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines.Rows[i][0].ToString() == "" || estDetailLines.Rows[i][0].ToString() == "Main Component" || estDetailLines.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines.Rows[i][1].ToString() == "" || estDetailLines.Rows[i][1].ToString() == "Main Component" || estDetailLines.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -3733,7 +3733,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail = "subEstimateDetail";
+                    string subEstDetail = "subEstimateDetails";
                     HideSubs(cryrpt, subEstDetail);
 
                 }
@@ -3771,7 +3771,7 @@ namespace vvt
                     string eID2 = estimateIDTbl2.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail2 = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID2;
+                    string estDetail2 = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID2;
 
                     try //to sql and fill adapter and DT
                     {
@@ -3799,7 +3799,7 @@ namespace vvt
                     for (int i = estDetailLines2.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines2.Rows[i][0].ToString() == "" || estDetailLines2.Rows[i][0].ToString() == "Main Component" || estDetailLines2.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines2.Rows[i][1].ToString() == "" || estDetailLines2.Rows[i][1].ToString() == "Main Component" || estDetailLines2.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -3818,7 +3818,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail2 = "subEstimateDetail";
+                    string subEstDetail2 = "subEstimateDetails2";
                     HideSubs(cryrpt, subEstDetail2);
 
                 }
@@ -3856,7 +3856,7 @@ namespace vvt
                     string eID3 = estimateIDTbl3.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail3 = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID3;
+                    string estDetail3 = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID3;
 
                     try //to sql and fill adapter and DT
                     {
@@ -3884,7 +3884,7 @@ namespace vvt
                     for (int i = estDetailLines3.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines3.Rows[i][0].ToString() == "" || estDetailLines3.Rows[i][0].ToString() == "Main Component" || estDetailLines3.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines3.Rows[i][1].ToString() == "" || estDetailLines3.Rows[i][1].ToString() == "Main Component" || estDetailLines3.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -3904,7 +3904,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail3 = "subEstimateDetail3";
+                    string subEstDetail3 = "subEstimateDetails3";
                     HideSubs(cryrpt, subEstDetail3);
 
                 }
@@ -4083,7 +4083,7 @@ namespace vvt
 
                 #endregion crystal report config end
 
-                Console.WriteLine("Time for non-DB connection related things: " +DateTime.Now.ToString());
+               // Console.WriteLine("Time for non-DB connection related things: " +DateTime.Now.ToString());
                 
 
                 //here is where i need to clean up lots, make functions, sql queryies, DT and DS manipualtion, pass the job number, etc 
@@ -4115,7 +4115,7 @@ namespace vvt
                 #endregion global connection propeties
 
 
-                Console.WriteLine("Time for opening connection to DB " + DateTime.Now.ToString());
+               // Console.WriteLine("Time for opening connection to DB " + DateTime.Now.ToString());
 
                 //here is where i can change the UI of the report based on database data
                 //ex) show word nailing on report if job# has a 810 tag associated with it
@@ -4160,11 +4160,11 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtHeader.Rows.Count;
                 itemCurrentCount += dtHeader.Columns.Count;
-                Console.WriteLine("Header of CR Job - This* sql statment/Datatable fill - Record Row Current: "+ recordCurrentCount+ " Elements current "+ itemCurrentCount +"\nRunning Total:Record Rows: "+recordCount+" Elements per row: "+itemCount);
+               // Console.WriteLine("Header of CR Job - This* sql statment/Datatable fill - Record Row Current: "+ recordCurrentCount+ " Elements current "+ itemCurrentCount +"\nRunning Total:Record Rows: "+recordCount+" Elements per row: "+itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
-                Console.WriteLine("Time for Header of CR Job" + DateTime.Now.ToString());
+               // Console.WriteLine("Time for Header of CR Job" + DateTime.Now.ToString());
 
                 //set all text objects to the data from datatable
                 try
@@ -4255,11 +4255,11 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtCust.Rows.Count;
                 itemCurrentCount += dtCust.Columns.Count;
-                Console.WriteLine("Header of CR Customer - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("Header of CR Customer - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
-                Console.WriteLine("Time for Header of CR Customer" + DateTime.Now.ToString());
+               // Console.WriteLine("Time for Header of CR Customer" + DateTime.Now.ToString());
 
                 //set the Customer info text objects
                 //cust name
@@ -4331,11 +4331,11 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtSalesAgent.Rows.Count;
                 itemCurrentCount += dtSalesAgent.Columns.Count;
-                Console.WriteLine("Header of CR Sales Agent - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("Header of CR Sales Agent - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
-                Console.WriteLine("Time for Header of CR sales agent" + DateTime.Now.ToString());
+              //  Console.WriteLine("Time for Header of CR sales agent" + DateTime.Now.ToString());
 
                 try
                 {
@@ -4374,11 +4374,11 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtCsr.Rows.Count;
                 itemCurrentCount += dtCsr.Columns.Count;
-                Console.WriteLine("Header of CR CSR - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("Header of CR CSR - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
-                Console.WriteLine("Time for header for CR CSR" + DateTime.Now.ToString());
+              //  Console.WriteLine("Time for header for CR CSR" + DateTime.Now.ToString());
 
                 try
                 {
@@ -4426,11 +4426,11 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtEdit.Rows.Count;
                 itemCurrentCount += dtEdit.Columns.Count;
-                Console.WriteLine("TagStatus/810 check - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("TagStatus/810 check - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
-                Console.WriteLine("Time for TagStatus/810 check" + DateTime.Now.ToString());
+               // Console.WriteLine("Time for TagStatus/810 check" + DateTime.Now.ToString());
 
                 //here is needed for 810 chck
                 bool check = false;
@@ -4878,7 +4878,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtMailFF.Rows.Count;
                 itemCurrentCount += dtMailFF.Columns.Count;
-                Console.WriteLine("mail free fields subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("mail free fields subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -4911,7 +4911,7 @@ namespace vvt
                     HideSubs(cryrpt, subMailFF);
 
                 }
-                Console.WriteLine("Time for Mailing free fields subrpt" + DateTime.Now.ToString());
+               // Console.WriteLine("Time for Mailing free fields subrpt" + DateTime.Now.ToString());
                 #endregion Mailing Free Fields subReport
 
                 #region Job Notes subReport
@@ -4939,7 +4939,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtJobNotes.Rows.Count;
                 itemCurrentCount += dtJobNotes.Columns.Count;
-                Console.WriteLine("JobNotes subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("JobNotes subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -4969,7 +4969,7 @@ namespace vvt
 
                 }
 
-                Console.WriteLine("Time for Job Notes subrpt" + DateTime.Now.ToString());
+               // Console.WriteLine("Time for Job Notes subrpt" + DateTime.Now.ToString());
                 #endregion Job Notes subReports
 
 
@@ -4998,7 +4998,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtAlt.Rows.Count;
                 itemCurrentCount += dtAlt.Columns.Count;
-                Console.WriteLine("Alterations subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("Alterations subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
 
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5017,7 +5017,7 @@ namespace vvt
                     HideSubs(cryrpt, subAlt);
 
                 }
-                Console.WriteLine("Time for alteration subrpt" + DateTime.Now.ToString());
+               // Console.WriteLine("Time for alteration subrpt" + DateTime.Now.ToString());
                 #endregion alterations subRpt
 
                 #region Job free fields subRPt
@@ -5045,7 +5045,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtFF.Rows.Count;
                 itemCurrentCount += dtFF.Columns.Count;
-                Console.WriteLine("Job free fields subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+              //  Console.WriteLine("Job free fields subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5093,7 +5093,7 @@ namespace vvt
 
                 }
 
-                Console.WriteLine("Time for Job Free fields subrpt" + DateTime.Now.ToString());
+                //Console.WriteLine("Time for Job Free fields subrpt" + DateTime.Now.ToString());
                 #endregion job free fields subRpt
 
                 #region PO req subRpt
@@ -5121,7 +5121,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtPOreq.Rows.Count;
                 itemCurrentCount += dtPOreq.Columns.Count;
-                Console.WriteLine("PO Req subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+              //  Console.WriteLine("PO Req subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5140,7 +5140,7 @@ namespace vvt
                     HideSubs(cryrpt, subPOreq);
 
                 }
-                Console.WriteLine("Time for PO req subrpt" + DateTime.Now.ToString());
+              //  Console.WriteLine("Time for PO req subrpt" + DateTime.Now.ToString());
                 #endregion PO req subRpt
 
 
@@ -5168,7 +5168,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtPOLine.Rows.Count;
                 itemCurrentCount += dtPOLine.Columns.Count;
-                Console.WriteLine("PO Line subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("PO Line subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5186,7 +5186,7 @@ namespace vvt
                     HideSubs(cryrpt, subPOLine);
 
                 }
-                Console.WriteLine("Time for PO line subrpt" + DateTime.Now.ToString());
+               // Console.WriteLine("Time for PO line subrpt" + DateTime.Now.ToString());
                 #endregion Po Line info Subrpt
 
                 #region ship to data subRpt
@@ -5214,7 +5214,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtShipTo.Rows.Count;
                 itemCurrentCount += dtShipTo.Columns.Count;
-                Console.WriteLine("Ship to subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+              //  Console.WriteLine("Ship to subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5233,7 +5233,7 @@ namespace vvt
                     HideSubs(cryrpt, subShipTo);
 
                 }
-                Console.WriteLine("Time for ship to data subrpt" + DateTime.Now.ToString());
+              //  Console.WriteLine("Time for ship to data subrpt" + DateTime.Now.ToString());
                 #endregion ship to data subRpt
 
                 #region form spec subRpt
@@ -5259,7 +5259,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtSpecForm.Rows.Count;
                 itemCurrentCount += dtSpecForm.Columns.Count;
-                Console.WriteLine("job specs subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("job specs subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5279,7 +5279,7 @@ namespace vvt
 
                 }
 
-                Console.WriteLine("Time for form specs subrpt " + DateTime.Now.ToString());
+               // Console.WriteLine("Time for form specs subrpt " + DateTime.Now.ToString());
                 #endregion form spec subRpt
 
                 #region form Notes subrpt
@@ -5305,7 +5305,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtFormNotes.Rows.Count;
                 itemCurrentCount += dtFormNotes.Columns.Count;
-                Console.WriteLine("Form notes subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("Form notes subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5325,7 +5325,7 @@ namespace vvt
 
                 }
 
-                Console.WriteLine("Time for form notes subrpt " + DateTime.Now.ToString());
+               // Console.WriteLine("Time for form notes subrpt " + DateTime.Now.ToString());
                 #endregion form notes subRpt
 
                 #region prepress rpt
@@ -5351,7 +5351,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtPrepress.Rows.Count;
                 itemCurrentCount += dtPrepress.Columns.Count;
-                Console.WriteLine("Prepresssubrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+              //  Console.WriteLine("Prepresssubrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5370,7 +5370,7 @@ namespace vvt
                     HideSubs(cryrpt, subPrepress);
 
                 }
-                Console.WriteLine("Time for prepress subrpt " + DateTime.Now.ToString());
+               // Console.WriteLine("Time for prepress subrpt " + DateTime.Now.ToString());
                 #endregion prepress rpt
 
                 #region press rpt
@@ -5395,7 +5395,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtPress.Rows.Count;
                 itemCurrentCount += dtPress.Columns.Count;
-                Console.WriteLine("Press subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("Press subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5413,7 +5413,7 @@ namespace vvt
                     HideSubs(cryrpt, subPress);
 
                 }
-                Console.WriteLine("Time for press subrpt " + DateTime.Now.ToString());
+               // Console.WriteLine("Time for press subrpt " + DateTime.Now.ToString());
                 #endregion press rpt
 
                 #region stock rpt
@@ -5440,7 +5440,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtStock.Rows.Count;
                 itemCurrentCount += dtStock.Columns.Count;
-                Console.WriteLine("stock subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+               // Console.WriteLine("stock subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5468,7 +5468,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtPG.Rows.Count;
                 itemCurrentCount += dtPG.Columns.Count;
-                Console.WriteLine("Stock subrpt - PageGrain field - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+              //  Console.WriteLine("Stock subrpt - PageGrain field - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5501,7 +5501,7 @@ namespace vvt
                     HideSubs(cryrpt, subStock);
 
                 }
-                Console.WriteLine("Time for stock subrpt+PageGrain feild query " + DateTime.Now.ToString());
+               // Console.WriteLine("Time for stock subrpt+PageGrain feild query " + DateTime.Now.ToString());
                 #endregion stock rpt
 
                 #region bindery rpt
@@ -5528,7 +5528,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtBind.Rows.Count;
                 itemCurrentCount += dtBind.Columns.Count;
-                Console.WriteLine("Bindery subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+              //  Console.WriteLine("Bindery subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5548,7 +5548,7 @@ namespace vvt
 
                 }
 
-                Console.WriteLine("Time for bindery subrpt " + DateTime.Now.ToString());
+              //  Console.WriteLine("Time for bindery subrpt " + DateTime.Now.ToString());
                 #endregion bindery rpt
 
                 #region bindery matts rpt
@@ -5575,7 +5575,7 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dtBindMatts.Rows.Count;
                 itemCurrentCount += dtBindMatts.Columns.Count;
-                Console.WriteLine("Bindery Matts subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+              //  Console.WriteLine("Bindery Matts subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
@@ -5594,7 +5594,7 @@ namespace vvt
                     HideSubs(cryrpt, subBinderyMatts);
 
                 }
-                Console.WriteLine("Time for bindery matts subrpt" + DateTime.Now.ToString());
+               // Console.WriteLine("Time for bindery matts subrpt" + DateTime.Now.ToString());
                 #endregion bindery matts rpt
 
                 #region 810 notes
@@ -5621,9 +5621,9 @@ namespace vvt
                 //current DT
                 recordCurrentCount += dt810Notes.Rows.Count;
                 itemCurrentCount += dt810Notes.Columns.Count;
-                Console.WriteLine("810 Notes subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
+              //  Console.WriteLine("810 Notes subrpt - This* sql statment/Datatable fill - Record Row Current: " + recordCurrentCount + " Elements current " + itemCurrentCount + "\nRunning Total:Record Rows: " + recordCount + " Elements per row: " + itemCount);
                 sqlCount++;
-                Console.WriteLine("Sql query count: "+sqlCount);
+              //  Console.WriteLine("Sql query count: "+sqlCount);
                 recordCurrentCount = 0;
                 itemCurrentCount = 0;
 
@@ -5656,7 +5656,7 @@ namespace vvt
                     HideSubs(cryrpt, sub810Notes);
 
                 }
-                Console.WriteLine("Time for 810 atg notes subrpt" + DateTime.Now.ToString());
+               // Console.WriteLine("Time for 810 atg notes subrpt" + DateTime.Now.ToString());
                 #endregion 810 notes
 
                 #region estimateDetail
@@ -5689,7 +5689,7 @@ namespace vvt
                     string eID = estimateIDTbl.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
+                    string estDetail = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
 
                     try //to sql and fill adapter and DT
                     {
@@ -5717,7 +5717,7 @@ namespace vvt
                     for (int i = estDetailLines.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines.Rows[i][0].ToString() == "" || estDetailLines.Rows[i][0].ToString() == "Main Component" || estDetailLines.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines.Rows[i][1].ToString() == "" || estDetailLines.Rows[i][1].ToString() == "Main Component" || estDetailLines.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -5737,7 +5737,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail = "subEstimateDetail";
+                    string subEstDetail = "subEstimateDetails";
                     HideSubs(cryrpt, subEstDetail);
 
                 }
@@ -5775,7 +5775,7 @@ namespace vvt
                     string eID2 = estimateIDTbl2.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail2 = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID2;
+                    string estDetail2 = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID2;
 
                     try //to sql and fill adapter and DT
                     {
@@ -5803,7 +5803,7 @@ namespace vvt
                     for (int i = estDetailLines2.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines2.Rows[i][0].ToString() == "" || estDetailLines2.Rows[i][0].ToString() == "Main Component" || estDetailLines2.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines2.Rows[i][1].ToString() == "" || estDetailLines2.Rows[i][1].ToString() == "Main Component" || estDetailLines2.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -5822,7 +5822,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail2 = "subEstimateDetail2";
+                    string subEstDetail2 = "subEstimateDetails2";
                     HideSubs(cryrpt, subEstDetail2);
 
                 }
@@ -5860,7 +5860,7 @@ namespace vvt
                     string eID3 = estimateIDTbl3.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail3 = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID3;
+                    string estDetail3 = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID3;
 
                     try //to sql and fill adapter and DT
                     {
@@ -5888,7 +5888,7 @@ namespace vvt
                     for (int i = estDetailLines3.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines3.Rows[i][0].ToString() == "" || estDetailLines3.Rows[i][0].ToString() == "Main Component" || estDetailLines3.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines3.Rows[i][1].ToString() == "" || estDetailLines3.Rows[i][1].ToString() == "Main Component" || estDetailLines3.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -5908,7 +5908,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail3 = "subEstimateDetail3";
+                    string subEstDetail3 = "subEstimateDetails3";
                     HideSubs(cryrpt, subEstDetail3);
 
                 }
@@ -5935,7 +5935,7 @@ namespace vvt
                 LaunchOrigin.crystalReportViewer1.Refresh(); //here is where i get the prompt DB login
 
                 label3.Text = "Report loaded.";
-                Console.WriteLine("Report loaded: "+DateTime.Now.ToString());
+              //  Console.WriteLine("Report loaded: "+DateTime.Now.ToString());
                 #endregion display rpt
 
             }
@@ -6731,7 +6731,7 @@ namespace vvt
                     string eID = estimateIDTbl.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
+                    string estDetail = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID;
 
                     try //to sql and fill adapter and DT
                     {
@@ -6759,7 +6759,7 @@ namespace vvt
                     for (int i = estDetailLines.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines.Rows[i][0].ToString() == "" || estDetailLines.Rows[i][0].ToString() == "Main Component" || estDetailLines.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines.Rows[i][1].ToString() == "" || estDetailLines.Rows[i][1].ToString() == "Main Component" || estDetailLines.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -6779,7 +6779,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail = "subEstimateDetail";
+                    string subEstDetail = "subEstimateDetails";
                     HideSubs(cryrpt, subEstDetail);
 
                 }
@@ -6817,7 +6817,7 @@ namespace vvt
                     string eID2 = estimateIDTbl2.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail2 = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID2;
+                    string estDetail2 = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID2;
 
                     try //to sql and fill adapter and DT
                     {
@@ -6845,7 +6845,7 @@ namespace vvt
                     for (int i = estDetailLines2.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines2.Rows[i][0].ToString() == "" || estDetailLines2.Rows[i][0].ToString() == "Main Component" || estDetailLines2.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines2.Rows[i][1].ToString() == "" || estDetailLines2.Rows[i][1].ToString() == "Main Component" || estDetailLines2.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -6857,14 +6857,14 @@ namespace vvt
                     }//remove whitespace
 
                     estDetailLines2.AcceptChanges();
-                    cryrpt.Subreports[4].DataSourceConnections.Clear();
-                    cryrpt.Subreports[4].SetDataSource(estDetailLines2);
+                    cryrpt.Subreports[5].DataSourceConnections.Clear();
+                    cryrpt.Subreports[5].SetDataSource(estDetailLines2);
 
                 }
                 else
                 {
 
-                    string subEstDetail2 = "subEstimateDetail";
+                    string subEstDetail2 = "subEstimateDetails2";
                     HideSubs(cryrpt, subEstDetail2);
 
                 }
@@ -6902,7 +6902,7 @@ namespace vvt
                     string eID3 = estimateIDTbl3.Rows[0]["Estimate-ID"].ToString();
 
                     //new query for that estimate id
-                    string estDetail3 = "SELECT Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID3;
+                    string estDetail3 = "SELECT \"Segment-ID\", Description FROM PUB.Segment WHERE \"Estimate-ID\" = " + eID3;
 
                     try //to sql and fill adapter and DT
                     {
@@ -6930,7 +6930,7 @@ namespace vvt
                     for (int i = estDetailLines3.Rows.Count - 1; i >= 0; i--)
                     {
 
-                        if (estDetailLines3.Rows[i][0].ToString() == "" || estDetailLines3.Rows[i][0].ToString() == "Main Component" || estDetailLines3.Rows[i][0].ToString() == "Finishing")
+                        if (estDetailLines3.Rows[i][1].ToString() == "" || estDetailLines3.Rows[i][1].ToString() == "Main Component" || estDetailLines3.Rows[i][1].ToString() == "Finishing")
                         {
 
 
@@ -6950,7 +6950,7 @@ namespace vvt
                 else
                 {
 
-                    string subEstDetail3 = "subEstimateDetail3";
+                    string subEstDetail3 = "subEstimateDetails3";
                     HideSubs(cryrpt, subEstDetail3);
 
                 }
@@ -7513,8 +7513,14 @@ namespace vvt
                 string subJobMV2 = "subJobMailVersion2";
                 HideSubs(cryrpt, subJobMV2);
 
-                string subestiDetail = "subEstimateDetail";
+                string subestiDetail = "subEstimateDetails";
                 HideSubs(cryrpt, subestiDetail);
+
+                string subestiDetail2 = "subEstimateDetails2";
+                HideSubs(cryrpt, subestiDetail2);
+
+                string subestiDetail3 = "subEstimateDetails3";
+                HideSubs(cryrpt, subestiDetail3);
 
                 DialogResult input = MessageBox.Show("Billing section needed?", "Print billing section as well?", MessageBoxButtons.YesNo);
                 if (input == DialogResult.No)
