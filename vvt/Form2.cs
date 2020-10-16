@@ -2394,6 +2394,7 @@ namespace vvt
 
                 #endregion stock rpt
 
+                
                 #region estimateDetail
 
                 //need to grab the estimate detail, gunna need to do some manipulation to grab that estimateID
@@ -2650,9 +2651,9 @@ namespace vvt
 
 
                 #endregion
-
+    
                 #endregion sub report creation
-
+        
 
                 dbConn.Close();
                 #endregion DB close connection
@@ -2686,8 +2687,11 @@ namespace vvt
                 LaunchOrigin.crystalReportViewer1.ShowParameterPanelButton = false;
                 LaunchOrigin.crystalReportViewer1.ReportSource = cryrpt;
 
-                LaunchOrigin.crystalReportViewer1.Refresh(); //here is where i get the prompt DB login
-
+                try
+                {
+                    LaunchOrigin.crystalReportViewer1.Refresh(); //here is where i get the prompt DB login
+                }
+                catch (Exception ex) { MessageBox.Show("Could not load report becuase: "+ex.Message); }
                 label3.Text = "Report loaded.";
             }
             else {
