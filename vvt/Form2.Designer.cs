@@ -188,7 +188,7 @@
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(205, 13);
             this.label6.TabIndex = 17;
-            this.label6.Text = "VVT Version: 1.0 Last Modified: 10/16/20";
+            this.label6.Text = "VVT Version: 1.3 Last Modified: 12/21/20";
             // 
             // Form2
             // 

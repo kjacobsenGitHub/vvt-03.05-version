@@ -1886,12 +1886,16 @@ namespace vvt
                         }
                         catch (Exception ex) { }
 
+                        //copy DT and pop off first nine
                         DataTable dtMailV2 = dtMailVersion.Copy();
 
                         try
                         {
-                            //copy DT and pop off first nine
-
+                            //first suppress from back 17-14
+                            dtMailV2.Rows[17].Delete();
+                            dtMailV2.Rows[16].Delete();
+                            dtMailV2.Rows[15].Delete();
+                            dtMailV2.Rows[14].Delete();
                             dtMailV2.Rows[0].Delete();
                             dtMailV2.Rows[1].Delete();
                             dtMailV2.Rows[2].Delete();
@@ -1904,6 +1908,10 @@ namespace vvt
                             dtMailV2.AcceptChanges();
 
                             //remove last 9 from dtMailversion
+                            dtMailVersion.Rows[5].Delete();
+                            dtMailVersion.Rows[6].Delete();
+                            dtMailVersion.Rows[7].Delete();
+                            dtMailVersion.Rows[8].Delete();
                             dtMailVersion.Rows[9].Delete();
                             dtMailVersion.Rows[10].Delete();
                             dtMailVersion.Rows[11].Delete();
@@ -2016,9 +2024,9 @@ namespace vvt
                     HideSubs(cryrpt, subMailFF);
 
                 }
-
+                
                 #endregion Mailing Free Fields subReport
-
+    
                 #region Job Notes subReport
                 string queryJobNotes = "SELECT \"SpecCategory-ID\", Description, \"Created-By\", \"Comment-Date\", \"Update-date\" FROM PUB.JobComments WHERE \"Job-ID\" = " + jobNumberUser;
 
@@ -4777,8 +4785,14 @@ namespace vvt
 
                         //copy DT and pop off first nine
                         DataTable dtMailV2 = dtMailVersion.Copy();
+
                         try
                         {
+                            //first suppress from back 17-14
+                            dtMailV2.Rows[17].Delete();
+                            dtMailV2.Rows[16].Delete();
+                            dtMailV2.Rows[15].Delete();
+                            dtMailV2.Rows[14].Delete();
                             dtMailV2.Rows[0].Delete();
                             dtMailV2.Rows[1].Delete();
                             dtMailV2.Rows[2].Delete();
@@ -4791,6 +4805,10 @@ namespace vvt
                             dtMailV2.AcceptChanges();
 
                             //remove last 9 from dtMailversion
+                            dtMailVersion.Rows[5].Delete();
+                            dtMailVersion.Rows[6].Delete();
+                            dtMailVersion.Rows[7].Delete();
+                            dtMailVersion.Rows[8].Delete();
                             dtMailVersion.Rows[9].Delete();
                             dtMailVersion.Rows[10].Delete();
                             dtMailVersion.Rows[11].Delete();
